@@ -4,7 +4,17 @@ body {
     padding: 0;
 }
 
-.min-height-container{
-    min-height: 100vh;
+html {
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
 }
 
+html::-webkit-scrollbar {
+    width: 0px;
+}
+
+.page-content{
+    min-height: 100vh;
+    height: auto;
+    clear: both;
+}
