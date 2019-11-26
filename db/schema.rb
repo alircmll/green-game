@@ -10,10 +10,79 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_110721) do
+ActiveRecord::Schema.define(version: 2019_11_26_112527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.bigint "option_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["option_id"], name: "index_answers_on_option_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "challenges", force: :cascade do |t|
+    t.integer "duration"
+    t.integer "step_number"
+    t.integer "points_by_step"
+    t.string "title"
+    t.text "description"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_challenges_on_category_id"
+  end
+
+  create_table "options", force: :cascade do |t|
+    t.string "title"
+    t.boolean "is_right"
+    t.bigint "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_options_on_question_id"
+  end
+
+  create_table "party_challenges", force: :cascade do |t|
+    t.integer "point"
+    t.bigint "user_id"
+    t.bigint "challenge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["challenge_id"], name: "index_party_challenges_on_challenge_id"
+    t.index ["user_id"], name: "index_party_challenges_on_user_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "title"
+    t.bigint "quiz_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quiz_id"], name: "index_questions_on_quiz_id"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.integer "points_by_question"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tips", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tips_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +92,31 @@ ActiveRecord::Schema.define(version: 2019_11_26_110721) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.integer "level", default: 0
+    t.integer "total_point", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.string "kind"
+    t.bigint "tip_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tip_id"], name: "index_votes_on_tip_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
+  end
+
+  add_foreign_key "answers", "options"
+  add_foreign_key "answers", "users"
+  add_foreign_key "challenges", "categories"
+  add_foreign_key "options", "questions"
+  add_foreign_key "party_challenges", "challenges"
+  add_foreign_key "party_challenges", "users"
+  add_foreign_key "questions", "quizzes"
+  add_foreign_key "tips", "users"
+  add_foreign_key "votes", "tips"
+  add_foreign_key "votes", "users"
 end
