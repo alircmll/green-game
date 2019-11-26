@@ -1,2 +1,13 @@
-<h1>Tips#index</h1>
-<p>Find me in app/views/tips/index.html.erb</p>
+
+
+<div class="container">
+  <div class="row">
+  <% @tips.each do |tip| %>
+    <div class="col-sm-6 offset-3">
+      <%= tip.title %>
+      <%= tip.description %>
+      <%= tip.user.username %>
+    </div>
+  <% end %>
+  </div>
+</div>
