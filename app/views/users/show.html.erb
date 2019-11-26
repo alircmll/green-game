@@ -1,0 +1,30 @@
+<section id="user" class="container-fluid d-flex flex-column bg-dark">
+  <section id="userStatus" class="row px-4 my-auto">
+    <div class="col-12 d-flex align-items-center mb-4 justify-content-between">
+      <img src="https://avatars0.githubusercontent.com/u/43972190?v=4" alt="" class="avatar">
+      <p class= "name text-white"><%= @user.email.capitalize %></p>
+    </div>
+    <div class="col-12 d-flex align-items-center justify-content-between text-white mt-4 ">
+    <span id="myLevel">Lvl. 1</span>
+    <span id="nextLevelIn">67%</span>
+    </div>
+    <div class="col-12  ">
+    <%# PROGRESS BAR, Changer style pourcantage et aria-valuenow %>
+      <div class="progress">
+        <div class="progress-bar bg-primary" role="progressbar" style="width: 67%;"
+            aria-valuenow="67" aria-valuemin="0" aria-valuemax="100">
+          </div>
+      </div>
+    </div>
+  </section>
+</section>
+  <section id="userContent" class="container-fluid h-100 d-flex page-content flex-column bg-white p-4">
+    <div id="myTodo" class="row ">
+    <p class="h4">My sustainable lifestyle day</p>
+    <%# Je place ici la todo %>
+    </div>
+    <div id="myChallenges" class="row ">
+    <p class="h4">My Challenges</p>
+    <%# Je place mes challenges %>
+    </div>
+  </section>

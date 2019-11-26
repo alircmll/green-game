@@ -1,1 +1,50 @@
-// Specific CSS for your home-page
+#firstScreen {
+    background-image: linear-gradient(81.2deg, rgba(0, 0, 0, 0.49) -49.44%, rgba(96, 54, 94, 0.62) 82.85%), image-url("background/sign-in-bg.jpg");
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+    align-content: stretch;
+
+    &>.row {
+        flex-grow: 1;
+        z-index: 5;
+    }
+
+    .logo {
+        z-index: 10;
+
+        img {
+            width: 260px;
+        }
+    }
+
+    .form-inputs {
+        z-index: 10;
+    }
+
+    .form-actions {
+        .btn {
+            width: 315px;
+            height: 44px;
+            border-radius: $border-radius;
+            position: relative;
+            left: -36px;
+            margin-top: 72px ;
+        }
+    }
+
+    // .rectangle {
+    //     position: absolute;
+    //     z-index: 1;
+    //     left: 0;
+    //     right: 0;
+    //     top: 0;
+    //     bottom: 0;
+    //     background: $aubergine;
+    //     box-shadow: 0px 8px 64px rgba(27, 39, 73, 0.2);
+    //     border-radius: 26px;
+    //     transform: rotate(70deg);
+    // }
+}
