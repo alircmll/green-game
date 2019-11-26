@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :party_challenges
   has_many :answers
   has_many :votes
+  mount_uploader :photo, PhotoUploader
 end
