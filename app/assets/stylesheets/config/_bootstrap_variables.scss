@@ -9,17 +9,42 @@ $headings-font-family:    $headers-font;
 $body-bg:                 $light-gray;
 $font-size-base: 1rem;
 
+// Variable couleurs 
+$canard: #0b5f6a;
+$teal: #1f99a4;
+$biscaygreen: #abd3df;
+$aubergine: #60365e;
+
 // Colors
 $body-color: $gray;
-$primary:    $blue;
+$primary:    $aubergine;
 $success:    $green;
 $info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
 
 // Buttons & inputs' radius
-$border-radius:    2px;
-$border-radius-lg: 2px;
-$border-radius-sm: 2px;
+$border-radius:    8px;
+$border-radius-lg: 8px * 3;
+$border-radius-sm: 8px * 2;
 
-// Override other variables below!
+// Random-color
+@function random-color($min: 0, $max: 255, $alpha: 1) {
+	@if $min < 0 {
+		$min: -1;
+	} @else {
+		$min: $min - 1;
+	}
+	@if $max > 255 {
+		$max: 256;
+	} @else {
+		$max: $max + 1;
+	}
+	$red: random($max) + $min;
+	$green: random($max) + $min;
+	$blue: random($max) + $min;
+	@return rgba($red, $green, $blue, $alpha);
+}
+
+$primary-light: mix(#ffffff, $primary, 25%);
+$primary-dark: mix(#000000, $primary, 25%);

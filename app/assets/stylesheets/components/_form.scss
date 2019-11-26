@@ -1,0 +1,23 @@
+// Rendre les inputs transparants avec un border bottom uniquement
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select.form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid $primary-light;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  // border-radius: 0;
+  color: white;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: transparent;
+  color: white;
+}
