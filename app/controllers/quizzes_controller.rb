@@ -3,12 +3,14 @@ class QuizzesController < ApplicationController
     # Check quiz in progress
     quiz = user_session[:quiz]
     if quiz == nil 
+      # ======================  a déplacer dans le liens pour accéder au quizz
       # Pick random one quiz
       @quiz = Quiz.all.sample
+      # ===========================================================================
       quizSession = {
-        id: @quiz.id
-        score: 0
-        currentQuestion: 1
+        id: @quiz.id,
+        score: 0,
+        currentQuestion: 0
       }
       # Start new quiz
       user_session[:quiz] = quizSession
