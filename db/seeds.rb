@@ -1,3 +1,4 @@
+
 puts "Destroy all"
 
 User.destroy_all
@@ -140,3 +141,4 @@ Challenge.create!(challenges)
 puts "Finished!"
 
 puts "Seed DONE"
+

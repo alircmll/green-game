@@ -1,0 +1,28 @@
+<div class="container text-center mt-4">
+  <h1><%= @category.name %> </h1>
+  <div class="row">
+    <div class="col-4">
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <%= link_to challenges_path, id: "main-btn" do %>
+    <div class="card-category m-4" >
+      Challenges
+    </div>
+  <% end %>
+  <%= link_to quiz_path(@category), id: "main-btn" do %>
+    <div class="card-category m-4">
+    Quizz
+    </div>
+  <% end %>
+  <%= link_to tips_path, id: "main-btn" do %>
+    <div class="card-category m-4">
+      Tips
+    </div>
+  <% end %>
+</div>
+
+
