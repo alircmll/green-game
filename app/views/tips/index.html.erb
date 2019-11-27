@@ -8,18 +8,28 @@
       <% @tips.each do |tip| %>
         <div class="card w-100 my-4">
           <div class="card-body ">
+            <div class="voteForTip d-flex justify-content-end">
+              <% if tip.votes.present? %>
+                <%= button_to tip_votes_path(tip), method: :post do %>
+                  <i class="fas fa-heart"></i>
+                <% end %>
+              <% else %>
+                <%= button_to tip_votes_path(tip), method: :post do %>
+                  <i class="far fa-heart"></i>
+                <% end %>
+              <% end %>
+            </div>
             <h5 class="card-title"><%= tip.title %></h5>
             <h6 class="card-subtitle mb-2 text-muted"><small>Posted by: <%= tip.user.username %></small></h6>
             <p class="card-text"><%= tip.description %></p>
             <% if tip.user == current_user %>
-              <%= link_to 'delete',tip_path(tip), class:"card-link", method: :delete %>
+              <%= button_to 'delete',tip_path(tip), class:"card-link", method: :delete %>
             <% end %>
-      <!-- <a href="#" class="card-link">Another link</a> -->
+            <span> <%= pluralize(tip.votes.count, 'like') %></span>
           </div>
         </div>
       <% end %>
     </div>
   </div>
 </div>
-
 
