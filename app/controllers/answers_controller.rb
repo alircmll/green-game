@@ -1,8 +1,23 @@
 class AnswersController < ApplicationController
   def new
-    @answer = Answer.new
-    @quiz = Quiz.find(user_session["quiz"]["id"])
-    @question = @quiz.questions[user_session["quiz"]["currentQuestion"]]    
+    # Check quiz in progress
+    quiz = user_session["quiz"]
+    if quiz == nil 
+      @quiz = Quiz.all.sample
+      quizSession = {
+        "id" => @quiz.id,
+        "score" => 0,
+        "currentQuestion" => 0
+      }
+      # Start new quiz
+      user_session["quiz"] = quizSession
+    else
+      @quiz = Quiz.find(quiz["id"])
+    end
+    
+    @answer = Answer.new    
+    @question = @quiz.questions[user_session["quiz"]["currentQuestion"]]
+    @options = [@question.options.first.id, @question.options.last.id]
     @good_option = (@question.options.first.is_right) ? @question.options.first.id : @question.options.last.id
   end
 
@@ -10,11 +25,20 @@ class AnswersController < ApplicationController
     answser = Answer.new(answer_params)
     answser.user = current_user
     answser.save
-    user_session["quiz"]["currentQuestion"] += 1
-    quiz = Quiz.find(user_session["quiz"]["id"])
-    user_session["quiz"]["score"] += quiz.points_by_question
-    # mettre a jour le score du user
-    redirect_to quiz_path(id: user_session["quiz"]["id"])
+
+    if Option.find(answser.option_id).is_right
+      @quiz = Quiz.find(user_session["quiz"]["id"])
+      user_session["quiz"]["score"] += @quiz.points_by_question
+      current_user.total_point += @quiz.points_by_question
+      current_user.save
+    end
+    
+    if @quiz.questions.count == user_session["quiz"]["currentQuestion"]
+      redirect_to quiz_path
+    else
+      user_session["quiz"]["currentQuestion"] += 1
+      redirect_to new_answer_path
+    end
   end
 
 private

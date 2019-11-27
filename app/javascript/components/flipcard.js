@@ -1,7 +1,9 @@
 import { checkServerIdentity } from "tls";
 
 const flipcard = () => {    
-    $('.radio').on('click', function () {        
+    // $('.radio').on('click', function () {
+    $('.radio_buttons').on('click', function () {
+        
         $('.card').toggleClass('flipped');
         
         const radio1 = document.getElementById('radio1');
