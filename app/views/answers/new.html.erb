@@ -1,0 +1,32 @@
+<div class="container">
+  <h1 class="text-center">Quiz</h1>
+  <p class="text-right"><%= "Score : #{user_session["quiz"]["score"]}" %></p>  
+  
+  <%= simple_form_for [@answer] do |f| %>
+  
+    <div class="card">
+      <div class="front content">        
+        <%= "Question : #{user_session["quiz"]["currentQuestion"]+1}/#{@quiz.questions.count}" %>        
+        <%= @question.title %>    
+        <div class="inputGroup btn btn-primary">
+          <input id="radio1" class="radio" type="radio" value=<%= @question.options.first.id %> />
+          <label for="radio1"><%= @question.options.first.title %></label>
+        </div>
+        <div class="inputGroup btn btn-primary">
+          <input id="radio2" class="radio" type="radio" value=<%= @question.options.last.id %> />
+          <label for="radio2"><%= @question.options.last.title %></label>
+        </div>        
+      </div>      
+      <div class="back content">
+        <img id="badresult" src="<%= asset_path('bad.jpg') %>" alt="" >
+        <img id="goodresult" src="<%= asset_path('valid.jpg') %>" alt="" >
+        <input type="hidden" id="goodOption" value=<%= @good_option %> />
+        
+        <!-- <p class="valid btn btn-primary" >Question suivante</p> -->
+        <%= f.submit "Question suivante", class: "btn btn-primary" %>
+
+      </div>      
+    </div>
+
+  <% end %>  
+</div>

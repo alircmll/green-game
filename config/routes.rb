@@ -9,9 +9,7 @@ Rails.application.routes.draw do
   resources :tips, only: [:new, :create] do
     resources :votes, only: [:create]
   end
-  resources :options, only: [] do
-    resources :answers, only: [:new, :create]
-  end
+  resources :answers, only: [:new, :create]
   resources :quizzes, only: [:show]
   resources :places, only: [:index]
 
