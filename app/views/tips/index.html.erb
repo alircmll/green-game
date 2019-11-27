@@ -9,23 +9,21 @@
             <div class="card w-100 my-4">
               <div class="card-body">
                 <div class="voteForTip  d-flex justify-content-end">
-                    <% if tip.votes.present? %>
-                      <%= button_to tip_votes_path(tip), class: "btn btn-primary", method: :post do %>
-                        <i class="fas fa-heart"></i>
-                      <% end %>
-                    <% else %>
-                      <%= button_to tip_votes_path(tip), class: "btn btn-primary", method: :post do %>
-                        <i class="far fa-heart"></i>
-                      <% end %>
+                    <%= button_to tip_votes_path(tip), method: :post, class: "like-btn" do %>
+                        <i class="fa<%= tip.votes.present? ? "s" : "r" %> fa-heart"></i>
                     <% end %>
                 </div>
                   <h5 class="card-title"><%= tip.title %></h5>
                   <h6 class="card-subtitle mb-2 text-muted"><small>Posted by: <%= tip.user.username %></small></h6>
                   <p class="card-text"><%= tip.description %></p>
-                  <% if tip.user == current_user %>
-                    <%= button_to 'delete',tip_path(tip), class:"card-link", method: :delete %>
-                  <% end %>
-                  <span><%= pluralize(tip.votes.count, 'like') %></span>
+                  <div class="bottom-tip-card d-flex justify-content-space-around align-items-center">
+                    <span><%= pluralize(tip.votes.count, 'likes') %></span>
+                    <% if tip.user == current_user %>
+                      <%= button_to tip_path(tip), method: :delete, class:"like-btn" do%>
+                        <i class='fas fa-trash-alt'></i>
+                      <% end %>
+                    <% end %>
+                  </div>
               </div>
             </div>
           <% end %>
