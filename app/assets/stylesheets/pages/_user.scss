@@ -2,8 +2,6 @@
     height: 360px;
 
     #userStatus {
-        
-        ;
 
         .name {
             margin-top: 10px;
@@ -11,10 +9,17 @@
             font-weight: bold;
         }
     }
+
+    
 }
 
 #userContent {
     margin: -50px 0 0 0;
+    padding: 2rem 2.5rem;
     border-top-left-radius: $border-radius-lg;
     border-top-right-radius: $border-radius-lg;
+    
+    p.h4 {
+        font-weight: 500;
+    }
 }
