@@ -5,8 +5,8 @@ body {
 }
 
 html {
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 html::-webkit-scrollbar {
@@ -18,3 +18,9 @@ html::-webkit-scrollbar {
     height: auto;
     clear: both;
 }
+.padding-100 {
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+

@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     resources :party_challenges, only: [:create]
   end
   resources :tips, only: [:index, :new, :create, :destroy] do
-    resources :votes, only: [:create]
-  end
+      resources :votes, only: [:create]
+   end
   resources :options, only: [] do
     resources :answers, only: [:new, :create]
   end
