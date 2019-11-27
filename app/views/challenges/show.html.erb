@@ -1,18 +1,20 @@
-<div class="container page-content">
+<div class="container">
+  <div class="challenge-card-title d-flex justify-content-start my-4">
+    <h2><%= @challenge.title %></h2>
+  </div>
+</div>
+<div class="container">
   <div class="row">
     <div class="col-12">
-      <div class="challenge-card-title d-flex justify-content-start">
-          <h2><%= @challenge.title %></h2>
-        </div>
         <div class="challenge-card-btn d-flex justify-content-center align-items">
           <div class="card-challenge">
-            <div class="card-body-challenge d-flex justify-content-space-around">
+            <div class="card-body-challenge d-flex justify-content-space-around mb-4">
               <p><%= @challenge.duration %> Days</p> <p><%= @challenge.points_by_step %></p>
 
             </div>
           </div>
         </div>
-        <div class="card-challenge-content">
+        <div class="card-challenge-content mt-4 pt-4">
           <p><%= @challenge.description %></p>
         </div>
     </div>
