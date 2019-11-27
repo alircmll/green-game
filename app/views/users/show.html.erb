@@ -6,8 +6,8 @@
   <section id="userStatus" class="row px-4 my-auto">
     <div class="col-9 offset-1 d-flex align-items-center mb-4 justify-content-between">
       <!-- Use any element to open the sidenav -->
-      <img src="https://avatars0.githubusercontent.com/u/43972190?v=4" alt="" class="avatar">
-      <p class= "name text-white">LamPouple</p>
+      <img src="<%= @user[:photo] %>" alt="" class="avatar">
+      <p class= "name text-white"><%= @user.username.capitalize %></p>
     </div>
     <div class="col-9 offset-1 d-flex align-items-center justify-content-between text-white mt-4 ">
       <span id="myLevel">Lvl. 1</span>
