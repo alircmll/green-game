@@ -1,4 +1,4 @@
-<section id="friendly" class="container-fluid">
+<section id="categories" class="container-fluid">
 
   <div  class="row text-center">
     <div class="col-12 mb-4">
@@ -8,26 +8,21 @@
 
   <div class="row">
     <div class="col-12 text-center">
-      <button class="learn-more">
-      <span class="circle">
-        <span class="icon arrow"></span>
-      </span>
-      <span class="button-text"><%= link_to "Challenges", challenges_path %></span>
-      </button>
-      <button class="learn-more">
-      <span class="circle">
-        <span class="icon arrow"></span>
-      </span>
-      <span class="button-text"><%= link_to "Quiz", "#" %></span>
-      </button>
+      <button class="button-homepage"><%= link_to "Challenges", challenges_path %> <i class="fas fa-chevron-circle-right"></i></button>
     </div>
   </div>
+  <div class="row">
+    <div class="col-12 text-center">
+      <button class="button-homepage"><%= link_to "Quiz", quiz_path(1) %> <i class="fas fa-chevron-circle-right"></i></button>
+    </div>
+  </div>
+
 
   <div class="row">
     <% @categories.each do |category| %>
     <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4 mb-sm-4">
       <div class="wrapper">
-        <div class="card"><%= cl_image_tag('Velo_npexj9', class: "card-img") %>
+        <div class="card-homepage"><%= cl_image_tag('Velo_npexj9', class: "card-img") %>
           <div class="info">
             <h3><%= category.name %></h3>
             <button><%= link_to "Details", category_path(category) %></button>

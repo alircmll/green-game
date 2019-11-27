@@ -1,4 +1,56 @@
-// Button Tips
+
+// Button HOMEPAGE
+
+.button-homepage {
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 20px;
+  letter-spacing: 4px;
+  position: relative;
+  background-color: $aubergine;
+  border: none;
+  color: #fff;
+  padding: 20px;
+  margin-bottom: 50px;
+  width: 350px;
+  text-align: center;
+  transition-duration: 0.4s;
+  overflow: hidden;
+  box-shadow: 0 5px 15px $primary-light;
+  border-radius: 4px;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.button-homepage:after {
+  content: "";
+  background: $primary-light;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button-homepage:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+
+.button-homepage:focus { outline:0; }
+ 
+// tip btn 
+
 
 .like-btn {
   background-color: transparent;
@@ -6,3 +58,5 @@
   color: $aubergine;
   outline: 0 !important;
 }
+
+
