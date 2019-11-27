@@ -1,0 +1,58 @@
+<%= render 'shared/sidebar' %>
+<section id="user" class="container-fluid d-flex flex-column bg-dark">
+  <button type="button" id="userMenuBtn" class="btn">
+    <%= image_tag 'menubar.png' %>
+  </button>
+  <section id="userStatus" class="row px-4 my-auto">
+    <div class="col-9 offset-1 d-flex align-items-center mb-4 justify-content-between">
+      <!-- Use any element to open the sidenav -->
+      <img src="https://avatars0.githubusercontent.com/u/43972190?v=4" alt="" class="avatar">
+      <p class= "name text-white">LamPouple</p>
+    </div>
+    <div class="col-9 offset-1 d-flex align-items-center justify-content-between text-white mt-4 ">
+      <span id="myLevel">Lvl. 1</span>
+      <span id="nextLevelIn">67%</span>
+    </div>
+    <div class="col-9 offset-1  ">
+      <%# PROGRESS BAR, Changer style pourcantage et aria-valuenow %>
+      <div class="progress">
+        <div class="progress-bar bg-primary" role="progressbar" style="width: 67%;"
+            aria-valuenow="67" aria-valuemin="0" aria-valuemax="100">
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+<section id="userContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
+  <div id="myTodo" class="row ">
+    <p class="h4">My sustainable lifestyle day</p>
+    <%# TODO LIST%>
+    <ul id="toDo" class="d-flex flex-column-reverse todo-list list-group">
+      <%# ITEMS %>
+      <li class="list-item">
+        <input id="box1" type="checkbox" />
+        <label for="box1" class="">Buy local fish</label>
+      </li>
+      <li class="list-item">
+        <input id="box3" type="checkbox" />
+        <label for="box3" class="">Take bike instead of car</label>
+      </li>
+      <li class="list-item">
+        <input id="box4" type="checkbox" />
+        <label for="box4" class="">Recycle plastic</label>
+      </li>
+      <li class="list-item">
+        <input id="box5" type="checkbox" />
+        <label for="box5" class="">Eat cuttlefish</label>
+      </li>
+    </ul>
+  
+  </div>
+  <div id="myChallenges" class="row">
+    <div class="col-12 d-flex p-0 align-items-center justify-content-between ">
+    <p class="h4">My Challenges</p>
+     <small>View All</small>
+    </div>
+    <%# Je place mes challenges %>
+  </div>
+</section>

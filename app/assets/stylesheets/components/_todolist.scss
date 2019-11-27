@@ -1,0 +1,47 @@
+// Pour custom les checkbox
+input[type=checkbox] {
+    display: none;
+}
+
+/* to hide the checkbox itself */
+input[type=checkbox]+label:before {
+    font-family: FontAwesome;
+    display: inline-block;
+}
+
+/* unchecked icon */
+input[type=checkbox]+label:before {
+    content: "\f10c";
+}
+/* space between checkbox and label */
+input[type=checkbox]+label:before {
+    letter-spacing: 10px;
+}
+
+
+/* checked icon */
+input[type=checkbox]:checked+label:before {
+    content: "\f05d";
+}
+
+/* allow space for check mark */
+input[type=checkbox]:checked+label:before {
+    letter-spacing: 10px;
+    color: $aubergine;
+}
+
+
+#toDo {
+    width: 100%;
+    margin-bottom: 16px;
+
+    .list-item {
+        list-style-type: none;
+        font-weight: normal;
+        font-size: 24px;
+        width: 100%;
+        padding: 8px 0;
+    }
+
+
+}
