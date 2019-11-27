@@ -19,7 +19,7 @@
                   <div class="bottom-tip-card d-flex justify-content-space-around align-items-center">
                     <span><%= pluralize(tip.votes.count, 'likes') %></span>
                     <% if tip.user == current_user %>
-                      <%= button_to tip_path(tip), method: :delete, class:"like-btn" do%>
+                      <%= button_to tip_path(tip), method: :delete, class: "like-btn" do%>
                         <i class='fas fa-trash-alt'></i>
                       <% end %>
                     <% end %>
