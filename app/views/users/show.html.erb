@@ -6,7 +6,7 @@
   <section id="userStatus" class="row px-4 my-auto">
     <div class="col-10 offset-1 d-flex align-items-center  justify-content-between">
       <!-- Use any element to open the sidenav -->
-      <img src="<%= @user[:photo] %>" alt="" class="avatar">
+      <%= cl_image_tag @user.photo, class: "avatar p-1" %>
       <p class= "name text-white"><%= @user.username.capitalize %></p>
     </div>
     <div class="col-10 offset-1 d-flex align-items-center justify-content-between text-white mt-3 ">
@@ -49,13 +49,12 @@
         <label for="box5" class="">Eat cuttlefish</label>
       </li>
     </ul>
-  
   </div>
   <div id="myChallenges" class="row">
     <div class="col-12 d-flex p-0 align-items-center justify-content-between ">
-    <p class="h4">My Challenges</p>
-    <%#  Rajouter mon challenge en cours ici %>
-     <small>View All</small>
+      <p class="h4">My Challenges</p>
+      <%#  Rajouter mon challenge en cours ici %>
+      <small>View All</small>
     </div>
     <%# Je place mes challenges %>
   </div>
