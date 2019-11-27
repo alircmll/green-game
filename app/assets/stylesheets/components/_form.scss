@@ -21,3 +21,8 @@ select.form-control:focus {
   background: transparent;
   color: white;
 }
+
+.was-validated .form-control:valid,
+.form-control.is-valid {
+  border-color: $primary-light !important;
+}

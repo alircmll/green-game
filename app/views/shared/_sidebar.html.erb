@@ -1,12 +1,12 @@
 <div id="mySidenav" class="sidenav">
   <div class="row">
-    <div class="col-12 d-flex px-5 align-items-center justify-content-between ">
+    <div class="col-10 offset-1 d-flex align-items-center mb-4 justify-content-between">
       <p class="h4 text-white">My Profil</p>
-      <a id="closeUserBtn" href="javascript:void(0)" class="closebtn" ">&times;</a>
+      <a id="closeUserBtn" href="javascript:void(0)" class="closebtn mt-n2" ">&times;</a>
     </div>
   </div>
   <div class="row mt-4">
-    <div class="col-9 offset-1 text-center">
+    <div class="col-10 offset-1 text-center">
       <!-- Use any element to open the sidenav -->
       <img src="<%= @user[:photo] %>" alt="" class="avatar">
       <p class= "name text-white my-2"><%= @user.username.capitalize %></p>
@@ -33,7 +33,7 @@
                 input_html: { autocomplete: "current-password" } %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "Update", class: "btn btn-primary" %>
+          <%= f.button :submit, "Update", class: "btn btn-primary btn-block" %>
         </div>
       <% end %>
     </div>

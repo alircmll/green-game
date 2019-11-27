@@ -4,17 +4,19 @@
     <%= image_tag 'menubar.png' %>
   </button>
   <section id="userStatus" class="row px-4 my-auto">
-    <div class="col-9 offset-1 d-flex align-items-center mb-4 justify-content-between">
+    <div class="col-9 offset-1 d-flex align-items-center  justify-content-between">
       <!-- Use any element to open the sidenav -->
       <img src="<%= @user[:photo] %>" alt="" class="avatar">
       <p class= "name text-white"><%= @user.username.capitalize %></p>
     </div>
-    <div class="col-9 offset-1 d-flex align-items-center justify-content-between text-white mt-4 ">
+    <div class="col-9 offset-1 d-flex align-items-center justify-content-between text-white mt-3 ">
+      <%#  Incrementer avec les paliers le niveau %>
       <span id="myLevel">Lvl. 1</span>
+      <%# Changer le pourcentage en focntion de la progress bar  %>
       <span id="nextLevelIn">67%</span>
     </div>
     <div class="col-9 offset-1  ">
-      <%# PROGRESS BAR, Changer style pourcantage et aria-valuenow %>
+      <%# PROGRESS BAR, Changer style pourcantage avec width et aria-valuenow %>
       <div class="progress">
         <div class="progress-bar bg-primary" role="progressbar" style="width: 67%;"
             aria-valuenow="67" aria-valuemin="0" aria-valuemax="100">
@@ -29,6 +31,7 @@
     <%# TODO LIST%>
     <ul id="toDo" class="d-flex flex-column-reverse todo-list list-group">
       <%# ITEMS %>
+      <%#  Faire un Each pour display les taches et generer la li suivante %>
       <li class="list-item">
         <input id="box1" type="checkbox" />
         <label for="box1" class="">Buy local fish</label>
@@ -51,6 +54,7 @@
   <div id="myChallenges" class="row">
     <div class="col-12 d-flex p-0 align-items-center justify-content-between ">
     <p class="h4">My Challenges</p>
+    <%#  Rajouter mon challenge en cours ici %>
      <small>View All</small>
     </div>
     <%# Je place mes challenges %>
