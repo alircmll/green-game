@@ -1,10 +1,10 @@
 
 puts "Destroy all"
 
-User.destroy_all
-Category.destroy_all
 Tip.destroy_all
 Challenge.destroy_all
+Category.destroy_all
+User.destroy_all
 
 puts "Creating users..."
  a = User.create!(
