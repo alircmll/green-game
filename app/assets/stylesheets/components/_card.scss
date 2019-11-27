@@ -209,3 +209,14 @@
 .card {
   box-shadow: 10px 10px 8px #C2C1C2;
 }
+
+.card-body-challenge {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+  justify-content: space-around
+}
+.card-challenge {
+  box-shadow: 10px 10px 8px #C2C1C2;
+  border-radius:4px;
+  width: 200px
+}

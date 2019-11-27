@@ -1,3 +1,4 @@
+
 // Button HOMEPAGE
 
 .button-homepage {
@@ -45,5 +46,17 @@
   transition: 0s
 }
 
+
 .button-homepage:focus { outline:0; }
+ 
+// tip btn 
+
+
+.like-btn {
+  background-color: transparent;
+  border-color: transparent;
+  color: $aubergine;
+  outline: 0 !important;
+}
+
 
