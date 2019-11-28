@@ -1,37 +1,42 @@
-<section id="categories" class="container-fluid">
-
-  <div  class="row text-center">
-    <div class="col-12 mb-4">
-      <h2 class="text-primary display-4 text-uppercase"><strong>Challenges</strong></h2>
+<section id="categoriesIndex" class="container-fluid d-flex flex-column bg-dark">
+  <section id="categoriesTitle" class="row px-4 my-auto">
+    <div class=" name col-10 offset-1 text-center">
+      <span class=" text-white  text-uppercase ">Welcome</span>
     </div>
-  </div>
-
+  </section>
+</section>
+<section id="categoriesContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
   <div class="row">
-    <div class="col-12 text-center div-button">
-      <button class="button-homepage"><%= link_to "Challenges", challenges_path %></button>
+    <div class="col-12">
+      <%= link_to challenges_path, class: "div-button" do %>
+        <h1 class=" m-0 p-0"">Challenges</h1>
+      <% end %>
+    </div>
+    <div class="col-12">
+      <%= link_to new_answer_path, class: "div-button" do %>
+        <h1 class=" m-0 p-0"">Quiz</h1>
+      <% end %>
     </div>
   </div>
   <div class="row">
-    <div class="col-12 text-center div-button">
-      <button class="button-homepage"><%= link_to "Quiz", new_answer_path %></button>
+    <div class="col-12 d-flex p-3 align-items-center justify-content-between ">
+      <p class="h4">My Challenges</p>
     </div>
-  </div>
-
-
-  <div id="container-card" class="row">
-    <% @categories.each do |category| %>
-    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4 mb-sm-4">
-      <div class="wrapper">
-        <div class="card-homepage"><%= cl_image_tag('Velo_npexj9', class: "card-img") %>
-          <div class="title">
-            <h3><%= category.name %></h3>
-          </div>
-          <div class="info">
-            <button><%= link_to "...", category_path(category) %></button>
-          </div>
-        </div>
+    <div class="col-12">
+      <div class="card-columns">
+        <% @categories.each do |category| %>
+          <%= link_to category_path(category) do %>
+            <div class="card-homepage">
+              <%= cl_image_tag('Velo_npexj9', class: "card-img") %>
+              <div class="title">
+                <h3><%= category.name %></h3>
+              </div>
+              <div class="info">
+              </div>
+            </div>
+          <% end %>
+        <% end %><!-- Fin Category Each  !-->
       </div>
     </div>
-    <% end %>
   </div>
 </section>
