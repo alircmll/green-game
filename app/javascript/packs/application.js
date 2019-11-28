@@ -1,10 +1,12 @@
 import "bootstrap";
 
 import { flipcard } from '../components/flipcard';
+import { confetti } from '../components/confetti';
 import { collapse } from "plugins/collapsible.js";
 
 flipcard();
 collapse();
+confetti();
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
