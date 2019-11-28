@@ -1,28 +1,28 @@
-<div class="container text-center mt-4">
-  <h1><%= @category.name %> </h1>
+<section id="category" class="container-fluid d-flex flex-column bg-dark">
+  <section id="categoryTitle" class="row px-4 my-auto">
+    <div class=" name col-10 offset-1 text-center">
+      <span class=" text-white  text-uppercase "><%= @category.name %></span>
+    </div>
+  </section>
+</section>
+<section id="categoryContent" class="container-fluid d-flex page-content flex-column bg-white">
   <div class="row">
-    <div class="col-4">
-
+    <div class="col-12">
+      <%= link_to challenges_path, id: "main-btn" do %>
+        <div class="card-category m-4" >
+          Challenges
+        </div>
+      <% end %>
+      <%= link_to quiz_path(@category), id: "main-btn" do %>
+        <div class="card-category m-4">
+          Quizz
+        </div>
+      <% end %>
+      <%= link_to tips_path, id: "main-btn" do %>
+        <div class="card-category m-4">
+          Tips
+        </div>
+      <% end %>
     </div>
   </div>
-</div>
-
-<div class="container">
-  <%= link_to challenges_path, id: "main-btn" do %>
-    <div class="card-category m-4" >
-      Challenges
-    </div>
-  <% end %>
-  <%= link_to quiz_path(@category), id: "main-btn" do %>
-    <div class="card-category m-4">
-    Quizz
-    </div>
-  <% end %>
-  <%= link_to tips_path, id: "main-btn" do %>
-    <div class="card-category m-4">
-      Tips
-    </div>
-  <% end %>
-</div>
-
-
+</section>
