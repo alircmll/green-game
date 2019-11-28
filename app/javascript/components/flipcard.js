@@ -2,7 +2,7 @@ import { checkServerIdentity } from "tls";
 
 const flipcard = () => {    
     $('.radio').on('click', function () {
-        $('.card').toggleClass('flipped');
+        $('.flipcard').toggleClass('flipped');
         const el = document.querySelectorAll('input[id^="answer_option_id_"]');
         const radio1 = el[0];
         const radio2 = el[1];

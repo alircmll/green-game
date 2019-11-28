@@ -1,37 +1,45 @@
-<div class="container">
+<div class="flipcontainer">
   <h1 class="text-center">Quiz</h1>
-  <p class="text-right"><%= "Score : #{user_session["quiz"]["score"]}" %></p>
-
+  <p class="flipscore text-left"><%= "Score : #{user_session["quiz"]["score"]}" %></p>
   <%= simple_form_for [@answer] do |f| %>
 
-    <div id="FlipCard" class="card">
-      <div class="front content">
-        <%= "Question : #{user_session["quiz"]["currentQuestion"]+1}/#{@quiz.questions.count}" %>
-        <%= @question.title %>
-
+    <div class="flipcard">
+      <div class="front flipcontent">
+        <div class="wrapper">
+          <div class="count text-right">
+            <%= "Question : #{user_session["quiz"]["currentQuestion"]+1}/#{@quiz.questions.count}" %>
+          </div>
+          <div class="question d-flex align-items-center">
+            <%= @question.title %>
+          </div>
+          
           <%= f.input :option_id,
-                      :label => '',
-                      :collection => @options,
-                      :as => :radio_buttons,
-                      :label_method => :last,
-                      :value_method => :first,
-                      :input_html => { :class => 'radio' },
-                      :item_wrapper_tag => :label,
-                      :item_wrapper_class => 'btn btn-primary',
-                      :collection_wrapper_tag => :div,
-                      :collection_wrapper_class => 'inputGroup'
-          %>
-
+                          :label => '',
+                          :collection => @options,
+                          :as => :radio_buttons,
+                          :label_method => :last,
+                          :value_method => :first,
+                          :input_html => { :class => 'radio' },
+                          :item_wrapper_tag => :label,
+                          :item_wrapper_class => 'btn btn-primary',
+                          :collection_wrapper_tag => :div,
+                          :collection_wrapper_class => 'options text-center'%>
+        </div>
       </div>
-
-      <div class="back content">
-        <img id="badresult" src="<%= asset_path('bad.jpg') %>" alt="" >
-        <img id="goodresult" src="<%= asset_path('valid.jpg') %>" alt="" >
-        <input type="hidden" id="goodOption" value=<%= @good_option %> />
-        <% label_button = (user_session["quiz"]["currentQuestion"]+1==5) ? "Quiz terminé !" : "Question suivante" %>
-        <%= f.submit label_button, class: "btn btn-primary" %>
+      <div class="back flipcontent">
+        <div class="wrapper">
+          <div class="question d-flex align-items-center justify-content-center">
+            <img id="badresult" src="<%= asset_path('bad.jpg') %>" alt="" >
+            <img id="goodresult" src="<%= asset_path('valid.jpg') %>" alt="" >
+          </div>
+          <div class="options text-center">
+            <input type="hidden" id="goodOption" value=<%= @good_option %> />
+            <% label_button = (user_session["quiz"]["currentQuestion"]+1==5) ? "Quiz terminé !" : "Question suivante" %>
+            <%= f.submit label_button, class: "btn btn-primary" %>
+          </div>
+        </div>
       </div>
     </div>
 
-  <% end %>
+  <% end %>  
 </div>
