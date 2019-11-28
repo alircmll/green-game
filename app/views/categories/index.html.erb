@@ -1,11 +1,11 @@
-<section id="categories" class="container-fluid">
-
-  <div  class="row text-center">
-    <div class="col-12 mb-4">
-      <h2 class="text-primary display-4 text-uppercase"><strong>Challenges</strong></h2>
+<section id="categoriesIndex" class="container-fluid d-flex flex-column bg-dark">
+  <section id="categoriesTitle" class="row px-4 my-auto">
+    <div class=" name col-10 offset-1 text-center">
+      <span class=" text-white  text-uppercase ">Challenges</span>
     </div>
-  </div>
-
+  </section>
+</section>
+<section id="categoriesContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
   <div class="row">
     <div class="col-12 text-center div-button">
       <button class="button-homepage"><%= link_to "Challenges", challenges_path %></button>
@@ -16,22 +16,25 @@
       <button class="button-homepage"><%= link_to "Quiz", new_answer_path %></button>
     </div>
   </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card-columns">
+        <% @categories.each do |category| %>
+          
+          <%= link_to category_path(category) do %>
+            <div class="card-homepage">
+              <%= cl_image_tag('Velo_npexj9', class: "card-img") %>
+              <div class="title">
+                <h3><%= category.name %></h3>
+              </div>
+              <div class="info">
+              
+              </div>
+            </div>
+          <% end %>
 
-
-  <div id="container-card" class="row">
-    <% @categories.each do |category| %>
-    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4 mb-sm-4">
-      <div class="wrapper">
-        <div class="card-homepage"><%= cl_image_tag('Velo_npexj9', class: "card-img") %>
-          <div class="title">
-            <h3><%= category.name %></h3>
-          </div>
-          <div class="info">
-            <button><%= link_to "...", category_path(category) %></button>
-          </div>
-        </div>
+        <% end %><!-- Fin Category Each  !-->
       </div>
     </div>
-    <% end %>
   </div>
 </section>
