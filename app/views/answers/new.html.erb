@@ -8,12 +8,9 @@
       <div class="front content">        
         <%= "Question : #{user_session["quiz"]["currentQuestion"]+1}/#{@quiz.questions.count}" %>        
         <%= @question.title %>    
-        
-
-		    <div class="inputGroup btn btn-primary">
           
           <%= f.input :option_id,
-                      :label => false,
+                      :label => '',
                       :collection => @options,
                       :as => :radio_buttons,
                       :label_method => :last,
@@ -22,20 +19,17 @@
                       :item_wrapper_tag => :label,
                       :item_wrapper_class => 'btn btn-primary',
                       :collection_wrapper_tag => :div,
-                      :collection_wrapper_class => 'btn-group'
+                      :collection_wrapper_class => 'inputGroup'
           %>
-        </div>
+        
       </div>
       
       <div class="back content">
         <img id="badresult" src="<%= asset_path('bad.jpg') %>" alt="" >
         <img id="goodresult" src="<%= asset_path('valid.jpg') %>" alt="" >
-        <input type="hidden" id="goodOption" value=<%= @good_option %> />
-        
-        <!-- <p class="valid btn btn-primary" >Question suivante</p> -->
-        <% label_button = (user_session["quiz"]["currentQuestion"]+1==5) ? "Terminé" : "Question suivante" %>
+        <input type="hidden" id="goodOption" value=<%= @good_option %> />        
+        <% label_button = (user_session["quiz"]["currentQuestion"]+1==5) ? "Quiz terminé !" : "Question suivante" %>
         <%= f.submit label_button, class: "btn btn-primary" %>
-
       </div>      
     </div>
 
