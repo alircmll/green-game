@@ -1,8 +1,9 @@
-<div id="mySidenav" class="sidenav">
+<div id="mySidenav" class="sidenav hide-native-scrollbar ">
+  <div class="blur"></div>
   <div class="row">
     <div class="col-10 offset-1 d-flex align-items-center mt-n4 justify-content-between">
       <p class="h4 text-white">My Profil</p>
-      <a id="closeUserBtn" href="javascript:void(0)" class="closebtn mt-n3 text-primary" ">&times;</a>
+      <a id="closeUserBtn" href="javascript:void(0)" class="closebtn mt-n3 text-teal" ">&times;</a>
     </div>
   </div>
   <div class="row mt-4">
@@ -14,22 +15,24 @@
   </div>
   <div class="row">
     <%# METTRE LE FORMULAIRE EDIT PROFIL ICI %>
-    <div class="col-10 offset-1 pt-4">
+    <div class="col-10 offset-1 pt-2">
       <!-- MENU TAB -->
       <nav class="nav nav-tabs" id="myTab" role="tablist">
-        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Settings</a>
-        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
+        <a class="nav-item nav-link active d-flex flex-column justify-content-center align-items-center" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-sliders-h"></i><small> Setting</small></a>
+        <a class="nav-item nav-link d-flex flex-column justify-content-center align-items-center" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="fas fa-user-edit"></i><small>Profile</small></a>
       </nav>
       <!-- TAB CONTENT -->
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-
-        <%= link_to destroy_user_session_path, :method => :delete do %>
-        <i class="fas fa-sign-out-alt"></i>
-        <% end %>
-        
+          <div class="row">
+            <div class="col-12 text-center">
+              <%= link_to destroy_user_session_path, :method => :delete do %>
+                <i class="fas fa-sign-out-alt"></i>
+              <% end %>
+            </div>
+          </div>
         </div>
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" class="">
           <%= simple_form_for @user do |f| %>
             <%= f.error_notification %>
             <div class="form-inputs">

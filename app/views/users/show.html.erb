@@ -1,10 +1,17 @@
 <%= render 'shared/sidebar' %>
+
 <section id="user" class="container-fluid d-flex flex-column bg-dark">
-  <button type="button" id="userMenuBtn" class="btn">
-    <%= image_tag 'menubar.png' %>
-  </button>
-  <section id="userStatus" class="row px-4 my-auto">
-    <div class="col-10 offset-1 d-flex align-items-center  justify-content-between">
+  <section id="userStatus" class="row px-4 ">
+
+   <div id="userNav" class="row">
+    <div class="col-10 offset-1 d-flex align-items-center justify-content-between">
+      <button type="button" id="userMenuBtn" class="btn">
+        <%= image_tag 'menubar.png' %>
+      </button>
+    </div>
+  </div>
+
+    <div class="col-10 offset-1 mt-5 d-flex align-items-center  justify-content-between">
       <!-- Use any element to open the sidenav -->
       <%= cl_image_tag @user.photo, class: "avatar p-1" %>
       <p class= "name text-white"><%= @user.username.capitalize %></p>
@@ -14,17 +21,16 @@
       <span id="myLevel">Lvl. <%= @user.level %></span>
       <%# Changer le pourcentage en focntion de la progress bar  %>
       <span id="nextLevelIn"><%= @user.total_point %>%</span>
-  </div>
-  <div class="col-10 offset-1  ">
-    <%# PROGRESS BAR, Changer style pourcantage avec width et aria-valuenow %>
-
-    <div class="progress">
-      <div class="progress-bar bg-primary" role="progressbar" style="width: <%= @user.total_point %>%;"
+    </div>
+    <div class="col-10 offset-1  ">
+      <%# PROGRESS BAR, Changer style pourcantage avec width et aria-valuenow %>
+      <div class="progress">
+        <div class="progress-bar bg-primary" role="progressbar" style="width: <%= @user.total_point %>%;"
             aria-valuenow="<%= @user.total_point %>" aria-valuemin="0" aria-valuemax="100">
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 </section>
 <section id="userContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
   <div id="myTodo" class="row ">

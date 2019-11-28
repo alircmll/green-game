@@ -2,7 +2,9 @@ body {
     min-height: 100%;
     margin: 0;
     padding: 0;
+   
 }
+
 
 html {
     scrollbar-width: none;
@@ -23,4 +25,17 @@ html::-webkit-scrollbar {
   padding-top: 100px;
 }
 
+.hide-native-scrollbar {
+    scrollbar-width: none; /* Firefox 64 */
+    -ms-overflow-style: none; /* Internet Explorer 11 */
+    &::-webkit-scrollbar { /** WebKit */
+      display: none;
+    }
+  }
 
+  .text-teal {
+    color: $teal;
+  }
+  .text-biscay {
+    color: $biscaygreen;
+  }

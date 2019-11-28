@@ -44,3 +44,11 @@
   }
 
 }
+
+// ------------------------ NAV EVERYE WHERE
+
+#userNav {
+  .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link  {
+    border-color: none;
+  }
+}
