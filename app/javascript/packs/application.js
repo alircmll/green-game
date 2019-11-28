@@ -1,7 +1,7 @@
 import "bootstrap";
-import $ from "jquery";
 import 'mapbox-gl/dist/mapbox-gl.css';
 
+import $ from "jquery";
 import { collapse } from "plugins/collapsible.js";
 import { flipcard } from '../components/flipcard';
 import { initMapbox } from '../plugins/init_mapbox';

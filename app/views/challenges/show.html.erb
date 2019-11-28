@@ -1,22 +1,22 @@
-<div class="container">
-  <div class="challenge-card-title d-flex justify-content-start my-4">
-    <h2><%= @challenge.title %></h2>
-  </div>
-</div>
-<div class="container">
+<section id="challenge" class="container-fluid d-flex flex-column bg-dark">
+  <section id="challengeTitle" class="row px-4 my-auto">
+    <div class=" name col-10 offset-1 text-center">
+      <span class=" text-white  text-uppercase "><%= @challenge.title %></span>
+    </div>
+  </section>
+</section>
+<section id="challengeContent" class="container-fluid d-flex page-content flex-column bg-white">
   <div class="row">
     <div class="col-12">
-        <div class="challenge-card-btn d-flex justify-content-center align-items">
-          <div class="card-challenge card-body-challenge d-flex justify-content-space-around mb-4 text-center">
-
-              <p><%= @challenge.duration %> Days</p> <p><%= @challenge.points_by_step %>pts <%= image_tag('star (2).svg') %></p>
-
-          </div>
+      <div id="reward" class="">
+        <div class=" d-flex justify-content-around align-items-center my-2 text-center">
+          <p><%= @challenge.duration %> Days</p>
+          <p><%= @challenge.points_by_step %>pts <%= image_tag('star (2).svg') %></p>
         </div>
-        <div class="card-challenge-content mt-4 pt-4">
-          <p><%= @challenge.description %></p>
-        </div>
+      </div>
+    </div>
+    <div class="col-12 mt-4 text-justify">
+      <p class="description"><%= @challenge.description %></p>
     </div>
   </div>
-</div>
-
+</section>
