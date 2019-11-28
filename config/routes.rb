@@ -6,12 +6,11 @@ Rails.application.routes.draw do
   resources :challenges, only: [:index, :show, :new, :create, :update] do
     resources :party_challenges, only: [:create]
   end
+  resources :answers, only: [:new, :create]
+
   resources :tips, only: [:index, :new, :create, :destroy] do
       resources :votes, only: [:create]
    end
-  resources :options, only: [] do
-    resources :answers, only: [:new, :create]
-  end
   resources :quizzes, only: [:show]
   resources :places, only: [:index]
 
