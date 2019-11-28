@@ -1,12 +1,12 @@
 <div id="mySidenav" class="sidenav">
   <div class="row">
-    <div class="col-10 offset-1 d-flex align-items-center mb-4 justify-content-between">
+    <div class="col-10 offset-1 d-flex align-items-center mt-n4 justify-content-between">
       <p class="h4 text-white">My Profil</p>
       <a id="closeUserBtn" href="javascript:void(0)" class="closebtn mt-n3 text-primary" ">&times;</a>
     </div>
   </div>
   <div class="row mt-4">
-    <div class="col-10 offset-1 text-center">
+    <div class="col-10 offset-1 mt-n3 text-center">
       <!-- Use any element to open the sidenav -->
       <%= cl_image_tag @user.photo, class: "avatar p-1" %>
       <p class= "name text-white my-2"><%= @user.username.capitalize %></p>
@@ -14,7 +14,7 @@
   </div>
   <div class="row">
     <%# METTRE LE FORMULAIRE EDIT PROFIL ICI %>
-    <div class="col-10 offset-1">
+    <div class="col-10 offset-1 pt-4">
       <%= simple_form_for @user do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
