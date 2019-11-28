@@ -20,7 +20,6 @@ gem 'carrierwave', '~> 1.2'
 gem 'geocoder'
 gem 'material_icons'
 gem 'jquery-rails'
-gem "algoliasearch-rails"
 gem 'pg_search', '~> 2.3.0'
 
 
