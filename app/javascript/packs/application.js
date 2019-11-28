@@ -1,7 +1,6 @@
 import "bootstrap";
 import $ from "jquery";
 import 'mapbox-gl/dist/mapbox-gl.css';
-import  'algolia/v3/algoliasearch.min';
 
 import { flipcard } from '../components/flipcard';
 import { collapse } from "plugins/collapsible.js";

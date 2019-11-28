@@ -23,7 +23,7 @@
       <% end %>
     </div>
   </div>
-  
+
   <% if @tips.nil? != true %>
     <% if @tips.count > 0 %>
       <div class="search-result">
@@ -71,17 +71,6 @@
 
 <% if @categories.count > 0 %>
   <div class="row">
-    <%  @categories.each do |category| %>
-    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4 mb-sm-4">
-      <div class="wrapper">
-        <div class="card-homepage"><%= cl_image_tag('Velo_npexj9', class: "card-img") %>
-          <div class="info">
-            <h3><%= category.name %></h3>
-            <button><%= link_to "Details", category_path(category) %></button>
-          </div>
-        </div>
-
-  <div class="row">
     <div class="col-12 d-flex p-3 align-items-center justify-content-between ">
       <p class="h4">My Challenges</p>
     </div>
@@ -98,7 +87,7 @@
               </div>
             </div>
           <% end %>
-        <% end %><!-- Fin Category Each  !-->
+        <% end %>
       </div>
     </div>
   </div>
