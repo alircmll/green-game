@@ -1,2 +1,32 @@
-<h1>Tips#index</h1>
-<p>Find me in app/views/tips/index.html.erb</p>
+<div class="container padding-100">
+  <h2 class="text-center">Tips</h2>
+  <div class="row">
+    <div class="col-12 ">
+      <div class="d-flex justify-content-end">
+          <%= link_to "Add your tip", new_tip_path, class: "btn btn-primary" %>
+      </div>
+          <% @tips.each do |tip| %>
+            <div class="card w-100 my-4">
+              <div class="card-body">
+                <div class="voteForTip  d-flex justify-content-end">
+                    <%= button_to tip_votes_path(tip), method: :post, class: "like-btn" do %>
+                        <i class="fa<%= tip.votes.present? ? "s" : "r" %> fa-heart"></i>
+                    <% end %>
+                </div>
+                  <h5 class="card-title"><%= tip.title %></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><small>Posted by: <%= tip.user.username %></small></h6>
+                  <p class="card-text"><%= tip.description %></p>
+                  <div class="bottom-tip-card d-flex justify-content-space-around align-items-center">
+                    <span><%= pluralize(tip.votes.count, 'likes') %></span>
+                    <% if tip.user == current_user %>
+                      <%= button_to tip_path(tip), method: :delete, class: "like-btn" do%>
+                        <i class='fas fa-trash-alt'></i>
+                      <% end %>
+                    <% end %>
+                  </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+    </div>
+</div>

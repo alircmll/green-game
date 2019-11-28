@@ -3,17 +3,19 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>GRN GAME</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
+    <%# Enlever request.fullpath=='/' quand il y aura l'id user dans Catagoeries #INDEX   %>
+    <% unless request.fullpath=='/users/sign_in' || request.fullpath=='/users/sign_up' %>
+      <%= render 'shared/navbarmobile' %>
+    <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>

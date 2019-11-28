@@ -1,0 +1,29 @@
+#user {
+    height: 360px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -99;
+
+    #userStatus {
+
+        .name {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    }
+
+}
+
+#userContent {
+    z-index: 2;
+    margin-top: 36vh;
+    padding: 2rem 2.5rem;
+    border-top-left-radius: $border-radius-lg;
+    border-top-right-radius: $border-radius-lg;
+
+    p.h4 {
+        font-weight: 500;
+    }
+}
