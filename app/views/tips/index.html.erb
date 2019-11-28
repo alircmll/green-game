@@ -1,32 +1,37 @@
-<div class="container padding-100">
-  <h2 class="text-center">Tips</h2>
-  <div class="row">
-    <div class="col-12 ">
-      <div class="d-flex justify-content-end">
-          <%= link_to "Add your tip", new_tip_path, class: "btn btn-primary" %>
-      </div>
-          <% @tips.each do |tip| %>
-            <div class="card w-100 my-4">
-              <div class="card-body">
-                <div class="voteForTip  d-flex justify-content-end">
-                    <%= button_to tip_votes_path(tip), method: :post, class: "like-btn" do %>
-                        <i class="fa<%= tip.votes.present? ? "s" : "r" %> fa-heart"></i>
-                    <% end %>
-                </div>
-                  <h5 class="card-title"><%= tip.title %></h5>
-                  <h6 class="card-subtitle mb-2 text-muted"><small>Posted by: <%= tip.user.username %></small></h6>
-                  <p class="card-text"><%= tip.description %></p>
-                  <div class="bottom-tip-card d-flex justify-content-space-around align-items-center">
-                    <span><%= pluralize(tip.votes.count, 'likes') %></span>
-                    <% if tip.user == current_user %>
-                      <%= button_to tip_path(tip), method: :delete, class: "like-btn" do%>
-                        <i class='fas fa-trash-alt'></i>
-                      <% end %>
-                    <% end %>
-                  </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
+<section id="tips" class="container-fluid d-flex flex-column bg-dark">
+  <section id="tipsTitle" class="row px-4 my-auto">
+    <div class="name col-10 offset-1 text-center">
+      <span class=" ">Tips</span>
     </div>
-</div>
+  </section>
+</section>
+<section id="tipsContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
+  
+  <div class="cta-over-section">
+    <%= link_to "Add your  tip", new_tip_path, class: "btn btn-block btn-primary" %>
+  </div>
+
+    <% @tips.each do |tip| %>
+      <div class="card my-4">
+        <div class="card-body">
+          <div class="voteForTip d-flex justify-content-end">
+            <%= button_to tip_votes_path(tip), method: :post, class: "like-btn" do %>
+              <i class="fa<%= tip.votes.present? ? "s" : "r" %> fa-heart"></i>
+            <% end %>
+          </div>
+          <h5 class="card-title mb-0"><%= tip.title %></h5>
+          <small class="card-subtitle mt-n4 text-muted">Posted by: <%= tip.user.username %></small>
+          <p class="card-text mt-4"><%= tip.description %></p>
+          <div class="bottom-tip-card d-flex justify-content-space-around align-items-center">
+            <span><%= pluralize(tip.votes.count, 'likes') %></span>
+            <% if tip.user == current_user %>
+              <%= button_to tip_path(tip), method: :delete, class: "like-btn" do%>
+                <i class='fas fa-trash-alt'></i>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %> <!-- Fin Tips Each  !-->
+
+</section>
