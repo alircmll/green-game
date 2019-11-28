@@ -1,18 +1,19 @@
 import "bootstrap";
+import $ from "jquery";
+import 'mapbox-gl/dist/mapbox-gl.css';
+import  'algolia/v3/algoliasearch.min';
+
+
 
 import { flipcard } from '../components/flipcard';
 
-flipcard();
-
-import 'mapbox-gl/dist/mapbox-gl.css';
-
 import { initMapbox } from '../plugins/init_mapbox';
 
-initMapbox();
-import $ from "jquery";
 import { closeNav, openNav} from  "plugins/navbottom.js";
 
 // MENU
 $("#userMenuBtn").click(openNav);
 $("#closeUserBtn").click(closeNav);
+initMapbox();
+flipcard();
 
