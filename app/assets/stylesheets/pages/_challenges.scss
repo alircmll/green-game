@@ -1,0 +1,52 @@
+#challenges {
+    height: 36vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -99;
+    background: linear-gradient(81.2deg, rgba(0, 0, 0, 0.49) -49.44%, rgba(96, 54, 94, 0.62) 82.85%), image-url("background/bg-tips.jpg");
+    background-position: center center;
+    background-size: cover;
+
+    #challengesTitle {
+
+        .name {
+            margin-top: -42px;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+        }
+    }
+
+}
+
+#challengesContent {
+    z-index: 2;
+    margin-top: 30vh;
+    padding: 2rem 2.5rem ;
+    border-top-left-radius: $border-radius-lg;
+    border-top-right-radius: $border-radius-lg;
+
+    .category {
+        border-radius: $border-radius;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: $primary-light;
+        background-clip: border-box;
+        padding: 24px 12px;
+        transition: all ease 400ms;
+        
+        &:hover {
+            background-color: $primary-dark;
+            transition: all ease 400ms;
+        }
+
+
+    }
+
+
+}
