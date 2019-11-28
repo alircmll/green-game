@@ -1,4 +1,5 @@
-#quiz {
+#FlipCard {
+
   .container {
     width: 500px;
     height: 300px;
@@ -17,12 +18,15 @@
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     // cursor: pointer;
 
-    .content {
-      position: absolute;
+
+    .card {
       width: 100%;
       height: 100%;
-      backface-visibility: hidden;
+      position: absolute;
+      transform-style: preserve-3d;
+      transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       border-radius: 6px;
+
       background: #fff;
       display: flex;
       justify-content: center;
@@ -44,6 +48,7 @@
       //   cursor: pointer;
       //   visibility: hidden;
       // }
+
       .radio {
         width: 32px;
         height: 32px;
