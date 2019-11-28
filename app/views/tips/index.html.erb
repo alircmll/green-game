@@ -6,8 +6,9 @@
   </section>
 </section>
 <section id="tipsContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
-  <div class="d-flex justify-content-end cta-over-section">
-    <%= link_to "Add your tip", new_tip_path, class: "btn btn-primary btn-block btn-shadow" %>
+  
+  <div class="cta-over-section">
+    <%= link_to "Add your tip", new_tip_path, class: "btn btn-block btn-primary" %>
   </div>
 
     <% @tips.each do |tip| %>

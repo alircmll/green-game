@@ -10,12 +10,12 @@
 
   #tipsTitle {
 
-      .name {
-        margin-top: -42px;
-          font-size: 3rem;
-          font-weight: bold;
-          color: white;
-      }
+    .name {
+      margin-top: -42px;
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+    }
   }
 
 }
@@ -40,11 +40,19 @@
   }
 
   .cta-over-section {
-    margin-top: -50px; 
- }
- 
+    margin-top: -56px; 
+    height: 54px;
+    // background: $primary;
+    a {
+      padding: 0.5rem 3rem;
+      font-size: 1.25rem;
+      line-height: 1.5;
+      border-radius: 24px ;
+      color: white;
+    }
+  }
+
 
 
 
 }
-

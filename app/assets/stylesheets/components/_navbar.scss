@@ -24,12 +24,18 @@
     text-align: center;
     position: relative
   }
+  
+  a {
+    text-decoration: none;
+    text-align: center;
+    position: relative
+  }
 
   .active i {
     color: $primary;
   }
 
-  ul li a i {
+  a i {
     font-size: 2rem;
     display: block;
     color: #8A8EA6;
