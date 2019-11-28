@@ -1,8 +1,10 @@
 import "bootstrap";
 
 import { flipcard } from '../components/flipcard';
+import { collapse } from "plugins/collapsible.js";
 
 flipcard();
+collapse();
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
