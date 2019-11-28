@@ -1,8 +1,11 @@
+// Card HOMEPAGE
+
 #categories {
 
   margin: 36px 0;
   background-color: white;
   border-radius: 3px;
+  padding-bottom: 100px;
 
 
   &>.row:first-child {
@@ -70,14 +73,15 @@
   display: flex;
   align-items: center;
   transition: 0.4s ease-out;
-  background-color: #D4BEBE;
+  background-color: $primary-light;
   // box-shadow: 0px 7px 10px rgba(black, 0.5);
   border: none;
   justify-content: center;
   text-align: center;
-  margin-top: 80px;
+  margin-top: 50px;
+  color: white;
 
-  h3, p {
+  p {
       transition: all ease 0.4s;
     }
 
@@ -85,23 +89,25 @@
     transform: translateY(0px); // Changer 0 pour lever vers le haut la card
     -webkit-transform: translateY(0px);
 
-    h3, p {
+    p {
       z-index: 5;
       color: white;
       transition: all ease 0.4s;
     }
 
     &:before {
-      opacity: 1;
+      opacity: 0.5;
     }
 
     .info {
       opacity: 1;
-      transform: translateY(20px);
-      -webkit-transform: translateY(20px);
+      transform: translateY(45px);
+      -webkit-transform: translateY(45px);
       margin: auto;
     }
-
+    .title {
+      z-index: 5;
+    }
   }
 
   &:before {
@@ -129,15 +135,24 @@
     border-radius: 4px;
   }
 
+  .title {
+    position: absolute;
+    color: white;
+    opacity: 1;
+    margin: auto;
+    z-index: 5;
+  }
+
   .info {
     position: relative;
     z-index: 3;
     color: white;
     opacity: 0;
-    transform: translateY(0px);
-    -webkit-transform: translateY(0px);
+    transform: translateY(10px);
+    -webkit-transform: translateY(10px);
     transition: 0.5s;
-    margin: auto;
+    // margin: auto;
+    text-decoration: none;
 
     h1 {
       margin: 0px;
@@ -150,7 +165,7 @@
     }
 
     button {
-      padding: 0.6rem;
+      padding: 5px 10px;
       outline: none;
       border: none;
       border-radius: 3px;
@@ -170,8 +185,9 @@
         background: white;
 
         a {
-          color: rgba($primary, 0.6);
+          color: black;
           transition: 0.4s ease;
+          text-decoration: none;
         }
       }
     }
