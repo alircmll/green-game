@@ -7,30 +7,31 @@
   </div>
 
   <div class="row">
-    <div class="col-12 text-center">
-      <button class="button-homepage"><%= link_to "Challenges", challenges_path %> <i class="fas fa-chevron-circle-right"></i></button>
+    <div class="col-12 text-center div-button">
+      <button class="button-homepage"><%= link_to "Challenges", challenges_path %></button>
     </div>
   </div>
   <div class="row">
-    <div class="col-12 text-center">
-      <button class="button-homepage"><%= link_to "Quiz", quiz_path(1) %> <i class="fas fa-chevron-circle-right"></i></button>
+    <div class="col-12 text-center div-button">
+      <button class="button-homepage"><%= link_to "Quiz", new_answer_path %></button>
     </div>
   </div>
 
 
-  <div class="row">
+  <div id="container-card" class="row">
     <% @categories.each do |category| %>
     <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4 mb-sm-4">
       <div class="wrapper">
         <div class="card-homepage"><%= cl_image_tag('Velo_npexj9', class: "card-img") %>
-          <div class="info">
+          <div class="title">
             <h3><%= category.name %></h3>
-            <button><%= link_to "Details", category_path(category) %></button>
+          </div>
+          <div class="info">
+            <button><%= link_to "...", category_path(category) %></button>
           </div>
         </div>
       </div>
     </div>
     <% end %>
   </div>
-
 </section>
