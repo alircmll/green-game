@@ -2,11 +2,20 @@
   <ul class="d-flex">
     <li>
       <%#= link_to user_path, :class => current_class?(user_path)  do %>
-        <a href="#{}"><i class="fa fa-user" aria-hidden="true"></i></a>
-        <%# end %>
+        <%= link_to user_path(current_user) do %>
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <% end %>
       </li>
-      <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-      <li><a href="#"><i class="fa fa-map-pin" aria-hidden="true"></i></a></li>
+      <li>
+        <%= link_to root_path do  %>
+        <i class="fa fa-home" aria-hidden="true"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to places_path do  %>
+        <i class="fa fa-map-pin" aria-hidden="true"></i>
+        <% end %>
+      </li>
       <li>
         <%= link_to url_for(:back) do %>
           <i class="fas fa-arrow-left"></i>

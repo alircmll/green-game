@@ -1,7 +1,12 @@
+
 <section id="categoriesIndex" class="container-fluid d-flex flex-column bg-dark">
   <section id="categoriesTitle" class="row px-4 my-auto">
     <div class=" name col-10 offset-1 text-center">
-      <span class=" text-white  text-uppercase ">Welcome</span>
+       <%= simple_form_for root_path, method: :get, class: "search" do %>
+          <%= text_field_tag :search, nil, placeholder: "Search artists ...", class: "form-control" %>
+          <%= submit_tag "",  class: "exit", style: "display: none;",type: "reset" %>
+          <% end %>
+      </div>
     </div>
   </section>
 </section>
@@ -18,6 +23,64 @@
       <% end %>
     </div>
   </div>
+  
+  <% if @tips.nil? != true %>
+    <% if @tips.count > 0 %>
+      <div class="search-result">
+        <% @tips.each do |tip| %>
+          <div class="card w-100 my-4">
+            <div class="card-body">
+              <div class="voteForTip  d-flex justify-content-end">
+                  <%= button_to tip_votes_path(tip), method: :post, class: "like-btn" do %>
+                    <i class="fa<%= tip.votes.present? ? "s" : "r" %> fa-heart"></i>
+                  <% end %>
+              </div>
+                <h5 class="card-title"><%= tip.title %></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><small>Posted by: <%= tip.user.username %></small></h6>
+                  <p class="card-text"><%= tip.description %></p>
+              <div class="bottom-tip-card d-flex justify-content-space-around align-items-center">
+                <span><%= pluralize(tip.votes.count, 'likes') %></span>
+                  <% if tip.user == current_user %>
+                    <%= button_to tip_path(tip), method: :delete, class: "like-btn" do%>
+                      <i class='fas fa-trash-alt'></i>
+                    <% end %>
+                  <% end %>
+              </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+
+<% if @challenges.nil? != true %>
+  <% if @challenges.count > 0 %>
+    <div class="search-result">
+      <div class="row">
+        <div class="col-12">
+          <% @challenges.each do |challenge| %>
+            <%= challenge.title %>
+            <%= challenge.description.first(10) %>
+            <%= link_to "show", challenge_path(challenge)  %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<% if @categories.count > 0 %>
+  <div class="row">
+    <%  @categories.each do |category| %>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4 mb-sm-4">
+      <div class="wrapper">
+        <div class="card-homepage"><%= cl_image_tag('Velo_npexj9', class: "card-img") %>
+          <div class="info">
+            <h3><%= category.name %></h3>
+            <button><%= link_to "Details", category_path(category) %></button>
+          </div>
+        </div>
+
   <div class="row">
     <div class="col-12 d-flex p-3 align-items-center justify-content-between ">
       <p class="h4">My Challenges</p>
@@ -39,4 +102,5 @@
       </div>
     </div>
   </div>
+<% end %>
 </section>
