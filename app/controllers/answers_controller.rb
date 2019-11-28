@@ -17,7 +17,7 @@ class AnswersController < ApplicationController
     
     @answer = Answer.new    
     @question = @quiz.questions[user_session["quiz"]["currentQuestion"]]
-    @options = [@question.options.first.id, @question.options.last.id]
+    @options = [[@question.options.first.id, @question.options.first.title], [@question.options.last.id, @question.options.last.title]]
     @good_option = (@question.options.first.is_right) ? @question.options.first.id : @question.options.last.id
   end
 
@@ -26,17 +26,19 @@ class AnswersController < ApplicationController
     answser.user = current_user
     answser.save
 
+    @quiz = Quiz.find(user_session["quiz"]["id"])
+
     if Option.find(answser.option_id).is_right
-      @quiz = Quiz.find(user_session["quiz"]["id"])
       user_session["quiz"]["score"] += @quiz.points_by_question
       current_user.total_point += @quiz.points_by_question
       current_user.save
     end
-    
+
+    user_session["quiz"]["currentQuestion"] += 1
+
     if @quiz.questions.count == user_session["quiz"]["currentQuestion"]
-      redirect_to quiz_path
+      redirect_to quiz_path user_session["quiz"]["id"]
     else
-      user_session["quiz"]["currentQuestion"] += 1
       redirect_to new_answer_path
     end
   end

@@ -1,13 +1,11 @@
 import { checkServerIdentity } from "tls";
 
 const flipcard = () => {    
-    // $('.radio').on('click', function () {
-    $('.radio_buttons').on('click', function () {
-        
+    $('.radio').on('click', function () {
         $('.card').toggleClass('flipped');
-        
-        const radio1 = document.getElementById('radio1');
-        const radio2 = document.getElementById('radio2');
+        const el = document.querySelectorAll('input[id^="answer_option_id_"]');
+        const radio1 = el[0];
+        const radio2 = el[1];
         const good_option = document.getElementById('goodOption');
         if (radio1.checked && radio1.value === good_option.value ) {
             document.getElementById('badresult').setAttribute("hidden","")

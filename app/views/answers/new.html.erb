@@ -12,13 +12,19 @@
 
 		    <div class="inputGroup btn btn-primary">
           
-          <%= f.input :option_id, collection: @options, as: :radio_buttons, class: "radio" %>
-
-
+          <%= f.input :option_id,
+                      :label => false,
+                      :collection => @options,
+                      :as => :radio_buttons,
+                      :label_method => :last,
+                      :value_method => :first,
+                      :input_html => { :class => 'radio' },
+                      :item_wrapper_tag => :label,
+                      :item_wrapper_class => 'btn btn-primary',
+                      :collection_wrapper_tag => :div,
+                      :collection_wrapper_class => 'btn-group'
+          %>
         </div>
-
-
-
       </div>
       
       <div class="back content">
@@ -27,7 +33,8 @@
         <input type="hidden" id="goodOption" value=<%= @good_option %> />
         
         <!-- <p class="valid btn btn-primary" >Question suivante</p> -->
-        <%= f.submit "Question suivante", class: "btn btn-primary" %>
+        <% label_button = (user_session["quiz"]["currentQuestion"]+1==5) ? "Terminé" : "Question suivante" %>
+        <%= f.submit label_button, class: "btn btn-primary" %>
 
       </div>      
     </div>
