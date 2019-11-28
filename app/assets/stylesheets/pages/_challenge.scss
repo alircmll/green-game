@@ -1,0 +1,51 @@
+#challenge {
+    height: 36vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -99;
+    background: linear-gradient(81.2deg, rgba(0, 0, 0, 0.49) -49.44%, rgba(96, 54, 94, 0.62) 82.85%), image-url("background/bg-tips.jpg");
+    background-position: center center;
+    background-size: cover;
+
+    #challengeTitle {
+
+        .name {
+            margin-top: -42px;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+        }
+    }
+
+}
+
+#challengeContent {
+    z-index: 2;
+    position: fixed;
+    margin-top: 30vh;
+    padding: 2rem 2.5rem ;
+    border-top-left-radius: $border-radius-lg;
+    border-top-right-radius: $border-radius-lg;
+
+    #reward{
+        box-shadow: $boxshadow2;
+        border-radius: $border-radius-lg;
+        margin-top: -84px;
+        background-color: #fff;
+        padding: 8px 0;
+
+        p{
+            margin: 0;
+        }
+    }
+
+    .description {
+        font-size: 1.5rem;
+    }
+
+
+    
+
+
+}

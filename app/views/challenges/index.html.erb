@@ -1,11 +1,29 @@
-<div class="container">
-  <div class="row">
+<section id="challenges" class="container-fluid d-flex flex-column bg-dark">
+  <section id="challengesTitle" class="row px-4 my-auto">
+    <div class=" name col-10 offset-1 text-center">
+      <span class=" text-white  text-uppercase ">Challenges</span>
+    </div>
+  </section>
+</section>
+<section id="challengesContent" class="container-fluid d-flex page-content flex-column bg-white">
+  <div class="row ">
     <div class="col-12">
-      <% @challenges.each do |challenge| %>
-      <%= challenge.title %>
-      <%= challenge.description.first(10) %>
-      <%= link_to "show", challenge_path(challenge)  %>
-      <% end %>
+      <small>
+        Your favorite types of challenges here.
+      </small>
     </div>
   </div>
-</div>
+  <div class="row mt-4">
+  
+    <% @challenges.each do |challenge| %>
+      <div class="col-12 mb-2">
+        <%= link_to challenge_path(challenge) do %>
+          <div class="category">
+            <h3><%= challenge.title %></h3>
+            <%= challenge.description %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</section>
