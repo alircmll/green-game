@@ -8,15 +8,19 @@
     background: linear-gradient(81.2deg, rgba(0, 0, 0, 0.49) -49.44%, rgba(96, 54, 94, 0.62) 82.85%), image-url("background/bg-tips.jpg");
     background-position: center center;
     background-size: cover;
-  
+
     #congratTitle {
-  
+
       .name {
         margin-top: -42px;
         font-size: 3rem;
         font-weight: bold;
         color: white;
+        position: absolute;
+        top: 340px;
+        left: 0;
+        right: 0;
       }
     }
-  
+
   }
