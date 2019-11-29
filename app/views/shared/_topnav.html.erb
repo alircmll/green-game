@@ -1,0 +1,12 @@
+<div id="userNav"class="container">
+  <div  class="row">
+    <div class="col-12 d-flex align-items-center justify-content-between">
+      <button type="button" id="userMenuBtn" class="btn mt-n1">
+        <%= image_tag 'menubar.png' %>
+      </button>
+      <%= link_to url_for(:back), class: "btn btn-success" do %>
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+      <% end %>
+    </div>
+  </div>
+</div>

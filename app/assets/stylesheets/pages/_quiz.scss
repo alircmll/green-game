@@ -1,4 +1,4 @@
-#challenge {
+#quiz {
     height: 36vh;
     position: fixed;
     top: 0;
@@ -8,44 +8,25 @@
     background-position: center center;
     background-size: cover;
 
-    #challengeTitle {
+    #quizStatus {
 
         .name {
-            margin-top: -42px;
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: bold;
-            color: white;
         }
     }
 
 }
 
-#challengeContent {
+#quizContent {
     z-index: 2;
     position: fixed;
-    margin-top: 32vh;
-    padding: 2rem 2.5rem ;
+    margin-top: 30vh;
+    padding: 2rem 2.5rem;
     border-top-left-radius: $border-radius-lg;
     border-top-right-radius: $border-radius-lg;
 
-    #reward{
-        box-shadow: $boxshadow2;
-        border-radius: $border-radius-lg;
-        margin-top: -84px;
-        background-color: #fff;
-        padding: 8px 0;
-
-        p{
-            margin: 0;
-        }
+    p.h4 {
+        font-weight: 500;
     }
-
-    .description {
-        font-size: 1.5rem;
-    }
-
-
-    
-
-
 }

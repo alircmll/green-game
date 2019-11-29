@@ -1,19 +1,24 @@
-<div class="flipcontainer">
-  <h1 class="text-center">Quiz</h1>
-  <p class="flipscore text-left"><%= "Score : #{user_session["quiz"]["score"]}" %></p>
-  <%= simple_form_for [@answer] do |f| %>
-
-    <div class="flipcard">
-      <div class="front flipcontent">
-        <div class="wrapper">
-          <div class="count text-right">
-            <%= "Question : #{user_session["quiz"]["currentQuestion"]+1}/#{@quiz.questions.count}" %>
-          </div>
-          <div class="question d-flex align-items-center">
-            <%= @question.title %>
-          </div>
-          
-          <%= f.input :option_id,
+<section id="quiz" class="container-fluid d-flex flex-column bg-dark">
+  <section id="quizStatus" class="row px-2 my-auto">
+     <div class="col-10 offset-1 mt-n5 text-center">
+      <span class="name text-white  text-uppercase ">QUIZ</span>
+    </div>
+  </section>
+</section>
+<section id="quizContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
+  <div class="flipcontainer">
+    <p class="flipscore text-center"><%= "Your score : #{user_session["quiz"]["score"]}" %></p>
+    <%= simple_form_for [@answer] do |f| %>
+      <div class="flipcard">
+        <div class="front flipcontent">
+          <div class="wrapper">
+            <div class="count text-center">
+              <%= "Question : #{user_session["quiz"]["currentQuestion"]+1}/#{@quiz.questions.count}" %>
+            </div>
+            <div class="question d-flex align-items-center">
+              <%= @question.title %>
+            </div>
+            <%= f.input :option_id,
                           :label => '',
                           :collection => @options,
                           :as => :radio_buttons,
@@ -24,22 +29,22 @@
                           :item_wrapper_class => 'btn btn-primary',
                           :collection_wrapper_tag => :div,
                           :collection_wrapper_class => 'options text-center'%>
-        </div>
-      </div>
-      <div class="back flipcontent">
-        <div class="wrapper">
-          <div class="question d-flex align-items-center justify-content-center">
-            <img id="badresult" src="<%= asset_path('bad.jpg') %>" alt="" >
-            <img id="goodresult" src="<%= asset_path('valid.jpg') %>" alt="" >
-          </div>
-          <div class="options text-center">
-            <input type="hidden" id="goodOption" value=<%= @good_option %> />
-            <% label_button = (user_session["quiz"]["currentQuestion"]+1==5) ? "Quiz terminé !" : "Question suivante" %>
-            <%= f.submit label_button, class: "btn btn-primary" %>
           </div>
         </div>
+        <div class="back flipcontent">
+          <div class="wrapper">
+            <div class="question d-flex align-items-center justify-content-center">
+              <img id="badresult" src="<%= asset_path('bad.jpg') %>" alt="" >
+              <img id="goodresult" src="<%= asset_path('valid.jpg') %>" alt="" >
+            </div>
+            <div class="options text-center">
+              <input type="hidden" id="goodOption" value=<%= @good_option %> />
+              <% label_button = (user_session["quiz"]["currentQuestion"]+1==5) ? "Done !" : "Next" %>
+              <%= f.submit label_button, class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-
-  <% end %>  
-</div>
+    <% end %>
+  </div>
+</section>
