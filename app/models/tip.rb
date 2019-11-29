@@ -1,6 +1,6 @@
 class Tip < ApplicationRecord
   belongs_to :user
-  has_many :votes
+  has_many :votes, dependent: :destroy
   include PgSearch::Model
 
   pg_search_scope :search,
