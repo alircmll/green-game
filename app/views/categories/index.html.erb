@@ -80,7 +80,7 @@
         <% @categories.each do |category| %>
           <%= link_to category_path(category) do %>
             <div class="card-homepage">
-              <%= cl_image_tag('Velo_npexj9', class: "card-img") %>
+              <%= image_tag(category.photo, class: "card-img") %>
               <div class="title">
                 <h3><%= category.name %></h3>
               </div>
