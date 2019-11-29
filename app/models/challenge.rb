@@ -13,12 +13,13 @@ class Challenge < ApplicationRecord
                       normalization: 2
                     }
                   }
-private
+  private
 
   def self.perform_search(keyword)
     if keyword.present?
-    then Challenge.search(keyword)
-    else Challenge.all
+      then Challenge.search(keyword)
+    else
+      Challenge.all
     end
   end
 end

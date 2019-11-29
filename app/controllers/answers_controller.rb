@@ -2,7 +2,7 @@ class AnswersController < ApplicationController
   def new
     # Check quiz in progress
     quiz = user_session["quiz"]
-    if quiz == nil 
+    if quiz == nil
       @quiz = Quiz.all.sample
       quizSession = {
         "id" => @quiz.id,
@@ -14,14 +14,14 @@ class AnswersController < ApplicationController
     else
       @quiz = Quiz.find(quiz["id"])
     end
-    
-    @answer = Answer.new    
+
+    @answer = Answer.new
     @question = @quiz.questions[user_session["quiz"]["currentQuestion"]]
     @options = [[@question.options.first.id, @question.options.first.title], [@question.options.last.id, @question.options.last.title]]
     @good_option = (@question.options.first.is_right) ? @question.options.first.id : @question.options.last.id
   end
 
-  def create    
+  def create
     answser = Answer.new(answer_params)
     answser.user = current_user
     answser.save
