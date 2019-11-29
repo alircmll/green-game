@@ -1,13 +1,8 @@
 <%= render 'shared/sidebar' %>
 <section id="user" class="container-fluid d-flex flex-column bg-dark justify-content-center">
-  <section id="userStatus" class="row px-4 ">
-    <div id="userNav" class="row">
-      <div class="col-10 offset-1 d-flex align-items-center justify-content-between">
-        <button type="button" id="userMenuBtn" class="btn">
-          <%= image_tag 'menubar.png' %>
-        </button>
-      </div>
-    </div>
+<%= render 'shared/topnav' %>
+  <section id="userStatus" class="row px-4">
+      
     <div class="col-10 offset-1  d-flex align-items-center  justify-content-between">
       <!-- Use any element to open the sidenav -->
       <%= cl_image_tag @user.photo, class: "avatar p-1" %>

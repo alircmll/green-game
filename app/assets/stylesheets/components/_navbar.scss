@@ -48,10 +48,10 @@
 // ------------------------ NAV EVERYE WHERE
 
 #userNav {
+  z-index: 501;
 position: absolute;
 top: 2rem;
-left: 2rem;
-
+left: 0;
   .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link  {
     border-color: none;
   }

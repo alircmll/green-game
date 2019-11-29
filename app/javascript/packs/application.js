@@ -10,6 +10,8 @@ import { closeNav, openNav} from  "plugins/navbottom.js";
 import '../plugins/fadeinscrool'
 
 // MENU
+document.getElementById(userMenuBtn)
+
 $("#userMenuBtn").click(openNav);
 $("#closeUserBtn").click(closeNav);
 initMapbox();

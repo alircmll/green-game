@@ -23,10 +23,8 @@
 
 #userContent {
     z-index: 2;
-    margin-top: 36vh;
+    margin-top: 33vh;
     padding: 2rem 2.5rem;
-    border-top-left-radius: $border-radius-lg;
-    border-top-right-radius: $border-radius-lg;
 
     p.h4 {
         font-weight: 500;
@@ -49,7 +47,7 @@
     -o-transform: rotate(-90deg);
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     left: -9.80vh;
-    top: 8rem;
+    top: 7rem;
     position: absolute;
     color: black;
     font-size: 18px;
