@@ -7,6 +7,6 @@ class VotesController < ApplicationController
     else
       Vote.create(tip: @tip, user: current_user)
     end
-    redirect_to tips_path
+    redirect_to request.referrer
   end
 end
