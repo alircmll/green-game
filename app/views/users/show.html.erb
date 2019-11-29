@@ -1,5 +1,5 @@
 <%= render 'shared/sidebar' %>
-<section id="user" class="container-fluid d-flex flex-column bg-dark">
+<section id="user" class="container-fluid d-flex flex-column bg-dark justify-content-center">
   <section id="userStatus" class="row px-4 ">
     <div id="userNav" class="row">
       <div class="col-10 offset-1 d-flex align-items-center justify-content-between">
@@ -8,7 +8,7 @@
         </button>
       </div>
     </div>
-    <div class="col-10 offset-1 mt-5 d-flex align-items-center  justify-content-between">
+    <div class="col-10 offset-1  d-flex align-items-center  justify-content-between">
       <!-- Use any element to open the sidenav -->
       <%= cl_image_tag @user.photo, class: "avatar p-1" %>
       <p class= "name text-white"><%= @user.username.capitalize %></p>

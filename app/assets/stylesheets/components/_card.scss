@@ -140,7 +140,7 @@
   background-size: cover;
   background-position: center;
   background-color: rgba(#42213D, 0.6);
-  height: 128px;
+  height: 118px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,6 +150,11 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   box-shadow: $boxshadow2;
+  transition: all ease 300ms;
+  &:hover{
+    box-shadow: $boxshadow3;
+    transition: all ease 300ms;
+  }
 }
 
 #main-btn {

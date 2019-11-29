@@ -12,7 +12,6 @@
 
     #userStatus {
 
-        margin-top: 40px;
 
         .name {
             font-size: 1.2rem;
@@ -40,7 +39,6 @@
 
 .verticaltext {
     position: relative;
-    padding-left: 4rem;
     min-height: 120px;
 }
 
@@ -57,3 +55,23 @@
     font-size: 18px;
     font-weight: bold;
 }
+
+/* Portrait */
+@media screen and (orientation:portrait) {
+    /* Portrait styles */
+    .verticaltext {
+        padding-left: 4rem;
+    }
+
+    }
+    /* Landscape */
+    @media screen and (orientation:landscape) {
+    /* Landscape styles */
+    .verticaltext {
+        padding-left: 6rem;
+        min-height: 10px;
+    }
+    .verticaltext-content {
+        left: -18.80vh;
+    }
+    }
