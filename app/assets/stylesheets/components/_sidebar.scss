@@ -1,6 +1,7 @@
  /* The side navigation menu */
  .sidenav {
-   height: 1000px;
+   
+   height: 100vh;
    /* 100% Full-height */
    width: 0;
    /* 0 width - change this with JavaScript */
@@ -10,7 +11,7 @@
    /* Stay on top */
    top: 0;
    left: 0;
-   background:rgba(0,0,0,0.8);
+   background: rgba(0, 0, 0, 0.8);
 
    overflow-x: hidden;
    padding-top: 60px;
@@ -21,29 +22,30 @@
    }
 
    &:hover {
-     overflow-y: auto;
+     z-index: 551;
+     overflow-y: scroll ;
    }
 
    #nav-profile {
      overflow-y: auto;
-     height: calc(100vh - 84px);
-     padding: 44px 0;
-     
+     padding-top: 36px;
+    //  padding-bottom: 256PX;
+     margin-bottom: 84px;
    }
 
    .blur {
-    background: linear-gradient(81.2deg, rgba(0, 0, 0, 0.49) -49.44%, rgba(96, 54, 94, 0.62) 82.85%), image-url("background/bg-tips.jpg") ;
-    background-size: cover;
-    overflow: hidden;
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
-    position: absolute;
-    height: 100%;
-    top: -50px;
-    left: -50px;
-    right: -50px;
-    bottom: -50px;
-  }
+     background: linear-gradient(81.2deg, rgba(0, 0, 0, 0.49) -49.44%, rgba(96, 54, 94, 0.62) 82.85%), image-url("background/bg-tips.jpg");
+     background-size: cover;
+     overflow: hidden;
+     filter: blur(8px);
+     -webkit-filter: blur(8px);
+     position: absolute;
+     height: 130vh;
+     top: -50px;
+     left: -50px;
+     right: -50px;
+     bottom: -50px;
+   }
 
  }
 
