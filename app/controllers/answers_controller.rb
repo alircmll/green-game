@@ -2,17 +2,13 @@ class AnswersController < ApplicationController
   def new
     # Check quiz in progress
     quiz = user_session["quiz"]
-    if quiz == nil
-      @quiz = Quiz.all.sample
-      quizSession = {
-        "id" => @quiz.id,
-        "score" => 0,
-        "currentQuestion" => 0
-      }
-      # Start new quiz
-      user_session["quiz"] = quizSession
+    if quiz.nil?
+      newquiz
     else
-      @quiz = Quiz.find(quiz["id"])
+      @quiz = Quiz.find_by(id: quiz["id"])
+      if @quiz.nil?
+        newquiz
+      end
     end
 
     @answer = Answer.new
@@ -22,13 +18,13 @@ class AnswersController < ApplicationController
   end
 
   def create
-    answser = Answer.new(answer_params)
-    answser.user = current_user
-    answser.save
+    answer = Answer.new(answer_params)
+    answer.user = current_user
+    answer.save
 
-    @quiz = Quiz.find(user_session["quiz"]["id"])
+    @quiz = Quiz.find_by(id: user_session["quiz"]["id"])
 
-    if Option.find(answser.option_id).is_right
+    if Option.find(answer.option_id).is_right
       user_session["quiz"]["score"] += @quiz.points_by_question
       current_user.total_point += @quiz.points_by_question
       current_user.save
@@ -46,5 +42,16 @@ class AnswersController < ApplicationController
 private
   def answer_params
     params.require(:answer).permit(:option_id)
+  end
+
+  def newquiz
+    @quiz = Quiz.all.sample
+    quizSession = {
+      "id" => @quiz.id,
+      "score" => 0,
+      "currentQuestion" => 0
+    }
+    # Start new quiz
+    user_session["quiz"] = quizSession
   end
 end
