@@ -1,13 +1,13 @@
 
 puts "Destroy all"
 
-Tip.destroy_all
 Challenge.destroy_all
 Category.destroy_all
 Answer.destroy_all
 User.destroy_all
 Option.destroy_all
 Question.destroy_all
+Tip.destroy_all
 Quiz.destroy_all
 
 puts "Creating users..."
