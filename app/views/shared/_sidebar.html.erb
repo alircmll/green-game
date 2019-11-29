@@ -3,14 +3,14 @@
   <div class="row">
     <div class="col-10 offset-1 d-flex align-items-center mt-n4 justify-content-between">
       <p class="h4 text-white">My Profil</p>
-      <a id="closeUserBtn" href="javascript:void(0)" class="closebtn mt-n3 text-teal" ">&times;</a>
+      <a id="closeUserBtn" href="javascript:void(0)" class="closebtn mt-n3 text-teal">&times;</a>
     </div>
   </div>
   <div class="row mt-4">
     <div class="col-10 offset-1 mt-n3 text-center">
       <!-- Use any element to open the sidenav -->
-      <%= cl_image_tag @user.photo, class: "avatar p-1" %>
-      <p class= "name text-white my-2"><%= @user.username.capitalize %></p>
+      <%= cl_image_tag current_user.photo, class: "avatar p-1" %>
+      <p class= "name text-white my-2"><%= current_user.username.capitalize %></p>
     </div>
   </div>
   <div class="row">
@@ -33,24 +33,13 @@
           </div>
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" class="hide-native-scrollbar">
-          <%= simple_form_for @user do |f| %>
+          <%= simple_form_for current_user do |f| %>
             <%= f.error_notification %>
             <div class="form-inputs">
-              <%= f.input :username, required: false, autofocus: true %>
-              <%= f.input :email, required: false %>
-              <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-              <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-              <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-              <%= f.input :photo %>
-              <%= f.input :photo_cache, as: :hidden %>
+                <%= f.input :username %>
+                <%= f.input :photo %>
+                <%= f.input :photo_cache, as: :hidden %>
+
             </div>
             <div class="form-actions">
               <%= f.button :submit, "Update", class: "btn btn-primary btn-block" %>
