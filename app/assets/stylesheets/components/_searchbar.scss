@@ -3,27 +3,32 @@ $lightgreen: #BCE4D2;
 
 $speed: .5s;
 
+.search-bar {
+  margin: auto;
+}
+
 .search {
   position: absolute;
-  left: 50%;
+  left: 45%;
   top: 30%;
   transform: translate(-50%, -50%);
-  width: 500px;
+  width: 490px;
+  height: 136px;
 
   input {
     cursor: pointer;
     margin: 0 auto;
-    color: $lightgreen;
-    width: 60px;
-    height: 60px;
+    color: $primary-light;
+    width: 65px;
+    height: 65px;
     border: none;
-    font-size: 50px;
+    font-size: 20px;
     padding: 10px;
     position: absolute;
     top: 0px;
     left: 50%;
     border-radius: 100%;
-    box-shadow: 0 0 0 5px $lightgreen;
+    box-shadow: 0 0 0 5px $primary-light;
     background: transparent;
     transition: width .25s ease-in-out, border-radius .5s ease-in-out, left .35s ease;
     transition-delay: .5s, .75s, .5s;
@@ -31,10 +36,11 @@ $speed: .5s;
     &:focus, &:valid {
       border-radius: 1%;
       outline: none;
+      border: solid 4.5px $primary-light;
       position: absolute;
       transition-delay: 1s, .3s, 1s;
-      width: 100%;
-      left: 15%;
+      width: 74%;
+      left: 16%;
 
       +button.exit {
         pointer-events: all;
@@ -42,11 +48,11 @@ $speed: .5s;
         position: absolute;
         padding: 0;
         border: 0;
-        top: 50%;
-        left: 99%;
-        background: $lightgreen;
+        top: -6px;
+        left: 76%;
+        background: $primary-light;
         border-radius: 10%;
-        color: $lightgreen;
+        color: $primary-light;
         outline: none;
         height: 5px;
         width: 50px;
@@ -63,9 +69,9 @@ $speed: .5s;
           position: absolute;
           padding: 0;
           border: 0;
-          background: $lightgreen;
+          background: $primary-light;
           border-radius: 10%;
-          color: $lightgreen;
+          color: $primary-light;
           outline: none;
           height: 5px;
           width: 50px;
@@ -74,7 +80,6 @@ $speed: .5s;
           transition-delay: .5s;
           cursor: pointer;
         }
-
       }
     }
   }
@@ -83,11 +88,12 @@ $speed: .5s;
     position: absolute;
     padding: 0;
     border: 0;
-    top: 50%;
-    left: 50%;
-    background: $lightgreen;
+    top: -7px;
+    // bottom: 15px;
+    left: 238px;
+    background: $primary-light;
     border-radius: 10%;
-    color: $lightgreen;
+    color: $primary-light;
     outline: none;
     height: 5px;
     width: 50px;
@@ -107,9 +113,9 @@ $speed: .5s;
       border: 0;
       top: 0%;
       left: 0%;
-      background: $lightgreen;
+      background: $primary-light;
       border-radius: 10%;
-      color: $lightgreen;
+      color: $primary-light;
       outline: none;
       height: 5px;
       width: 50px;

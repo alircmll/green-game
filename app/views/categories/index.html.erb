@@ -1,15 +1,15 @@
 <section id="categoriesIndex" class="container-fluid d-flex flex-column bg-dark">
 <%= render 'shared/topnav' %>
   <section id="categoriesTitle" class="row px-4 my-auto">
-    <div class=" name col-10 offset-1 text-center">
-       <%= simple_form_for root_path, method: :get, class: "search" do %>
-          <%= text_field_tag :search, nil, placeholder: "Search artists ...", class: "form-control" %>
-          <%= submit_tag "",  class: "exit", style: "display: none;",type: "reset" %>
-          <% end %>
-      </div>
+    <div class="search-bar col-12 offset-1 text-center">
+      <form action="/" method="get" class="search">
+        <input id="search" name="search" type="text" required />
+        <button class="exit" type="reset">
+      </form>
     </div>
   </section>
 </section>
+
 <section id="categoriesContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
   <div class="row">
     <div class="col-12">
