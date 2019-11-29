@@ -349,4 +349,10 @@ const confetti = () => {
     });
 }
 
+if (document.getElementById('confetti')) {
+  window.onload = function(){
+    confetti();
+  };
+}
+
 export { confetti };
