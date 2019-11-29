@@ -32,7 +32,8 @@
     background-color: $primary-light;
     color: white;
     flex-shrink: 1;
-    padding-right: 15px;
+    border-top-left-radius:  $border-radius-lg;
+    border-top-right-radius:  $border-radius-lg;
   }
   .question {    
     
@@ -54,12 +55,14 @@
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 6px;
+    border-radius: $border-radius-lg;
     background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;    
     color: #47525D;
+    box-shadow: $boxshadow2;
+    
 
     .radio {
         width: 32px;

@@ -1,18 +1,18 @@
 <section id="quiz" class="container-fluid d-flex flex-column bg-dark">
-  <section id="quizStatus" class="row px-4 my-auto">
-     <div class="col-10 offset-1 mt-n4 text-center">
+  <section id="quizStatus" class="row px-2 my-auto">
+     <div class="col-10 offset-1 mt-n5 text-center">
       <span class="name text-white  text-uppercase ">QUIZ</span>
     </div>
   </section>
 </section>
 <section id="quizContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
   <div class="flipcontainer">
-    <p class="flipscore text-left"><%= "Score : #{user_session["quiz"]["score"]}" %></p>
+    <p class="flipscore text-center"><%= "Your score : #{user_session["quiz"]["score"]}" %></p>
     <%= simple_form_for [@answer] do |f| %>
       <div class="flipcard">
         <div class="front flipcontent">
           <div class="wrapper">
-            <div class="count text-right">
+            <div class="count text-center">
               <%= "Question : #{user_session["quiz"]["currentQuestion"]+1}/#{@quiz.questions.count}" %>
             </div>
             <div class="question d-flex align-items-center">
