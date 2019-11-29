@@ -32,4 +32,28 @@
     p.h4 {
         font-weight: 500;
     }
+
+    #myTodo {
+        min-height: 320px;
+    }
+}
+
+.verticaltext {
+    position: relative;
+    padding-left: 4rem;
+    min-height: 120px;
+}
+
+.verticaltext-content {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    left: -9.80vh;
+    top: 8rem;
+    position: absolute;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
 }

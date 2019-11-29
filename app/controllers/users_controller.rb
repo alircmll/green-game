@@ -16,11 +16,8 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
     @user.update(user_params)
     @user.save
-    redirect_to user_path(@user)
+    redirect_to user_path(@current_user.id)
   end
-
- 
-
   
   private
 

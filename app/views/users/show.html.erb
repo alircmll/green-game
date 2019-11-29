@@ -1,16 +1,13 @@
 <%= render 'shared/sidebar' %>
-
 <section id="user" class="container-fluid d-flex flex-column bg-dark">
   <section id="userStatus" class="row px-4 ">
-
-   <div id="userNav" class="row">
-    <div class="col-10 offset-1 d-flex align-items-center justify-content-between">
-      <button type="button" id="userMenuBtn" class="btn">
-        <%= image_tag 'menubar.png' %>
-      </button>
+    <div id="userNav" class="row">
+      <div class="col-10 offset-1 d-flex align-items-center justify-content-between">
+        <button type="button" id="userMenuBtn" class="btn">
+          <%= image_tag 'menubar.png' %>
+        </button>
+      </div>
     </div>
-  </div>
-
     <div class="col-10 offset-1 mt-5 d-flex align-items-center  justify-content-between">
       <!-- Use any element to open the sidenav -->
       <%= cl_image_tag @user.photo, class: "avatar p-1" %>
@@ -22,6 +19,8 @@
       <%# Changer le pourcentage en focntion de la progress bar  %>
       <span id="nextLevelIn"><%= @user.total_point %>%</span>
     </div>
+
+    <%# raise %>
     <div class="col-10 offset-1  ">
       <%# PROGRESS BAR, Changer style pourcantage avec width et aria-valuenow %>
       <div class="progress">
@@ -34,31 +33,42 @@
 </section>
 <section id="userContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
   <div id="myTodo" class="row ">
-    <p class="h4">My sustainable lifestyle day</p>
-    <%# TODO LIST%>
-    <ul id="toDo" class="d-flex flex-column-reverse todo-list list-group">
-      <%# ITEMS %>
-      <%#  Faire un Each pour display les taches et generer la li suivante %>
-      <li class="list-item">
-        <input id="box1" type="checkbox" />
-        <label for="box1" class="">Buy local fish</label>
-      </li>
-      <li class="list-item">
-        <input id="box3" type="checkbox" />
-        <label for="box3" class="">Take bike instead of car</label>
-      </li>
-      <li class="list-item">
-        <input id="box4" type="checkbox" />
-        <label for="box4" class="">Recycle plastic</label>
-      </li>
-      <li class="list-item">
-        <input id="box5" type="checkbox" />
-        <label for="box5" class="">Eat cuttlefish</label>
-      </li>
-    </ul>
+    <div class="verticaltext top">
+      <p class="verticaltext-content">My sustainable lifestyle day</p>
+      <%# TODO LIST%>
+      <ul id="toDo" class="d-flex flex-column-reverse todo-list list-group">
+        <%# ITEMS %>
+        <%#  Faire un Each pour display les taches et generer la li suivante %>
+        <li class="list-item">
+          <input id="box1" type="checkbox" />
+          <label for="box1" class="">Buy local fish</label>
+        </li>
+        <li class="list-item">
+          <input id="box3" type="checkbox" />
+          <label for="box3" class="">Take bike instead of car</label>
+        </li>
+        <li class="list-item">
+          <input id="box4" type="checkbox" />
+          <label for="box4" class="">Recycle plastic</label>
+        </li>
+        <li class="list-item">
+          <input id="box5" type="checkbox" />
+          <label for="box5" class="">Eat cuttlefish</label>
+        </li>
+        <li class="list-item">
+          <input id="box5" type="checkbox" />
+          <label for="box5" class="">Eat cuttlefish</label>
+        </li>
+        <li class="list-item">
+          <input id="box5" type="checkbox" />
+          <label for="box5" class="">Eat cuttlefish</label>
+        </li>
+      </ul>
+    </div>
   </div>
+  <hr>
   <div id="myChallenges" class="row">
-    <div class="col-12 d-flex p-0 align-items-center justify-content-between ">
+    <div class="col-12 d-flex mt-0 align-items-center justify-content-between ">
       <p class="h4">My Challenges</p>
       <%#  Rajouter mon challenge en cours ici %>
       <small>View All</small>

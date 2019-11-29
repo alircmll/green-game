@@ -7,6 +7,7 @@ import { flipcard } from '../components/flipcard';
 import { confetti } from '../components/confetti';
 import { initMapbox } from '../plugins/init_mapbox';
 import { closeNav, openNav} from  "plugins/navbottom.js";
+import '../plugins/fadeinscrool'
 
 // MENU
 $("#userMenuBtn").click(openNav);
