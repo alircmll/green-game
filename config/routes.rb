@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   resources :answers, only: [:new, :create]
 
-  resources :tips, only: [:index, :new, :create, :destroy] do
+  resources :tips, only: [:index, :show, :new, :create, :destroy] do
       resources :votes, only: [:create]
    end
   resources :quizzes, only: [:show]
