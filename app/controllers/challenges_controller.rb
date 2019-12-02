@@ -21,11 +21,9 @@ class ChallengesController < ApplicationController
   #   end
   # end
 
-  private
+  # private
 
   # def challenge_params
   #   params.require(:challenge).permit(:title, :description, :duration, :points_by_step, :step_number, :category_id)
   # end
 end
-
-
