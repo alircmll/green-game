@@ -15,7 +15,7 @@ class Tip < ApplicationRecord
                       normalization: 2
                     }
                   }
-private
+  private
 
   def self.perform_search(keyword)
     if keyword.present?
