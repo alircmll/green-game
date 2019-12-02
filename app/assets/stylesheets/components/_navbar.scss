@@ -63,11 +63,20 @@
 
 #myTab {
 
+  a {
+    color: white;
+  }
+
   .nav-tabs .nav-link {
     transition: all ease 500ms;
   }
 
   .active {
     transition: all ease 500ms;
+
+  }
+
+  a.active {
+    color: $primary;
   }
 }
