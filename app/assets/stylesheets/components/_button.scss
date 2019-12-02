@@ -1,76 +1,3 @@
-// Button HOMEPAGE
-
-.button-homepage {
-  border: 0;
-}
-
-.div-button {
-  margin-bottom: 50px;
-}
-
-a {
-  color: white;
-
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
-}
-
-.button-homepage {
-  position: relative;
-  background-color: transparent;
-  margin-top: 15px;
-  width: 350px;
-}
-
-.div-button {
-  color: white;
-  font-family: Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 36px;
-  text-align: center;
-  background-color: $primary-light;
-  display: block;
-  padding: 24px 44px;
-
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  text-shadow: $boxshadow1;
-  filter: dropshadow(color=#000, offx=0px, offy=1px);
-
-  -webkit-box-shadow: inset 0 1px 0 $aubergine, 0 10px 0 $aubergine;
-  -moz-box-shadow: inset 0 1px 0 $aubergine, 0 10px 0 $aubergine;
-  box-shadow: inset 0 1px 0 $aubergine, 0 10px 0 $aubergine;
-
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-
-.div-button a:active{
-  top: 10px;
-  background-color: $primary-dark;
-
-  -webkit-box-shadow: inset 0 1px 0 $primary-dark, inset 0 -3px 0 $primary-dark;
-  -moz-box-shadow: inset 0 1px 0 $primary-dark, inset 0 -3pxpx 0 $primary-dark;
-  box-shadow: inset 0 1px 0 $primary-dark, inset 0 -3px 0 $primary-dark;
-  outline: 0 !important;
-}
-
-.div-button:after{
-  content: "";
-  height: 100%;
-  width: 100%;
-  padding: 4px;
-  position: absolute;
-  bottom: -15px;
-  left: -4px;
-  z-index: -1;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-
 // -------------------------- Tip Btn
 
 
@@ -82,7 +9,7 @@ a {
 }
 
 
-// -------------------------- Btn Press
+// -------------------------- Btn Press Home Pages
 
 .pressbtn{
   position:relative;
