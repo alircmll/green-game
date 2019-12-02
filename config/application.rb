@@ -24,5 +24,4 @@ module GreenGame
   end
 end
 
- #config/application.rb
  config.exceptions_app = self.routes
