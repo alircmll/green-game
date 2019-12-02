@@ -9,7 +9,7 @@ select.form-control {
   -webkit-box-shadow: none;
   box-shadow: none;
   // border-radius: 0;
-  color: $primary-light;
+  color: white;
 }
 
 input[type="text"]:focus,
@@ -19,7 +19,7 @@ select.form-control:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
   background: transparent;
-  color: $primary-light;
+  color: white;
   border-bottom: 2px solid $canard;
 }
 

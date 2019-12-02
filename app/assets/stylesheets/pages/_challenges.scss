@@ -39,8 +39,11 @@
         background-clip: border-box;
         padding: 24px 12px;
         transition: all ease 400ms;
+        box-shadow: $boxshadow2;
+        margin-bottom: 16px;
 
-        &:hover {
+
+        &:hover, &:focus {
             background-color: $primary-dark;
             transition: all ease 400ms;
         }
