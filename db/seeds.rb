@@ -2,11 +2,11 @@
 puts "Destroy all"
 
 Challenge.destroy_all
+Tip.destroy_all
 Category.destroy_all
 Answer.destroy_all
 Option.destroy_all
 Question.destroy_all
-Tip.destroy_all
 Quiz.destroy_all
 User.destroy_all
 
@@ -43,6 +43,16 @@ puts "Creating users..."
 
 puts 'Finished!'
 
+puts "Creating Categories..."
+
+transport = Category.create!(name: "Transport", photo: "https://images.pexels.com/photos/1548771/pexels-photo-1548771.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+food = Category.create!(name: "Food", photo: "https://images.pexels.com/photos/2110485/pexels-photo-2110485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+diy = Category.create!(name: "DIY", photo: "https://images.unsplash.com/photo-1561424111-c81487d25086?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1036&q=80")
+energy = Category.create!(name: "Energie", photo: "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80")
+no_waste = Category.create!(name: "Zéro déchet", photo: "https://images.unsplash.com/photo-1526951521990-620dc14c214b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80")
+nature_connect = Category.create!(name: "Nature connect", photo: "https://images.unsplash.com/photo-1534254608209-03b8f2c24397?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80")
+
+puts 'Finished!'
 
 puts "Creating tips..."
 
@@ -58,7 +68,7 @@ tips = [
     title:         "L’importance de trier les déchets à la maison",
     description:   "Les ordures ménagères contiennent de nombreuses matières premières précieuses qui peuvent être recyclées. Plus nous trions et recyclons de déchets, moins nous en jetons dans les conteneurs et moins nous devons payer pour leur transport. Pour trier de manière efficace les déchets ménagers, il est souvent utile de les séparer en plusieurs catégories, notamment : Les déchets organiques (fruits, légumes, coquilles d'oeufs, marc de café...), le verre, le plastique et le métal, le papier et le carton, les déchets non recyclables (les restes cuits, les restes de viandes/poissons, les os...), les déchets dangereux (produits de nettoyage, pile, ampoule...), et les déchets encombrants.",
     user:          b,
-    category:      zéro_déchet
+    category:      no_waste
   },
   {
     title:         "Les avantages de faire du compost pour son jardin",
@@ -76,13 +86,13 @@ tips = [
     title:         "Comment gérer efficacement les déchets ménagers",
     description:   "Réduire et gérer correctement la production de déchets ménagers et d’ordures est très important pour la santé et l’hygiène de votre famille et de vos voisins. Nous produisons plus de déchets que ce que nous pourrions gérer ou recycler. A ce titre, il est important que chacun contribue à la gestion et à la réduction de la quantité des déchets produits à la maison. Voici quelques astuces : Acheter des produits avec moins d’emballage, éviter au maximum les matières plastiques et opter pour des emballages réutilisables, donner ce dont vous ne vous servez plus, et controler la quantité de papier que vous utilisez.",
     user:          a,
-    category:      zéro_déchet
+    category:      no_waste
   },
   {
     title:         "Une meilleure isolation pour une meilleure économie d’énergie",
     description:   "Une maison moins énergivore passe avant tout par une bonne isolation ! Alors, pour optimiser le rendement énergétique que vous pourrez obtenir grâce à la réduction de votre consommation, il est important que vous vérifiiez si votre maison ne laisse pas s’échapper la chaleur par le toit, les murs, le sol ou encore les portes et les fenêtres. Voici quelques matériaux à utiliser en cas de ré isolation de votre intérieur : Les isolants d’origine végétale (la fibre de bois, le chanvre, la chènevotte et le liège), les isolants d’origine minérale (à l’instar de l’argile expansée ou de la perlite et de la vermiculite), les isolants recyclés (la ouate de cellulose et le verre cellulaire).",
     user:          b,
-    category:      energie
+    category:      energy
   },
   {
     title:         "Comment éviter le gaspillage alimentaire ?",
@@ -94,7 +104,7 @@ tips = [
     title:         "Plaque à induction et protection de l’environnement, les choses à savoir",
     description:   "La plaque à induction est devenue un équipement incontournable dans les cuisines, et cela, grâce aux multiples avantages qu’elle procure. En effet, si cette invention a la côte actuellement, c’est tout simplement parce qu’elle est moins énergivore que les autres plaques de cuisson traditionnelles : Plus économique et plus fonctionnel, plus écologique et moins énergivore, plus de sécurité et moins d’accident.",
     user:          d,
-    category:      energie
+    category:      energy
   },
   {
     title:         "Permaculture, les avantages d’élever des poules dans son jardin",
@@ -106,7 +116,7 @@ tips = [
     title:         "Jardinage écolo, toit végétal un concept à adopter sûrement",
     description:   "Près de deux tiers des Français disent vouloir opter pour un jardin écolo. Parmi les techniques à adopter pour y arriver, le toit végétal et ses avantages : Un toit pour retenir les eaux de pluie, un toit pour améliorer l’isolation thermique (permet de réduire l’usage du climatiseur pendant l’été grâce à l’évapotranspiration, et l’usage du chauffage pendant l’hiver grâce à la réduction de la déperdition de la chaleur au niveau du toit), un toit avec une excellente durée de vie, un toit pour accueillir la biordiversité",
     user:          b,
-    category:      energie
+    category:      energy
   },
   {
     title:         "Des astuces simples pour un jardin écologique",
@@ -118,7 +128,7 @@ tips = [
     title:         "Comment diminuer sa consommation d’eau sous la douche ?",
     description:   "En plus de préserver l’une des ressources naturelles les plus rares au monde, l’économie en eau permet aussi de réduire la facture que vous allez payer tous les mois. Alors, si vous souhaitez adopter une attitude écolo chez vous, voici quelques conseils que vous pourrez adopter afin qu’ils deviennent des habitudes : Préférez les douches par rapport aux bains (le bain représente entre 150 et 200 litres d'eau contre à peine 70 litres pour une douche), équipez vous d'installations intelligentes comme les pommeaux de douches écologiques qui vous permettront de réduire le débit d'eau (jusqu'à 7 litres par minute).",
     user:          d,
-    category:      energie
+    category:      energy
   },
   {
     title:         "Respecter le milieu naturel",
@@ -130,7 +140,7 @@ tips = [
     title:         "N’imprimer qu’en cas de nécessité absolue",
     description:   "Je pense ne rien vous apprendre si je vous dis que les ressources s’épuisent. Pour remédier à ça, un petit geste au quotidien est d’éviter, autant que possible, d’imprimer de l’inutile, en recto pas verso et sur du papier super épais pas recyclé.",
     user:          b,
-    category:      zéro_déchet
+    category:      no_waste
   },
   {
     title:         "Privilégier les transports en commun à la voiture",
@@ -142,7 +152,7 @@ tips = [
     title:         "Utiliser une messagerie citoyenne et écologique",
     description:   "À l’origine, Newmanity est un réseau social créé en 2012 autour des questions de développement durable. En septembre 2015, la plateforme a ouvert une messagerie, Newmanity Mail, respectueuse de l’environnement dont l’objectif est de limiter les empreintes numériques et carbone. Grâce à un hébergement « green » (via l’hébergeur Greenshift), les e-mails émettent 2 fois moins de CO2 que la moyenne. Newmanity s’engage, par ailleurs, à respecter la confidentialité des données puisque celles-ci ne sont ni lues ni revendues !",
     user:          d,
-    category:      energie
+    category:      energy
   },
   {
     title:         "S’équiper en fournitures 100% écolo et s’inspirer des espaces les plus green",
@@ -169,16 +179,6 @@ Tip.create!(tips)
 puts "Finished!"
 
 
-puts "Creating Categories..."
-
-transport = Category.create!(name: "Transport", photo: "https://images.pexels.com/photos/1548771/pexels-photo-1548771.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
-food = Category.create!(name: "Food", photo: "https://images.pexels.com/photos/2110485/pexels-photo-2110485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
-diy = Category.create!(name: "DIY", photo: "https://images.unsplash.com/photo-1561424111-c81487d25086?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1036&q=80")
-energie = Category.create!(name: "Energie", photo: "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80")
-zéro_déchet = Category.create!(name: "Zéro déchet", photo: "https://images.unsplash.com/photo-1526951521990-620dc14c214b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80")
-nature_connect = Category.create!(name: "Nature connect", photo: "https://images.unsplash.com/photo-1534254608209-03b8f2c24397?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80")
-
-puts 'Finished!'
 
 puts "Creating Challenges..."
 
@@ -214,7 +214,7 @@ challenges = [
     step_number:      20,
     points_by_step:   50,
     description:      "Appréhendez les énergies renouvelables pendant 100 jours",
-    category:         energie
+    category:         energy
   },
   {
     title:            "Triez vos déchets",
@@ -222,7 +222,7 @@ challenges = [
     step_number:      7,
     points_by_step:   10,
     description:      "Faites du tri de vos déchets une habitude",
-    category:         zéro_déchet
+    category:         no_waste
   },
   {
     title:            "Reconnectez vous à l'essentiel",

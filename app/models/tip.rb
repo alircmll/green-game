@@ -1,5 +1,6 @@
 class Tip < ApplicationRecord
   belongs_to :user
+  belongs_to :category
   has_many :votes, dependent: :destroy
   include PgSearch::Model
 
@@ -14,8 +15,6 @@ class Tip < ApplicationRecord
                       normalization: 2
                     }
                   }
-
-
 private
 
   def self.perform_search(keyword)
