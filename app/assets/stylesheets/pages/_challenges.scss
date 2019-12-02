@@ -22,7 +22,7 @@
 
 #challengesContent {
     z-index: 2;
-    margin-top: 30vh;
+    margin-top: 10vh;
     padding: 2rem 2.5rem ;
     border-top-left-radius: $border-radius-lg;
     border-top-right-radius: $border-radius-lg;
@@ -80,4 +80,34 @@
 
 
     }
+}
+
+#partyChallenges {
+  z-index: 2;
+    padding-left:2.5rem ;
+    padding-right: 2.5rem ;
+    border-top-left-radius: $border-radius-lg;
+    border-top-right-radius: $border-radius-lg;
+
+    .category {
+        border-radius: $border-radius;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: $primary-light;
+        background-clip: border-box;
+        padding: 24px 12px;
+        transition: all ease 400ms;
+
+        &:hover {
+            background-color: $primary-dark;
+            transition: all ease 400ms;
+        }
+
+
+    }
+
 }

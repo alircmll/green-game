@@ -51,8 +51,25 @@
   </div>
   <hr>
   <div id="myChallenges" class="row">
-    <div class="col-12 d-flex mt-0 align-items-center justify-content-between ">
+    <div id="partyChallenges" class="container-fluid d-flex page-content flex-column bg-white">
       <p class="h4">My Challenges</p>
+        <div  class="row mt-4 mb-5">
+          <div class="col-12 mb-2">
+            <% @party_challenges.each do |pc| %>
+                <%= link_to challenge_path(pc["challenge_id"]) do %>
+                  <div class="category mb-2">
+                    <h3><%= pc.challenge.title %></h3>
+                    <%= pc.challenge.title %>
+                   <span> <%= pc.challenge.duration%> Jours</span>
+                   <%= pc.point %>
+                  </div>
+                <% end %>
+            <% end %>
+          </div>
+        </div>
+
+
+
       <%#  Rajouter mon challenge en cours ici %>
       <small>View All</small>
     </div>
