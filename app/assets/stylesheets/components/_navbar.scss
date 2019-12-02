@@ -60,3 +60,14 @@
     border-color: none;
   }
 }
+
+#myTab {
+
+  .nav-tabs .nav-link {
+    transition: all ease 500ms;
+  }
+
+  .active {
+    transition: all ease 500ms;
+  }
+}
