@@ -13,16 +13,11 @@
       <%= simple_form_for @tip do |f| %>
         <%= f.input :title, placeholder: 'Title' %>
         <%= f.input :description, placeholder: 'Description' %>
+        <%= f.association :category, include_blank: false %>
         <%= f.button :submit, class: "btn btn-primary btn-block text-primary-dark mt-5" %>
       <% end %>
-   
+
     </div>
   </div>
 </div>
 </section>
-
-
-
-
-
-
