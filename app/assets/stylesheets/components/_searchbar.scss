@@ -15,10 +15,14 @@ $speed: .5s;
   width: 490px;
   height: 136px;
 
+  input[type="text"]:focus, input[type="text"] {
+    color: white !important;
+  }
+
   input {
     cursor: pointer;
     margin: 0 auto;
-    color: $primary-light;
+    color: white;
     width: 65px;
     height: 65px;
     border: none;
@@ -62,6 +66,7 @@ $speed: .5s;
 
         &:focus {
           outline: none;
+
         }
 
         &:after {
