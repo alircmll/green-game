@@ -16,6 +16,7 @@
       <div class="card my-4 scrollh">
         <div class="card-body ">
           <div class="voteForTip d-flex justify-content-end">
+            <span><%= pluralize(tip.votes.count, '') %></span>
             <%= button_to tip_votes_path(tip), method: :post, class: "like-btn" do %>
               <i class="fa<%= tip.votes.present? ? "s" : "r" %> fa-heart"></i>
             <% end %>
@@ -24,7 +25,6 @@
           <small class="card-subtitle mt-n4 text-muted">Posted by: <%= tip.user.username %></small>
           <p class="card-text mt-4"><%= tip.description.first(35)%>...</p>
           <div class="bottom-tip-card d-flex justify-content-space-around align-items-center">
-            <span><%= pluralize(tip.votes.count, 'likes') %></span>
             <%= link_to "View", tip_path(tip)%>
             <% if tip.user == current_user %>
               <%= button_to tip_path(tip), method: :delete, class: "like-btn" do%>

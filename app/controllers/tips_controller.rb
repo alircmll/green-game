@@ -1,7 +1,6 @@
 class TipsController < ApplicationController
   def index
     @tips = Tip.where(category_id: params[:category_id])
-
   end
 
   def show
