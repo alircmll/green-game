@@ -33,11 +33,11 @@
     box-shadow: $boxshadow3;
   }
 
-  .voteForTip {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-  }
+  // .voteForTip {
+  //   position: absolute;
+  //   top: 1rem;
+  //   right: 1rem;
+  // }
 
   .cta-over-section {
     margin-top: -73px;
@@ -45,7 +45,7 @@
     height: 54px;
     // background: $primary;
     a {
-      padding: 24px 3rem;
+      padding: 11px 3rem;
       font-size: 1.25rem;
       line-height: 1.5;
       border-radius: $border-radius-lg;
@@ -53,8 +53,11 @@
       box-shadow: $boxshadow2;
     }
   }
-
-
-
-
 }
+
+.bottom-tip-card {
+  display: flex;
+  justify-content: space-between !important;;
+}
+
+

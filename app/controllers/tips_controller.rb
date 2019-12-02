@@ -1,10 +1,11 @@
 class TipsController < ApplicationController
   def index
-    @tips = Tip.all
+    @tips = Tip.where(category_id: params[:id])
   end
 
   def show
     @tip = Tip.find(params[:id])
+
   end
 
   def new
@@ -14,6 +15,7 @@ class TipsController < ApplicationController
   def create
     @tip = Tip.new(tips_params)
     @tip.user = current_user
+
     if @tip.save
       redirect_to tips_path, notice: 'Your tip as successfully been created.'
     else
@@ -30,6 +32,6 @@ class TipsController < ApplicationController
   private
 
   def tips_params
-    params.require(:tip).permit(:title, :description)
+    params.require(:tip).permit(:title, :description, :category_id)
   end
 end

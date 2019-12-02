@@ -12,7 +12,7 @@
     <%= link_to "Add your  tip", new_tip_path, class: "btn btn-block btn-primary" %>
   </div>
 
-    <% @tips.each do |tip| %>
+    <% @tips.reverse_each do |tip| %>
       <div class="card my-4 scrollh">
         <div class="card-body ">
           <div class="voteForTip d-flex justify-content-end">
