@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :categories, only: [:show] do
     resources :tips, only: [:index]
   end
-
   resources :users, only: [:show, :edit, :update]
   resources :challenges, only: [:index, :show, :new, :create, :update] do
     resources :party_challenges, only: [:create]
@@ -15,10 +14,9 @@ Rails.application.routes.draw do
   resources :tips, only: [:show, :new, :create, :destroy] do
       resources :votes, only: [:create]
    end
-
   resources :quizzes, only: [:show]
   resources :places, only: [:index]
 
-  get '*unmatched_route', :to => 'errors#not_found'
+  get '*unmatched_route', to: 'errors#not_found'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
