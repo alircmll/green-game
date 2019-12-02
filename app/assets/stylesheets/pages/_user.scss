@@ -31,40 +31,20 @@
     }
 
     #myTodo {
-        min-height: 320px;
+        
     }
-}
-
-.verticaltext {
-    position: relative;
-    min-height: 120px;
-}
-
-.verticaltext-content {
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-    left: -29%;
-    top: 7rem;
-    position: absolute;
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
 }
 
 /* Portrait */
 @media screen and (orientation:portrait) {
     /* Portrait styles */
-    .verticaltext {
-        // padding-left: 4rem;
-    }
+
 
     }
     /* Landscape */
     @media screen and (orientation:landscape) {
     /* Landscape styles */
+
     .verticaltext {
         padding-left: 6rem;
         min-height: 10px;
