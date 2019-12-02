@@ -40,15 +40,17 @@
   }
 
   .cta-over-section {
-    margin-top: -56px; 
+    margin-top: -73px;
+    margin-bottom: 3rem;
     height: 54px;
     // background: $primary;
     a {
-      padding: 0.5rem 3rem;
+      padding: 24px 3rem;
       font-size: 1.25rem;
       line-height: 1.5;
-      border-radius: 26px ;
+      border-radius: $border-radius-lg;
       color: white;
+      box-shadow: $boxshadow2;
     }
   }
 
