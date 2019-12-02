@@ -1,16 +1,18 @@
 .flipcontainer {
-  
+
   height: 360px;
   position: relative;
   perspective: 800px;
   border-radius: $border-radius-lg;
-  
-  
+
+
 }
+
 .flipscore {
   font-size: 20px;
   color: $primary-dark;
 }
+
 .flipcard {
   width: 100%;
   height: 100%;
@@ -18,31 +20,34 @@
   transform-style: preserve-3d;
   transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border-radius: $border-radius-lg;
-  
+
   // cursor: pointe r;
   .wrapper {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;   
-       
+    justify-content: center;
+
   }
-  .count {    
+
+  .count {
     background-color: $primary-light;
     color: white;
     flex-shrink: 1;
-    border-top-left-radius:  $border-radius-lg;
-    border-top-right-radius:  $border-radius-lg;
+    border-top-left-radius: $border-radius-lg;
+    border-top-right-radius: $border-radius-lg;
   }
-  .question {    
-    
+
+  .question {
+
     padding: 15px;
     color: $primary-dark;
     font-size: 25px;
     flex-grow: 1;
   }
-  .options {    
+
+  .options {
     flex-grow: 1;
   }
 
@@ -59,22 +64,22 @@
     background: #fff;
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     color: #47525D;
     box-shadow: $boxshadow2;
-    
+
 
     .radio {
-        width: 32px;
-        height: 32px;
-        order: 1;
-        z-index: 2;
-        position: absolute;
-        right: 30px;
-        top: 50%;
-        transform: translateY(-50%);
-        cursor: pointer;
-        visibility: hidden;
+      width: 32px;
+      height: 32px;
+      order: 1;
+      z-index: 2;
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      visibility: hidden;
     }
 
     img {
@@ -89,5 +94,26 @@
 
   &.flipped {
     transform: rotateY(180deg);
+  }
+}
+
+@media (max-height: 740px) {
+  .flipcontainer {
+    margin-top: -17px !important;
+  }
+}
+
+@media (max-height: 700px) {
+  #quizContent {
+    margin-top: 26vh !important;
+  }
+
+  .flipcontainer {
+    margin-top: -17px !important;
+
+  }
+
+  .question {
+    font-size: 16px !important;
   }
 }
