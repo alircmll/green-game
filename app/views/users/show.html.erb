@@ -53,23 +53,26 @@
   <div id="myChallenges" class="row">
     <div id="partyChallenges" class="container-fluid d-flex page-content flex-column bg-white">
       <p class="h4">My Challenges</p>
-        <div  class="row mt-4 mb-5">
-          <div class="col-12 mb-2">
-            <% @party_challenges.each do |pc| %>
-                <%= link_to challenge_path(pc["challenge_id"]) do %>
-                  <div class="category mb-2">
-                    <h3><%= pc.challenge.title %></h3>
-                    <%= pc.challenge.title %>
-                   <span> <%= pc.challenge.duration%> Jours</span>
-                   <%= pc.point %>
-                  </div>
-                <% end %>
-            <% end %>
+      <% @party_challenges.each do |pc| %>
+        <div class="blog-slider">
+          <div class="blog-slider__wrp swiper-wrapper">
+            <div class="blog-slider__item swiper-slide">
+              <div class="blog-slider__img">
+                <%= cl_image_tag pc.challenge.category.photo %>
+              </div>
+              <div class="blog-slider__content">
+                <span class="blog-slider__code"><%= pc.challenge.duration %> jours</span>
+                <div class="blog-slider__title"><%= pc.challenge.title %></div>
+                <div class="blog-slider__text">
+                  <%= pc.challenge.description %>
+                  <%= pc.point %>
+                </div>
+                <%= link_to "Details", challenge_path(pc), class: "blog-slider__button" %>
+              </div>
+            </div>
           </div>
         </div>
-
-
-
+      <% end %>
       <%#  Rajouter mon challenge en cours ici %>
       <small>View All</small>
     </div>
