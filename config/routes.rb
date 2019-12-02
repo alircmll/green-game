@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root to: 'categories#index'
   resources :categories, only: [:show] do
@@ -14,8 +15,10 @@ Rails.application.routes.draw do
   resources :tips, only: [:show, :new, :create, :destroy] do
       resources :votes, only: [:create]
    end
+
   resources :quizzes, only: [:show]
   resources :places, only: [:index]
 
+  get '*unmatched_route', :to => 'errors#not_found'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

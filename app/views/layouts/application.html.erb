@@ -3,14 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
     <title><%= meta_title %></title>
-
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
-
     <meta name="description" content="<%= meta_description %>">
-
     <!-- Facebook Open Graph data -->
     <meta property="og:title" content="<%= meta_title %>" />
     <meta property="og:type" content="website" />
@@ -18,7 +14,6 @@
     <meta property="og:image" content="<%= image_url("fbogimg.jpg")  %>" />
     <meta property="og:description" content="<%= meta_description %>" />
     <meta property="og:site_name" content="<%= meta_title %>" />
-
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
     <!-- <meta name="twitter:title" content="<%= meta_title %>"> -->
@@ -28,7 +23,7 @@
     >
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
-
+    <script src="https://kit.fontawesome.com/5034b0d787.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
   </head>
   <body>
