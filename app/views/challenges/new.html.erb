@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 offset-2">
+      <%= simple_form_for @challenge do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :duration %>
+        <%= f.input :points_by_step %>
+        <%= f.input :step_number %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
