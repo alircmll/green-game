@@ -5,7 +5,6 @@ class TipsController < ApplicationController
 
   def show
     @tip = Tip.find(params[:id])
-
   end
 
   def new
@@ -17,7 +16,7 @@ class TipsController < ApplicationController
     @tip.user = current_user
 
     if @tip.save
-      redirect_to tips_path, notice: 'Your tip as successfully been created.'
+      redirect_to category_tips_path, notice: 'Your tip as successfully been created.'
     else
       render :new
     end
@@ -26,7 +25,7 @@ class TipsController < ApplicationController
   def destroy
     @tip = Tip.find(params[:id])
     @tip.destroy
-    redirect_to tips_path
+    redirect_to category_tips_path
   end
 
   private
