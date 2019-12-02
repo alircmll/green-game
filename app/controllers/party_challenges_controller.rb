@@ -1,10 +1,7 @@
 class PartyChallengesController < ApplicationController
-  # def new
-  #   @party_challenge = PartyChallenge.new
-  #   @challenge = Challenge.find(params[:challenge_id])
-  # end
 
   def create
+
     @challenge = Challenge.find(params[:challenge_id])
     @party_challenge = PartyChallenge.new(party_challenges_params)
     @party_challenge.challenge = @challenge
