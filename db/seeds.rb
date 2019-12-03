@@ -5,11 +5,11 @@ puts "Destroy all"
 
 Challenge.destroy_all
 Tip.destroy_all
-Category.destroy_all
 Answer.destroy_all
 Option.destroy_all
 Question.destroy_all
 Quiz.destroy_all
+Category.destroy_all
 User.destroy_all
 
 puts "Creating users..."
