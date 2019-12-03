@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_134735) do
+ActiveRecord::Schema.define(version: 2019_11_29_104419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,9 @@ ActiveRecord::Schema.define(version: 2019_11_28_134735) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "party_quiz_id"
     t.index ["option_id"], name: "index_answers_on_option_id"
+    t.index ["party_quiz_id"], name: "index_answers_on_party_quiz_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
@@ -61,6 +63,18 @@ ActiveRecord::Schema.define(version: 2019_11_28_134735) do
     t.index ["user_id"], name: "index_party_challenges_on_user_id"
   end
 
+  create_table "party_quizzes", force: :cascade do |t|
+    t.integer "party_points", default: 0
+    t.integer "position_in_quiz", default: 0
+    t.boolean "done", default: false
+    t.bigint "quiz_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quiz_id"], name: "index_party_quizzes_on_quiz_id"
+    t.index ["user_id"], name: "index_party_quizzes_on_user_id"
+  end
+
   create_table "pg_search_documents", force: :cascade do |t|
     t.text "content"
     t.string "searchable_type"
@@ -91,6 +105,10 @@ ActiveRecord::Schema.define(version: 2019_11_28_134735) do
     t.integer "points_by_question"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.string "title"
+    t.string "description"
+    t.index ["category_id"], name: "index_quizzes_on_category_id"
   end
 
   create_table "tips", force: :cascade do |t|
@@ -129,12 +147,16 @@ ActiveRecord::Schema.define(version: 2019_11_28_134735) do
   end
 
   add_foreign_key "answers", "options"
+  add_foreign_key "answers", "party_quizzes"
   add_foreign_key "answers", "users"
   add_foreign_key "challenges", "categories"
   add_foreign_key "options", "questions"
   add_foreign_key "party_challenges", "challenges"
   add_foreign_key "party_challenges", "users"
+  add_foreign_key "party_quizzes", "quizzes"
+  add_foreign_key "party_quizzes", "users"
   add_foreign_key "questions", "quizzes"
+  add_foreign_key "quizzes", "categories"
   add_foreign_key "tips", "users"
   add_foreign_key "votes", "tips"
   add_foreign_key "votes", "users"

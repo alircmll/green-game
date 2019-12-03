@@ -6,6 +6,7 @@ import { collapse } from "plugins/collapsible.js";
 import { flipcard } from '../components/flipcard';
 import { initMapbox } from '../plugins/init_mapbox';
 import { closeNav, openNav} from  "plugins/navbottom.js";
+import { confetti } from "../components/confetti";
 
 // MENU
 $("#userMenuBtn").click(openNav);
@@ -13,3 +14,4 @@ $("#closeUserBtn").click(closeNav);
 initMapbox();
 flipcard();
 collapse();
+confetti();

@@ -1,13 +1,13 @@
 <div class="flipcontainer">
   <h1 class="text-center">Quiz</h1>
-  <p class="flipscore text-left"><%= "Score : #{user_session["quiz"]["score"]}" %></p>
-  <%= simple_form_for [@answer] do |f| %>
+  <p class="flipscore text-left"><%= "Score : #{@party_quiz.party_points}" %></p>
+  <%= simple_form_for [@party_quiz, @answer] do |f| %>
 
     <div class="flipcard">
       <div class="front flipcontent">
         <div class="wrapper">
           <div class="count text-right">
-            <%= "Question : #{user_session["quiz"]["currentQuestion"]+1}/#{@quiz.questions.count}" %>
+            <%= "Question : #{@party_quiz.position_in_quiz+1}/#{@party_quiz.quiz.questions.count}" %>
           </div>
           <div class="question d-flex align-items-center">
             <%= @question.title %>
@@ -34,7 +34,7 @@
           </div>
           <div class="options text-center">
             <input type="hidden" id="goodOption" value=<%= @good_option %> />
-            <% label_button = (user_session["quiz"]["currentQuestion"]+1==5) ? "Quiz terminé !" : "Question suivante" %>
+            <% label_button = (@party_quiz.position_in_quiz+1==5) ? "Quiz terminé !" : "Question suivante" %>
             <%= f.submit label_button, class: "btn btn-primary" %>
           </div>
         </div>
