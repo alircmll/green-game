@@ -238,7 +238,7 @@ Challenge.create!(challenges)
 # Desctruction de tous les quiz
 
 # Premier Quiz
-quiz = Quiz.create(points_by_question: 5)
+quiz = Quiz.create(title: 'EcoloQuiz',description: 'The best quiz',category_id: no_waste.id, points_by_question: 5)
 # 1
 title = "In which year did the \"Grenelle\" Environment Forum take place in France ?"
 question = Question.create(title: title, quiz_id: quiz.id)

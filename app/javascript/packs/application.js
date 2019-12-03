@@ -18,4 +18,3 @@ $("#closeUserBtn").click(closeNav);
 initMapbox();
 flipcard();
 collapse();
-
