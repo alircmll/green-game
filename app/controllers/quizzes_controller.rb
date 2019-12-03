@@ -12,9 +12,11 @@ class QuizzesController < ApplicationController
   end
 
   def show
-    # @quiz = Quiz.find_by(id: params[])
     # Récupération de l'historique des quiz joués
+    @party_quizzes = PartyQuiz.where(user: current_user)
     
+    # récupération du dernier quiz et de son détail
+    @last_party_quizzes = @party_quizzes.last
 
   end
 
