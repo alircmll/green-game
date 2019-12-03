@@ -21,36 +21,43 @@
 }
 
 #challengesContent {
-    z-index: 2;
-    margin-top: 10vh;
-    padding: 2rem 2.5rem ;
-    border-top-left-radius: $border-radius-lg;
-    border-top-right-radius: $border-radius-lg;
+  z-index: 2;
+  margin-top: 10vh;
+  padding: 2rem 2.5rem ;
+  border-top-left-radius: $border-radius-lg;
+  border-top-right-radius: $border-radius-lg;
 
-    .category {
-        border-radius: $border-radius;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background-color: $primary-light;
-        background-clip: border-box;
-        padding: 24px 12px;
-        transition: all ease 400ms;
-        box-shadow: $boxshadow2;
-        margin-bottom: 16px;
+  a {
+    text-decoration: none;
+  }
 
+  .category {
+    border-radius: $border-radius;
+    display: flex;
+    // -webkit-box-orient: vertical;
+    // -webkit-box-direction: normal;
+    // flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: rgb(92,55,90);
+    background: linear-gradient(90deg, rgba(92,55,90,1) 0%, rgba(73,46,71,1) 60%, rgba(0,0,0,1) 100%);
+    background-clip: border-box;
+    padding: 24px 12px;
+    transition: all ease 400ms;
+    box-shadow: $boxshadow2;
+    margin-bottom: 16px;
+    color: white;
 
-        &:hover, &:focus {
-            background-color: $primary-dark;
-            transition: all ease 400ms;
-        }
-
-
+    img {
+      width: 20vh;
     }
 
+
+    &:hover, &:focus {
+        background-color: $primary-dark;
+        transition: all ease 400ms;
+    }
+  }
 }
 
 #challengesContentSearch {

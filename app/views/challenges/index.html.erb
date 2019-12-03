@@ -19,12 +19,18 @@
     <% @challenges.each do |challenge| %>
       <div class="col-12 mb-2">
         <%= link_to challenge_path(challenge) do %>
-          <div class="category">
-            <h3><%= challenge.title %></h3>
-            <%= challenge.description %>
+          <div class="category justify-content-between">
+            <div class="category-text">
+              <h2><%= challenge.title %></h2>
+              <p><%= challenge.description %></p>
+            </div>
+            <img src="http://whitebikes.com/wp-content/uploads/sites/8/2018/03/bilderkomme-500x375.png" alt="">
           </div>
         <% end %>
       </div>
     <% end %>
+
   </div>
 </section>
+
+
