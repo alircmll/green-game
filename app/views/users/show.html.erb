@@ -26,27 +26,20 @@
 <section id="userContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
   <div id="myTodo" class="row ">
     <div class="col-12 mt-0">
-      <p class="h4">My sustainable lifestyle day</p>
+      <p class="h4">ToDo</p>
       <%# TODO LIST%>
       <ul id="toDo" class="d-flex flex-column-reverse todo-list list-group mt-3">
         <%# ITEMS %>
         <%#  Faire un Each pour display les taches et generer la li suivante %>
-        <li class="list-item">
-          <input id="box1" type="checkbox" />
-          <label for="box1" class="">Buy local fish</label>
-        </li>
-        <li class="list-item">
-          <input id="box3" type="checkbox" />
-          <label for="box3" class="">Take bike instead of car</label>
-        </li>
-        <li class="list-item">
-          <input id="box4" type="checkbox" />
-          <label for="box4" class="">Recycle plastic</label>
-        </li>
+        <% @party_challenges.each do |pc| %>
+          <li class="list-item">
+            <input id="box1" type="checkbox" />
+            <label for="box1" class=""><%= pc.challenge.title %></label>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
-  <hr>
   <div id="myChallenges" class="row">
     <div id="partyChallenges" class="container-fluid d-flex page-content flex-column bg-white">
       <div class="row">
