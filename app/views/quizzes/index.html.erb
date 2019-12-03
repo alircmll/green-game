@@ -1,5 +1,4 @@
-<div class="container">    
-
+<div class="container">
 
     <section id="challengesContent" class="container-fluid d-flex page-content flex-column bg-white">
         <div class="row ">
@@ -10,9 +9,9 @@
             </div>
         </div>
         <div class="row mt-4">
-        
+
             <% @quizzes.each do |quiz| %>
-              <!-- CARTE QUIZ -->                
+              <!-- CARTE QUIZ -->
               <div class="col-12 mb-2">
                 <%= link_to new_quiz_party_quiz_path(quiz.id) do %>
                 <div class="category">
@@ -21,7 +20,7 @@
                     - Points / question : <%= quiz.points_by_question %><br>
                     - Nombres de question : <%= quiz.questions.count %><br>
                     - Partie en cours : <%= ( PartyQuiz.find_by(user_id: current_user.id, quiz_id: quiz.id, done: false).nil? != true ) %>
-                    
+
                 </div>
                 <% end %>
               </div>

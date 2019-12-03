@@ -1,3 +1,5 @@
+require 'json'
+require 'open-uri'
 
 puts "Destroy all"
 
@@ -262,6 +264,22 @@ Option.create(title: "Close the door",is_right: false, question_id: question.id)
 Option.create(title: "Turn off the light",is_right: true, question_id: question.id)
 
 puts "Finished!"
+
+
+puts "Creating places..."
+
+
+url = 'https://opendata.bordeaux-metropole.fr/api/records/1.0/search/?dataset=dechetteries-en-temps-reel&facet=statut&facet=insee'
+dechettery_serialized = open(url).read
+dechettery = JSON.parse(dechettery_serialized)
+dechettery['records'].each do |elem|
+  Place.create(name: "#{ elem['fields']['nom']}", address: "#{ elem['fields']['adresse']}", status: "#{ elem['fields']['statut']}", accept: "#{ elem['fields']['acceptes']}")
+end
+
+# name = dechettery['records'][0]['fields']['nom']
+# address = dechettery['records'][0]['fields']['adresse']
+
+#  Place.create(name: name, address: address)
 
 puts "Seed DONE"
 
