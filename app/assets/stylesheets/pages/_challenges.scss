@@ -40,18 +40,18 @@
     min-width: 0;
     word-wrap: break-word;
     background: rgb(11,95,106);
-    background: linear-gradient(90deg, rgba(11,95,106,1) 0%, rgba(11,95,106,1) 43%, rgba(0,0,0,1) 100%);
-    background-clip: border-box;
+    background: rgb(11,95,106);
+    background: linear-gradient(90deg, rgba(11,95,106,1) 39%, rgba(7,45,41,1) 91%);
     padding: 24px 12px;
     transition: all ease 400ms;
     box-shadow: $boxshadow2;
-    margin-bottom: 16px;
+    margin-top: 20px;
     color: white;
 
     img {
-      height: 20%;
-      width: 20%;
-      padding-top: 90px;
+      height: 7vh;
+      width: 7vh;
+      margin-top: 53px;
     }
 
 
