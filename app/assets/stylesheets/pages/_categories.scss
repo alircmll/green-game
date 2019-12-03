@@ -30,6 +30,10 @@
     border-top-left-radius: $border-radius-lg;
     border-top-right-radius: $border-radius-lg;
 
+    .card, .category {
+        box-shadow: $boxshadow2;
+    }
+
     .card-columns {
         column-gap: $gap;
 
@@ -49,6 +53,8 @@
 
 
     }
+
+
 
     @media (max-width: 390px) {
         .card-columns {

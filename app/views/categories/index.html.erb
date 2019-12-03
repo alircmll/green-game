@@ -12,7 +12,7 @@
   </section>
 </section>
 <section id="categoriesContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
-  <div class="row m">
+  <div class="row">
     <% unless params[:search].present? %>
     <div class="col-12">
       <div class="pressbtn">
@@ -30,14 +30,16 @@
     </div>
     <% end %>
   </div>
-  <% if @tips.nil? != true %>
-    <% if @tips.count >= 0 %>
+
+  <% if @tips.nil? != true || @challenges.nil? != true %>
+
+    <% if @tips.count > 0 %>
     <div class="search-result">
       <div class="col-12 d-flex align-items-center justify-content-between ">
-        <p class="h4">Tips</p>
+        <p class="h4 mx-n3">Tips</p>
       </div>
       <% @tips.each do |tip| %>
-      <div class="card w-100 my-2">
+      <div class="card w-100 my-4">
         <div class="card-body mb-2">
           <div class="voteForTip  d-flex justify-content-end">
             <%= button_to tip_votes_path(tip), method: :post, class: "like-btn" do %>
@@ -49,22 +51,20 @@
           <p class="card-text"><%= tip.description %></p>
           <div class="bottom-tip-card d-flex justify-content-space-around align-items-center">
             <span><%= pluralize(tip.votes.count, 'likes') %></span>
-              <% if tip.user == current_user %>
-              <%= button_to tip_path(tip), method: :delete, class: "like-btn" do%>
-              <i class='fas fa-trash-alt'></i>
-              <% end %>
+            <% if tip.user == current_user %>
+            <%= button_to tip_path(tip), method: :delete, class: "like-btn" do%>
+            <i class='fas fa-trash-alt'></i>
+            <% end %>
             <% end %>
           </div>
         </div>
       </div>
       <% end %>
     </div>
-    <% end %>
-  <% end %>
-  <% if @challenges.nil? != true %>
-    <% if @challenges.count >= 0 %>
+    <% end %> <!-- Fin @tips.count > 0 -->
+    <% if @challenges.count > 0 %>
     <div class="col-12 d-flex align-items-center mt-3 justify-content-between ">
-      <p class="h4">Challenges</p>
+      <p class="h4 mx-n3">Challenges</p>
     </div>
     <div id="challengesContentSearch" class="row mt-2">
       <% @challenges.each do |challenge| %>
@@ -78,26 +78,29 @@
       </div>
       <% end %>
     </div>
-    <% end %>
-  <% end %>
-  <% if @categories.count >= 0 %>
+    <% end %> <!-- Fin @challenges.count > 0 -->
+
+  <% end %> <!-- Fin de @tips.nil? != true || @challenges.nil? != true -->
+
+  <%# Categories  %>
+  <% if @categories.count > 0 %>
   <div class="row">
     <div class="col-12 d-flex p-3 mt-n2 align-items-center justify-content-between ">
-      <p class="h4 mt-4">Categories</p>
+      <p class="h4 mt-3">Categories</p>
     </div>
     <div class="col-12">
       <div class="card-columns">
         <% @categories.each do |category| %>
-          <%= link_to category_path(category) do %>
-          <div class="card-homepage">
-            <%= image_tag(category.photo, class: "card-img") %>
-            <div class="title">
-              <h3><%= category.name %></h3>
-            </div>
-            <div class="info">
-            </div>
+        <%= link_to category_path(category) do %>
+        <div class="card-homepage">
+          <%= image_tag(category.photo, class: "card-img") %>
+          <div class="title">
+            <h3><%= category.name %></h3>
           </div>
-          <% end %>
+          <div class="info">
+          </div>
+        </div>
+        <% end %>
         <% end %>
       </div>
     </div>
