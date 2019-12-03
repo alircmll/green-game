@@ -1,5 +1,6 @@
 class Challenge < ApplicationRecord
   belongs_to :category
+  has_many :party_challenges, dependent: :destroy
   include PgSearch::Model
 
   pg_search_scope :search,

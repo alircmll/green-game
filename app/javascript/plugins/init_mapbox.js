@@ -12,10 +12,20 @@ const buildMap = () => {
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
+
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
-      new mapboxgl.Marker()
-      .setLngLat([ marker.lng, marker.lat ])
+    // Create a HTML element for your custom marker
+    const element = document.createElement('div');
+    element.className = 'marker';
+    element.style.backgroundImage = `url('${marker.image_url}')`;
+    element.style.backgroundSize = 'contain';
+    element.style.width = '45px';
+    element.style.height = '45px';
+
+    // Pass the element as an argument to the new marker
+    new mapboxgl.Marker(element)
+      .setLngLat([marker.lng, marker.lat])
       .setPopup(popup)
       .addTo(map);
   });
@@ -25,7 +35,19 @@ const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+
 };
+
+ const addGeoloc = (map) => {
+  mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+  map.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: {
+      enableHighAccuracy: true
+    },
+    trackUserLocation: true
+    })
+  );
+}
 
 const initMapbox = () => {
   if (mapElement) {
@@ -33,7 +55,13 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+    addGeoloc(map);
+
   }
 };
 
 export { initMapbox };
+
+
+
+
