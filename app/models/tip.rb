@@ -1,6 +1,7 @@
 class Tip < ApplicationRecord
   belongs_to :user
-  has_many :votes
+  belongs_to :category
+  has_many :votes, dependent: :destroy
   include PgSearch::Model
 
   pg_search_scope :search,
@@ -14,9 +15,7 @@ class Tip < ApplicationRecord
                       normalization: 2
                     }
                   }
-
-
-private
+  private
 
   def self.perform_search(keyword)
     if keyword.present?

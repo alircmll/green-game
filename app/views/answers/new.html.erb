@@ -24,22 +24,21 @@
                           :item_wrapper_class => 'btn btn-primary',
                           :collection_wrapper_tag => :div,
                           :collection_wrapper_class => 'options text-center'%>
-        </div>
-      </div>
-      <div class="back flipcontent">
-        <div class="wrapper">
-          <div class="question d-flex align-items-center justify-content-center">
-            <img id="badresult" src="<%= asset_path('bad.jpg') %>" alt="" >
-            <img id="goodresult" src="<%= asset_path('valid.jpg') %>" alt="" >
           </div>
-          <div class="options text-center">
+        </div>
+        <div class="back flipcontent">
+          <div class="wrapper">
+            <div class="question d-flex align-items-center justify-content-center">
+              <img id="badresult" src="<%= asset_path('bad.jpg') %>" alt="" >
+              <img id="goodresult" src="<%= asset_path('valid.jpg') %>" alt="" >
+            </div>
+            <div class="options text-center">
             <input type="hidden" id="goodOption" value=<%= @good_option %> />
             <% label_button = (@party_quiz.position_in_quiz+1==5) ? "Quiz terminé !" : "Question suivante" %>
             <%= f.submit label_button, class: "btn btn-primary" %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-  <% end %>  
-</div>
+    <% end %>
+  </div>

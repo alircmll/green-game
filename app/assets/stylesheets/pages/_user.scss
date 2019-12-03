@@ -1,14 +1,19 @@
 #user {
-    height: 360px;
+    height: 36vh;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -99;
+    z-index: 500;
+    background: linear-gradient(81.2deg, rgba(0, 0, 0, 0.49) -49.44%, rgba(96, 54, 94, 0.62) 82.85%), image-url("background/bg-tips.jpg");
+    background-position: center center;
+    background-size: cover;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
 
     #userStatus {
 
+
         .name {
-            margin-top: 10px;
             font-size: 1.2rem;
             font-weight: bold;
         }
@@ -20,10 +25,31 @@
     z-index: 2;
     margin-top: 36vh;
     padding: 2rem 2.5rem;
-    border-top-left-radius: $border-radius-lg;
-    border-top-right-radius: $border-radius-lg;
 
     p.h4 {
         font-weight: 500;
     }
+
+    #myTodo {
+        
+    }
 }
+
+/* Portrait */
+@media screen and (orientation:portrait) {
+    /* Portrait styles */
+
+
+    }
+    /* Landscape */
+    @media screen and (orientation:landscape) {
+    /* Landscape styles */
+
+    .verticaltext {
+        padding-left: 6rem;
+        min-height: 10px;
+    }
+    .verticaltext-content {
+        left: -26%;
+    }
+    }

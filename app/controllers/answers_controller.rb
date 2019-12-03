@@ -19,6 +19,7 @@ class AnswersController < ApplicationController
     @question = @party_quiz.quiz.questions[@party_quiz.position_in_quiz]
     
     # Récupération des valeurs des options possibles
+
     @options = [[@question.options.first.id, @question.options.first.title], [@question.options.last.id, @question.options.last.title]]
     
     # Récupération de l'option qui est la bonne réponse
@@ -28,8 +29,7 @@ class AnswersController < ApplicationController
     @answer = Answer.new
   end
 
-  def create
-    
+  def create    
     # Récupération de la partie en cours
     @party_quiz = PartyQuiz.find_by(id: params[:party_quiz_id])
 
@@ -84,5 +84,5 @@ private
   def answer_params
     params.require(:answer).permit(:option_id, :party_quiz_id)
   end
-
 end
+

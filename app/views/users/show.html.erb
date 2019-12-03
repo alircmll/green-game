@@ -1,10 +1,7 @@
-<%= render 'shared/sidebar' %>
-<section id="user" class="container-fluid d-flex flex-column bg-dark">
-  <button type="button" id="userMenuBtn" class="btn">
-    <%= image_tag 'menubar.png' %>
-  </button>
-  <section id="userStatus" class="row px-4 my-auto">
-    <div class="col-10 offset-1 d-flex align-items-center  justify-content-between">
+<section id="user" class="container-fluid d-flex flex-column bg-dark justify-content-center">
+  <%= render 'shared/topnav' %>
+  <section id="userStatus" class="row px-4">
+    <div class="col-10 offset-1  d-flex align-items-center  justify-content-between">
       <!-- Use any element to open the sidenav -->
       <%= cl_image_tag @user.photo, class: "avatar p-1" %>
       <p class= "name text-white"><%= @user.username.capitalize %></p>
@@ -14,46 +11,69 @@
       <span id="myLevel">Lvl. <%= @user.level %></span>
       <%# Changer le pourcentage en focntion de la progress bar  %>
       <span id="nextLevelIn"><%= @user.total_point %>%</span>
-  </div>
-  <div class="col-10 offset-1  ">
-    <%# PROGRESS BAR, Changer style pourcantage avec width et aria-valuenow %>
-
-    <div class="progress">
-      <div class="progress-bar bg-primary" role="progressbar" style="width: <%= @user.total_point %>%;"
+    </div>
+    <%# raise %>
+    <div class="col-10 offset-1  ">
+      <%# PROGRESS BAR, Changer style pourcantage avec width et aria-valuenow %>
+      <div class="progress">
+        <div class="progress-bar bg-primary" role="progressbar" style="width: <%= @user.total_point %>%;"
             aria-valuenow="<%= @user.total_point %>" aria-valuemin="0" aria-valuemax="100">
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 </section>
 <section id="userContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
   <div id="myTodo" class="row ">
-    <p class="h4">My sustainable lifestyle day</p>
-    <%# TODO LIST%>
-    <ul id="toDo" class="d-flex flex-column-reverse todo-list list-group">
-      <%# ITEMS %>
-      <%#  Faire un Each pour display les taches et generer la li suivante %>
-      <li class="list-item">
-        <input id="box1" type="checkbox" />
-        <label for="box1" class="">Buy local fish</label>
-      </li>
-      <li class="list-item">
-        <input id="box3" type="checkbox" />
-        <label for="box3" class="">Take bike instead of car</label>
-      </li>
-      <li class="list-item">
-        <input id="box4" type="checkbox" />
-        <label for="box4" class="">Recycle plastic</label>
-      </li>
-      <li class="list-item">
-        <input id="box5" type="checkbox" />
-        <label for="box5" class="">Eat cuttlefish</label>
-      </li>
-    </ul>
+    <div class="col-12 mt-0">
+      <p class="h4">My sustainable lifestyle day</p>
+      <%# TODO LIST%>
+      <ul id="toDo" class="d-flex flex-column-reverse todo-list list-group mt-3">
+        <%# ITEMS %>
+        <%#  Faire un Each pour display les taches et generer la li suivante %>
+        <li class="list-item">
+          <input id="box1" type="checkbox" />
+          <label for="box1" class="">Buy local fish</label>
+        </li>
+        <li class="list-item">
+          <input id="box3" type="checkbox" />
+          <label for="box3" class="">Take bike instead of car</label>
+        </li>
+        <li class="list-item">
+          <input id="box4" type="checkbox" />
+          <label for="box4" class="">Recycle plastic</label>
+        </li>
+      </ul>
+    </div>
   </div>
+  <hr>
   <div id="myChallenges" class="row">
-    <div class="col-12 d-flex p-0 align-items-center justify-content-between ">
-      <p class="h4">My Challenges</p>
+    <div id="partyChallenges" class="container-fluid d-flex page-content flex-column bg-white">
+      <div class="row">
+        <div class="col-12  col-md-12 col-lg-8 offset-lg-2">
+          <p class="h4">My Challenges</p>
+          <% @party_challenges.each do |pc| %>
+            <div class="blog-slider">
+              <div class="blog-slider__wrp swiper-wrapper">
+                <div class="blog-slider__item swiper-slide">
+                  <div class="blog-slider__img">
+                    <%= cl_image_tag pc.challenge.category.photo %>
+                  </div>
+                  <div class="blog-slider__content">
+                    <span class="blog-slider__code"><%= pc.challenge.duration %> jours</span>
+                    <div class="blog-slider__title"><%= pc.challenge.title %></div>
+                    <div class="blog-slider__text">
+                      <%= pc.challenge.description %>
+                      <%= pc.point %>
+                    </div>
+                    <%= link_to "Details", challenge_path(pc), class: "blog-slider__button" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
       <%#  Rajouter mon challenge en cours ici %>
       <small>View All</small>
     </div>

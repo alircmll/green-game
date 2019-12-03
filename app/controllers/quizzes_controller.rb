@@ -17,7 +17,5 @@ class QuizzesController < ApplicationController
     
     # récupération du dernier quiz et de son détail
     @last_party_quizzes = @party_quizzes.last
-
   end
-
 end

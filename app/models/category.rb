@@ -1,5 +1,8 @@
 class Category < ApplicationRecord
   has_many :challenges
+  has_many :tips
+  CATEGORY = ["transport", "Food", "DIY", "Energy", "No waste", "Nature connect"]
+
   include PgSearch::Model
   scope :sorted, -> { order(name: :asc) }
 
