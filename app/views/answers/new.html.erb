@@ -1,3 +1,5 @@
+<section id="challenges" class="container-fluid d-flex flex-column bg-dark">
+<%= render 'shared/topnav' %>
 <div class="flipcontainer">
   <h1 class="text-center">Quiz</h1>
   <p class="flipscore text-left"><%= "Score : #{@party_quiz.party_points}" %></p>
@@ -32,6 +34,8 @@
               <img id="badresult" src="<%= asset_path('bad.jpg') %>" alt="" >
               <img id="goodresult" src="<%= asset_path('valid.jpg') %>" alt="" >
             </div>
+            <p><%= @question.details %></p>
+            <a href="<%= @question.link %>" target="_blank">More informations...</a>
             <div class="options text-center">
             <input type="hidden" id="goodOption" value=<%= @good_option %> />
             <% label_button = (@party_quiz.position_in_quiz+1==5) ? "Quiz terminé !" : "Question suivante" %>
@@ -42,3 +46,4 @@
       </div>
     <% end %>
   </div>
+</section>
