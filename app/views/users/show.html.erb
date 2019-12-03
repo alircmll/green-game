@@ -1,7 +1,6 @@
 <section id="user" class="container-fluid d-flex flex-column bg-dark justify-content-center">
-<%= render 'shared/topnav' %>
+  <%= render 'shared/topnav' %>
   <section id="userStatus" class="row px-4">
-
     <div class="col-10 offset-1  d-flex align-items-center  justify-content-between">
       <!-- Use any element to open the sidenav -->
       <%= cl_image_tag @user.photo, class: "avatar p-1" %>
@@ -13,7 +12,6 @@
       <%# Changer le pourcentage en focntion de la progress bar  %>
       <span id="nextLevelIn"><%= @user.total_point %>%</span>
     </div>
-
     <%# raise %>
     <div class="col-10 offset-1  ">
       <%# PROGRESS BAR, Changer style pourcantage avec width et aria-valuenow %>
@@ -27,9 +25,8 @@
 </section>
 <section id="userContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
   <div id="myTodo" class="row ">
-  <div class="col-12 mt-0">
+    <div class="col-12 mt-0">
       <p class="h4">My sustainable lifestyle day</p>
-
       <%# TODO LIST%>
       <ul id="toDo" class="d-flex flex-column-reverse todo-list list-group mt-3">
         <%# ITEMS %>
@@ -52,28 +49,31 @@
   <hr>
   <div id="myChallenges" class="row">
     <div id="partyChallenges" class="container-fluid d-flex page-content flex-column bg-white">
-      <p class="h4">My Challenges</p>
-      <% @party_challenges.each do |pc| %>
-        <div class="blog-slider">
-          <div class="blog-slider__wrp swiper-wrapper">
-            <div class="blog-slider__item swiper-slide">
-              <div class="blog-slider__img">
-                <%= cl_image_tag pc.challenge.category.photo %>
-              </div>
-              <div class="blog-slider__content">
-                <span class="blog-slider__code"><%= pc.challenge.duration %> jours</span>
-                <div class="blog-slider__title"><%= pc.challenge.title %></div>
-                <div class="blog-slider__text">
-                  <%= pc.challenge.description %>
-                  <%= pc.point %>
+      <div class="row">
+        <div class="col-12  col-md-12 col-lg-8 offset-lg-2">
+          <p class="h4">My Challenges</p>
+          <% @party_challenges.each do |pc| %>
+            <div class="blog-slider">
+              <div class="blog-slider__wrp swiper-wrapper">
+                <div class="blog-slider__item swiper-slide">
+                  <div class="blog-slider__img">
+                    <%= cl_image_tag pc.challenge.category.photo %>
+                  </div>
+                  <div class="blog-slider__content">
+                    <span class="blog-slider__code"><%= pc.challenge.duration %> jours</span>
+                    <div class="blog-slider__title"><%= pc.challenge.title %></div>
+                    <div class="blog-slider__text">
+                      <%= pc.challenge.description %>
+                      <%= pc.point %>
+                    </div>
+                    <%= link_to "Details", challenge_path(pc), class: "blog-slider__button" %>
+                  </div>
                 </div>
-                <%= link_to "Details", challenge_path(pc), class: "blog-slider__button" %>
               </div>
             </div>
-          </div>
+          <% end %>
         </div>
-      <% end %>
-
+      </div>
       <%#  Rajouter mon challenge en cours ici %>
       <small>View All</small>
     </div>
