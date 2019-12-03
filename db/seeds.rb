@@ -273,7 +273,7 @@ url = 'https://opendata.bordeaux-metropole.fr/api/records/1.0/search/?dataset=de
 dechettery_serialized = open(url).read
 dechettery = JSON.parse(dechettery_serialized)
 dechettery['records'].each do |elem|
-  Place.create(name: "#{ elem['fields']['nom']}", address: "#{ elem['fields']['adresse']}")
+  Place.create(name: "#{ elem['fields']['nom']}", address: "#{ elem['fields']['adresse']}", status: "#{ elem['fields']['statut']}", accept: "#{ elem['fields']['acceptes']}")
 end
 
 # name = dechettery['records'][0]['fields']['nom']

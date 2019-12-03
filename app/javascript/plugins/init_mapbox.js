@@ -38,8 +38,19 @@ const fitMapToMarkers = (map, markers) => {
 
 };
 
+
+const initMapbox = () => {
+  if (mapElement) {
+    const map = buildMap();
+    const markers = JSON.parse(mapElement.dataset.markers);
+    addMarkersToMap(map, markers);
+    fitMapToMarkers(map, markers);
+    addGeoloc(map);
+  }
+};
+
  const addGeoloc = (map) => {
-  mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+  // mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   map.addControl(new mapboxgl.GeolocateControl({
     positionOptions: {
       enableHighAccuracy: true
@@ -49,16 +60,6 @@ const fitMapToMarkers = (map, markers) => {
   );
 }
 
-const initMapbox = () => {
-  if (mapElement) {
-    const map = buildMap();
-    const markers = JSON.parse(mapElement.dataset.markers);
-    addMarkersToMap(map, markers);
-    fitMapToMarkers(map, markers);
-    addGeoloc(map);
-
-  }
-};
 
 export { initMapbox };
 
