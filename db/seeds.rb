@@ -268,15 +268,16 @@ Option.create(title: "19°C",is_right: true, question_id: question.id)
 Option.create(title: "22°C",is_right: false, question_id: question.id)
 # 4
 title = "Quand je quitte la maison je pense à :"
-details = "ecology and economis go hand in hand"
+details = "L'écologie et l'économie vont de pair."
 link = "https://particuliers.engie.fr/economies-energie.html"
 question = Question.create(title: title,details: details,link: link, quiz_id: quiz1.id)
 Option.create(title: "Fermer la porte",is_right: false, question_id: question.id)
 Option.create(title: "Eteindre les lumières",is_right: true, question_id: question.id)
 
 
+
 # Deuxième Quiz - Energie Renouvelable
-quiz2 = Quiz.create(title: 'Energie renouvelable', description: '', category_id: energy.id, points_by_question: 5)
+quiz2 = Quiz.create(title: 'Energie renouvelable', description: 'Quiz sur les énergies renouvelables', category_id: energy.id, points_by_question: 5)
 # 1
 title = "Qu'appelle-t-on énergie renouvelable ?"
 details = "Les énergies renouvelables sont des sources d'énergie dont le renouvellement naturel est assez rapide pour qu'elles puissent être considérées comme inépuisables à l'échelle du temps humain.."
@@ -340,6 +341,61 @@ link = "https://www.futura-sciences.com/planete/dossiers/developpement-durable-c
 question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
 Option.create(title: "Louis Lumière",is_right: false, question_id: question.id)
 Option.create(title: "Alexandre-Edmond Becquerel",is_right: true, question_id: question.id)
+
+
+
+# Troisième Quiz - Transport
+quiz3 = Quiz.create(title: 'Transport', description: 'Quiz sur les transports', category_id: transport.id, points_by_question: 7)
+# 1
+title = "Quelle est la surconsommation de carburant lors du premier kilomètre parcouru par votre véhicule ?"
+details = "Sachez également que cette surconsommation est de 25 % lors du deuxième kilomètre. Par conséquent, il est préférable de prendre votre vélo ou aller à pied pour effectuer un déplacement inférieur à 2 km : c’est bon pour le porte-monnaie, pour la santé et pour l’environnement."
+link = "#"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
+Option.create(title: "+ 50%",is_right: true, question_id: question.id)
+Option.create(title: "+ 20%",is_right: false, question_id: question.id)
+# 2
+title = "Parmi ces deux polluants, cherchez l’intrus :"
+details = "L’acide sulfurique (HCl) est l’intrus car il n’est pas présent et rejeté dans les gaz d’échappement des véhicules. Il provient de l’industrie et de l’incinération des déchets en particulier."
+link = "https://www.lefigaro.fr/automobile/2008/10/13/03001-20081013ARTFIG00373-ce-que-recrache-un-pot-d-echappement-.php"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
+Option.create(title: "L'acide sulfurique (HCl)",is_right: true, question_id: question.id)
+Option.create(title: "Le dioxyde de carbone (CO2)",is_right: false, question_id: question.id)
+#3
+title = "Si vous vous trouvez à l’arrêt avec votre véhicule seulement pendant 2 minutes, est-il vraiment utile d’arrêter votre moteur ?"
+details = "Au-delà de 10 secondes, votre véhicule consomme plus de carburant au ralenti que si vous l’arrêtez et le redémarrez."
+link = "https://permis-de-conduire.ooreka.fr/astuce/voir/301697/couper-son-moteur-a-l-arret-vraiment-utile"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
+Option.create(title: "Oui",is_right: true, question_id: question.id)
+Option.create(title: "Non",is_right: false, question_id: question.id)
+# 4
+title = "D’après vous, pour des marchandises, quel est le mode de transport le plus économe en carburant ?"
+details = "La péniche est le mode déplacement le plus économique. Avec 5 litres de carburant, elle transporte 1 tonne de marchandises sur 500 km alors que le train le fait sur 330 km et un camion sur seulement 80 km !"
+link = "http://www.cnba-transportfluvial.fr/acces-particuliers-cnba/presentation-generale/transport-fluvial"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
+Option.create(title: "Le train",is_right: false, question_id: question.id)
+Option.create(title: "La péniche",is_right: true, question_id: question.id)
+# 5
+title = "Si vous transportez des objets volumineux pour partir en vacances, il est préférable :"
+details = "Il est préférable de transporter les objets volumineux dans une remorque que sur une galerie car la prise au vent de votre véhicule est plus limitée dans ce cas et donc la consommation de carburant et la pollution engendrée sont diminuées."
+link = "https://www.lelynx.fr/assurance-auto/vehicule/autre/caravane-remorque/coffre-toit/"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
+Option.create(title: "De les installer sur la galerie de votre véhicule",is_right: false, question_id: question.id)
+Option.create(title: "De les tracter dans une remorque",is_right: true, question_id: question.id)
+# 6
+title = "Parmi ces deux propositions, laquelle est synonyme d’économie de carburant et donc de moindre pollution ?"
+details = "La conduite en surrégime, qui revient bien souvent à pousser les rapports sur un véhicule, sollicite le moteur plus qu’à la normale et réduit sa durée de vie tout en augmentant la consommation d’environ 20 %."
+link = "https://www.permisecole.com/conduite/conducteur/eco-conduite#/"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
+Option.create(title: "Une conduite en surrégime",is_right: false, question_id: question.id)
+Option.create(title: "Des accélérations modérées",is_right: true, question_id: question.id)
+#7
+title = "Sur une année, la surconsommation moyenne en carburant des véhicules climatisés par rapport à ceux qui ne le sont pas est de :"
+details = "Sachez que votre véhicule, s’il est climatisé, consomme à l’année environ 5 % de plus que le même modèle non climatisé. A titre indicatif, en ville et en moyenne, un véhicule essence consomme 9 l/100 km sans clim et 11,8 l/100 km avec clim ; un véhicule diesel consomme 7 l/100 km sans clim et 9,5 l/100 km avec clim. La climatisation proposée parfois pour 1 € de plus à l’achat des véhicules peut donc s’avérer une option beaucoup plus coûteuse à la longue."
+link = "https://www.legipermis.com/blog/2015/08/20/climatisation-consommation-essence-astuces-conseils/"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
+Option.create(title: "5%",is_right: true, question_id: question.id)
+Option.create(title: "1%",is_right: false, question_id: question.id)
+
 
 puts "Finished!"
 
