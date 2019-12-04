@@ -1,0 +1,27 @@
+<section id="challenges" class="container-fluid d-flex flex-column bg-dark">
+    <%= render 'shared/topnav' %>
+</section>
+<section id="challengesContent" class="container-fluid d-flex page-content flex-column bg-white">
+    <h2> last quiz</h2>
+    <!-- Affichage de l'entête de la dernière partie -->
+    <%= @last_party_quizzes.quiz.title %> | 
+    <%= @last_party_quizzes.quiz.description %> | 
+    <%= @last_party_quizzes.updated_at.strftime('%d-%m-%Y %H:%M') %> |
+     score : <%= @last_party_quizzes.party_points %>
+    <hr>
+    <!-- Affichage du détail de la partie -->
+    <% @questions.each do |question|  %>
+        <%= question.title %><br>
+        <%= question.options.first.title %> | <%= question.options.last.title %> <br>
+        <hr>
+    <% end %>
+
+    <!-- Affichage des dernières partie -->
+    <h2> historic </h2>
+    <% @party_quizzes.each do |party| %>
+        <%= party.updated_at.strftime('%d-%m-%Y %H:%M') %> | <%= party.quiz.title %> | score <%= party.party_points %> <br>
+
+    <% end %>
+  
+
+    </section>
