@@ -1,12 +1,19 @@
-<section id="tipsContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
 
-  <div class="container">
-    <div class="cta-over-section">
-      <%= link_to "Add your  tip", new_tip_path, class: "btn btn-block btn-primary " %>
+
+<section id="tips" class="container-fluid d-flex flex-column bg-dark">
+<%= render 'shared/topnav' %>
+  <section id="tipsTitle" class="row px-4 my-auto">
+    <div class="name col-10 offset-1 text-center">
+     <h4 class="card-title mb-0 mt-5"><%= @tip.title %></h4>
     </div>
+  </section>
+</section>
+<section id="tipsContent" class=" container-fluid h-100 d-flex page-content flex-column bg-white">
+  <div class="container">
+
         <div class="card my-4 scrollh">
           <div class="card-body ">
-            <h5 class="card-title mb-0"><%= @tip.title %></h5>
+
             <small class="card-subtitle mt-n4 text-muted">Posted by: <%= @tip.user.username %></small>
             <p class="card-text mt-4"><%= @tip.description %></p>
             <div class="bottom-tip-card d-flex justify-content-space-between align-items-center ">
@@ -26,10 +33,9 @@
         </div>
       <div class="tipBtnBack d-flex justify-content-center">
         <div class="row">
-           <%= link_to "<< Back", category_tips_path(@tip.category_id), class: "btn btn-block btn-primary" %>
+           <%= link_to "<< Back", category_tips_path(@tip.category_id), class: "btn btn-block btn-primary mb-5" %>
 
           </div>
         </div>
       </div>
-  </div>
 </section>
