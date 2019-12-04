@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_04_100226) do
+
+ActiveRecord::Schema.define(version: 2019_12_03_151809) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_12_04_100226) do
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.index ["category_id"], name: "index_challenges_on_category_id"
   end
 
@@ -94,6 +97,8 @@ ActiveRecord::Schema.define(version: 2019_12_04_100226) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.string "status"
+    t.text "accept"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -101,6 +106,8 @@ ActiveRecord::Schema.define(version: 2019_12_04_100226) do
     t.bigint "quiz_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "details"
+    t.string "link"
     t.index ["quiz_id"], name: "index_questions_on_quiz_id"
   end
 

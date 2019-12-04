@@ -26,11 +26,14 @@
 <section id="userContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
   <div id="myTodo" class="row ">
     <div class="col-12 mt-0">
-      <p class="h4 mb-3">TODO</p>
+
+      <p class="h4">Ma journée écologiquement durable</p>
+
       <%# TODO LIST%>
       <ul id="toDo" class="d-flex flex-column-reverse todo-list list-group mt-3">
         <%# ITEMS %>
         <%#  Faire un Each pour display les taches et generer la li suivante %>
+
         <!-- Mettre le form ici-->
         <%# Rajouter un message si tt les challenges du jours sont done   %>
           <% @party_challenges.each do |pc| %>
@@ -52,7 +55,9 @@
     <div id="partyChallenges" class="container-fluid d-flex page-content flex-column bg-white">
       <div class="row">
         <div class="col-12  col-md-12 col-lg-8 offset-lg-2">
-          <p class="h4 mb-3">My Challenges</p>
+
+          <p class="h4">Mes Challenges</p>
+
           <% @party_challenges.each do |pc| %>
             <div class="blog-slider mb-5">
               <div class="blog-slider__wrp swiper-wrapper">
@@ -76,7 +81,7 @@
         </div>
       </div>
       <%#  Rajouter mon challenge en cours ici %>
-      <small>View All</small>
+      <small>Tout voir</small>
     </div>
     <%# Je place mes challenges %>
   </div>

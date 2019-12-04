@@ -1,13 +1,15 @@
+require 'json'
+require 'open-uri'
 
 puts "Destroy all"
 
 Challenge.destroy_all
 Tip.destroy_all
-Category.destroy_all
 Answer.destroy_all
 Option.destroy_all
 Question.destroy_all
 Quiz.destroy_all
+Category.destroy_all
 User.destroy_all
 
 puts "Creating users..."
@@ -178,8 +180,6 @@ Tip.create!(tips)
 
 puts "Finished!"
 
-
-
 puts "Creating Challenges..."
 
 
@@ -190,7 +190,8 @@ challenges = [
     step_number:      7,
     points_by_step:   15,
     description:      "Changez vos déplacements en seulement 7 jours",
-    category:         transport
+    category:         transport,
+    photo:            "transport.png"
   },
   {
     title:            "Manger local et responsable",
@@ -198,7 +199,8 @@ challenges = [
     step_number:      10,
     points_by_step:   20,
     description:      "Changez vos habitudes alimentaires en deux semaines",
-    category:         food
+    category:         food,
+    photo:            "food.png"
   },
   {
     title:            "Bricoler avec du recyclé",
@@ -206,7 +208,8 @@ challenges = [
     step_number:      5,
     points_by_step:   10,
     description:      "Le DIY : Do It Yourself",
-    category:         diy
+    category:         diy,
+    photo:            "diy.png"
   },
   {
     title:            "Les énergies renouvelables",
@@ -214,7 +217,8 @@ challenges = [
     step_number:      20,
     points_by_step:   50,
     description:      "Appréhendez les énergies renouvelables pendant 100 jours",
-    category:         energy
+    category:         energy,
+    photo:            "energie-renouvelable.png"
   },
   {
     title:            "Triez vos déchets",
@@ -222,7 +226,8 @@ challenges = [
     step_number:      7,
     points_by_step:   10,
     description:      "Faites du tri de vos déchets une habitude",
-    category:         no_waste
+    category:         no_waste,
+    photo:            "sortwaste.png"
   },
   {
     title:            "Reconnectez vous à l'essentiel",
@@ -230,7 +235,8 @@ challenges = [
     step_number:      9,
     points_by_step:   15,
     description:      "Déconnecter pour mieux se reconnecter à l'essentiel : Dame nature",
-    category:         nature_connect
+    category:         nature_connect,
+    photo:            "damenature.png"
   }
 ]
 
@@ -241,27 +247,50 @@ Challenge.create!(challenges)
 quiz = Quiz.create(title: 'EcoloQuiz',description: 'The best quiz',category_id: no_waste.id, points_by_question: 5)
 # 1
 title = "In which year did the \"Grenelle\" Environment Forum take place in France ?"
-question = Question.create(title: title, quiz_id: quiz.id)
+details = "Two laws known as \"Grenelle I\" and \"Grenelle II\" were adopted in 2009 and 2010, following these major consultations."
+link = "https://www.connaissancedesenergies.org/fiche-pedagogique/grenelle-environnement"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz.id)
 Option.create(title: "2007",is_right: true, question_id: question.id)
 Option.create(title: "2017",is_right: false, question_id: question.id)
 # 2
 title = "In which city is the oldest French nuclear power station still in operation ?"
-question = Question.create(title: title, quiz_id: quiz.id)
+details = "The Fessenheim nuclear power plant is the first nuclear power plant in commercial operation since 1978"
+link = "https://fr.wikipedia.org/wiki/Centrale_nucl%C3%A9aire_de_Fessenheim"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz.id)
 Option.create(title: "Fessenheim",is_right: true, question_id: question.id)
 Option.create(title: "Gravelines",is_right: false, question_id: question.id)
 #4
-title = "
-What is the ideal temperature in a living room ?"
-question = Question.create(title: title, quiz_id: quiz.id)
+title = "What is the ideal temperature in a living room ?"
+details = "For rooms, the ideal temperature is between 16 and 17 ° C. Under the duvet, heating is not an obligation and too much heat can affect the quality of sleep."
+link = "https://www.lenergietoutcompris.fr/actualites-et-informations/economies-energie/realisez-des-economies-d-energie-en-ajustant-la-temperature-de-chacune-des-piece-de-votre-maison-47487"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz.id)
 Option.create(title: "19",is_right: true, question_id: question.id)
 Option.create(title: "22",is_right: false, question_id: question.id)
 # 5
 title = "When I leave a room of the house I think about :"
-question = Question.create(title: title, quiz_id: quiz.id)
+details = "ecology and economis go hand in hand"
+link = "https://particuliers.engie.fr/economies-energie.html"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz.id)
 Option.create(title: "Close the door",is_right: false, question_id: question.id)
 Option.create(title: "Turn off the light",is_right: true, question_id: question.id)
 
 puts "Finished!"
+
+
+puts "Creating places..."
+
+
+url = 'https://opendata.bordeaux-metropole.fr/api/records/1.0/search/?dataset=dechetteries-en-temps-reel&facet=statut&facet=insee'
+dechettery_serialized = open(url).read
+dechettery = JSON.parse(dechettery_serialized)
+dechettery['records'].each do |elem|
+  Place.create(name: "#{ elem['fields']['nom']}", address: "#{ elem['fields']['adresse']}", status: "#{ elem['fields']['statut']}", accept: "#{ elem['fields']['acceptes']}")
+end
+
+# name = dechettery['records'][0]['fields']['nom']
+# address = dechettery['records'][0]['fields']['adresse']
+
+#  Place.create(name: name, address: address)
 
 puts "Seed DONE"
 

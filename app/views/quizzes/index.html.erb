@@ -1,32 +1,44 @@
-<div class="container">    
-
-
-    <section id="challengesContent" class="container-fluid d-flex page-content flex-column bg-white">
-        <div class="row ">
-            <div class="col-12">
-            <small>
-                Quizzes
-            </small>
-            </div>
+<section id="challenges" class="container-fluid d-flex flex-column bg-dark">
+    <%= render 'shared/topnav' %>
+  <section id="challengesTitle" class="row px-4 my-auto">
+    <div class=" name col-10 offset-1 text-center">
+      <h3 class=" text-white  text-uppercase ">Quizzes</span>
+    </div>
+  </section>
+</section>
+<section id="quizzesContent" class="container-fluid d-flex page-content flex-column bg-white">
+    <div class="row ">
+        <div class="col-12 text-center">
+            Testez vos connaissances
         </div>
-        <div class="row mt-4">
-        
+    </div>
+    <div class="row mt-4">
             <% @quizzes.each do |quiz| %>
-              <!-- CARTE QUIZ -->                
-              <div class="col-12 mb-2">
-                <%= link_to new_quiz_party_quiz_path(quiz.id) do %>
-                <div class="category">
-                    <h3><%= quiz.title %></h3>
-                    <%= quiz.description %><br>
-                    - Points / question : <%= quiz.points_by_question %><br>
-                    - Nombres de question : <%= quiz.questions.count %><br>
-                    - Partie en cours : <%= ( PartyQuiz.find_by(user_id: current_user.id, quiz_id: quiz.id, done: false).nil? != true ) %>
-                    
+            <!-- CARTE QUIZ -->
+        <div class="col-12 mb-2">
+            <div id="reward" class="card p-2">
+                <div class="d-flex justify-content-around align-items-center  text-center">
+                    <h4><%= quiz.title %></h4>
+                    <p><%= image_tag('star (2).svg') %> <small><%= quiz.points_by_question %> pts / Question </small> </p>
                 </div>
-                <% end %>
-              </div>
+                <div class="d-flex justify-content-around align-items-center  text-center">
+                    <%= quiz.description %>
+                </div>
+                <div class="col-12">
+                    <div class="pressbtnquiz">
+                        <%= link_to new_quiz_party_quiz_path(quiz.id), class: "" do %>
+                            <h4 class=" m-0 p-0">Participer <i class="fas fa-chevron-circle-right"></i></h4>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-around align-items-center  text-right">
+                    <small>
+                        Nombre de questions : <%= quiz.questions.count %>
+                    </small>
+                </div>
+            </div>
             <% end %>
         </div>
-    </section>
+    </div>
+</section>
 
-</div>

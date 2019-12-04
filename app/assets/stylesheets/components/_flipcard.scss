@@ -47,6 +47,13 @@
     flex-grow: 1;
   }
 
+  .details {
+    padding: 5px;
+    color: $primary-dark;
+    font-size: 15px;
+    flex-grow: 1;
+  }
+
   .options {
     flex-grow: 1;
   }
@@ -83,8 +90,8 @@
     }
 
     img {
-      width: 120px;
-      height: 120px;
+      width: 100px;
+      height: 100px;
     }
   }
 
