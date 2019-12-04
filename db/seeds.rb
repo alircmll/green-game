@@ -277,7 +277,7 @@ Option.create(title: "Eteindre les lumières",is_right: true, question_id: quest
 
 
 # Deuxième Quiz - Energie Renouvelable
-quiz2 = Quiz.create(title: 'Energie renouvelable', description: 'Quiz sur les énergies renouvelables', category_id: energy.id, points_by_question: 5)
+quiz2 = Quiz.create(title: 'Energie', description: 'Quiz sur les énergies renouvelables', category_id: energy.id, points_by_question: 5)
 # 1
 title = "Qu'appelle-t-on énergie renouvelable ?"
 details = "Les énergies renouvelables sont des sources d'énergie dont le renouvellement naturel est assez rapide pour qu'elles puissent être considérées comme inépuisables à l'échelle du temps humain.."
