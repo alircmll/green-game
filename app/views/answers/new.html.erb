@@ -45,7 +45,7 @@
               <a href="<%= @question.link %>" target="_blank">More informations...</a>
             </div>
             <div class="options text-center">
-              <% label_button = (@party_quiz.position_in_quiz+1==5) ? "Done !" : "Next" %>
+              <% label_button = (@party_quiz.position_in_quiz+1 == @party_quiz.quiz.questions.count) ? "Done !" : "Next" %>
               <input type="hidden" id="goodOption" value=<%= @good_option %> />
               <%= f.submit label_button, class: "btn btn-primary" %>
             </div>

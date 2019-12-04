@@ -12,24 +12,24 @@
             <!-- CARTE QUIZ -->                
         <div class="col-12 mb-2">
             <div id="reward" class="card p-2">
-                <div class="d-flex justify-content-around align-items-center my-2 text-center">
+                <div class="d-flex justify-content-around align-items-center  text-center">
                     <h4><%= quiz.title %></h4>
                     <p><%= image_tag('star (2).svg') %> <small><%= quiz.points_by_question %> pts / Qu. </small> </p>
                 </div>
-                <div class="d-flex justify-content-around align-items-center my-2 text-center">
+                <div class="d-flex justify-content-around align-items-center  text-center">
                     <%= quiz.description %>                    
-                </div>
-                <div class="d-flex justify-content-around align-items-center my-2 text-right">
-                    <small>
-                        Nb Questions : <%= quiz.questions.count %>
-                    </small>
-                </div>
+                </div>                
                 <div class="col-12">
                     <div class="pressbtn">
                         <%= link_to new_quiz_party_quiz_path(quiz.id), class: "" do %>
                             <h4 class=" m-0 p-0">Participate</h4>
                         <% end %>
                     </div>
+                </div>
+                <div class="d-flex justify-content-around align-items-center  text-right">
+                    <small>
+                        Nb Questions : <%= quiz.questions.count %>
+                    </small>
                 </div>
             </div>
             <% end %>
