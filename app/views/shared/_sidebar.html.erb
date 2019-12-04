@@ -3,7 +3,7 @@
   <div class="blur"></div>
   <div class="row">
     <div class="col-10 offset-1 d-flex align-items-center mt-n4 justify-content-between">
-      <p class="h4 text-white">My Profil</p>
+      <p class="h4 text-white">Mon Profil</p>
       <a id="closeUserBtn" href="javascript:void(0)" class="closebtn mt-n3 text-teal">&times;</a>
     </div>
   </div>
@@ -19,8 +19,8 @@
     <div class="col-10 offset-1 pt-2">
       <!-- MENU TAB -->
       <nav class="nav nav-tabs" id="myTab" role="tablist">
-        <a class="nav-item nav-link active d-flex flex-column justify-content-center align-items-center" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-sliders-h"></i><small> Setting</small></a>
-        <a class="nav-item nav-link d-flex flex-column justify-content-center align-items-center" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="fas fa-user-edit"></i><small>Profile</small></a>
+        <a class="nav-item nav-link active d-flex flex-column justify-content-center align-items-center" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-sliders-h"></i><small> Paramètre</small></a>
+        <a class="nav-item nav-link d-flex flex-column justify-content-center align-items-center" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="fas fa-user-edit"></i><small>Profil</small></a>
       </nav>
       <!-- TAB CONTENT -->
       <div class="tab-content" id="nav-tabContent">
@@ -29,7 +29,7 @@
             <div class="col-12 text-center">
             <%# LOGOUT  %>
               <%= link_to destroy_user_session_path, :method => :delete, class: " btn btn-labeled btn-primary btn-block d-flex justify-content-between align-items-center p-3 mt-4" do %>
-                <p class="m-0 p-0">Logout</p> <i class="fas fa-sign-out-alt"></i>
+                <p class="m-0 p-0">Se déconnecter</p> <i class="fas fa-sign-out-alt"></i>
               <% end %>
             </div>
           </div>
@@ -44,7 +44,7 @@
 
             </div>
             <div class="form-actions">
-              <%= f.button :submit, "Update", class: "btn btn-primary btn-block" %>
+              <%= f.button :submit, "Mettre à jour", class: "btn btn-primary btn-block" %>
             </div>
           <% end %>
         </div>

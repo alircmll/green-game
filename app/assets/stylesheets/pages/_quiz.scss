@@ -30,3 +30,45 @@
         font-weight: 500;
     }
 }
+
+#quizzesContent {
+  z-index: 2;
+  margin-top: 30vh;
+  padding: 2rem 2.5rem ;
+  border-top-left-radius: $border-radius-lg;
+  border-top-right-radius: $border-radius-lg;
+
+  a {
+    text-decoration: none;
+  }
+
+  .category {
+    border-radius: $border-radius;
+    display: flex;
+    // -webkit-box-orient: vertical;
+    // -webkit-box-direction: normal;
+    // flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: rgb(11,95,106);
+    background: rgb(11,95,106);
+    background: linear-gradient(90deg, rgba(11,95,106,1) 39%, rgba(7,45,41,1) 91%);
+    padding: 24px 12px;
+    transition: all ease 400ms;
+    box-shadow: $boxshadow2;
+    margin-top: 20px;
+    color: white;
+
+    img {
+      height: 7vh;
+      width: 7vh;
+      margin-top: 53px;
+    }
+
+
+    &:hover, &:focus {
+        background-color: $primary-dark;
+        transition: all ease 400ms;
+    }
+  }
+}

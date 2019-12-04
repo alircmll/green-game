@@ -20,9 +20,11 @@
 
 }
 
+// Page Challenges
+
 #challengesContent {
   z-index: 2;
-  margin-top: 10vh;
+  margin-top: 30vh;
   padding: 2rem 2.5rem ;
   border-top-left-radius: $border-radius-lg;
   border-top-right-radius: $border-radius-lg;
@@ -115,8 +117,5 @@
             background-color: $primary-dark;
             transition: all ease 400ms;
         }
-
-
     }
-
 }
