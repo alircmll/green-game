@@ -308,7 +308,7 @@ question = Question.create(title: title,details: details,link: link, quiz_id: qu
 Option.create(title: "Non",is_right: false, question_id: question.id)
 Option.create(title: "Oui",is_right: true, question_id: question.id)
 # 5
-title = "Les cellules photovoltaïques qui transforment le rayonnement lumineux en électricité sont composées de :"
+title = "Les cellules photovoltaïques sont composées de :"
 details = "Le silicium est un matériau produit par l'industrie métallurgique à partir de sable ou de quartz, riches en silice."
 link = "https://www.picbleu.fr/page/les-panneaux-solaires-photovoltaiques-le-silicium#Qu'est-ce%20que%20le%20silicium%20?"
 question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
@@ -348,8 +348,8 @@ Option.create(title: "Alexandre-Edmond Becquerel",is_right: true, question_id: q
 # Troisième Quiz - Transport
 quiz3 = Quiz.create(title: 'Transport', description: 'Quiz sur les transports', category_id: transport.id, points_by_question: 7)
 # 1
-title = "Quelle est la surconsommation de carburant lors du premier kilomètre parcouru par votre véhicule ?"
-details = "Sachez également que cette surconsommation est de 25 % lors du deuxième kilomètre. Par conséquent, il est préférable de prendre votre vélo ou aller à pied pour effectuer un déplacement inférieur à 2 km : c’est bon pour le porte-monnaie, pour la santé et pour l’environnement."
+title = "En voiture, quelle est la surconsommation de carburant lors du premier kilomètre parcouru ?"
+details = "Sachez également que cette surconsommation est de 25 % lors du deuxième kilomètre."
 link = "#"
 question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
 Option.create(title: "+ 50%",is_right: true, question_id: question.id)
@@ -362,7 +362,7 @@ question = Question.create(title: title,details: details,link: link, quiz_id: qu
 Option.create(title: "L'acide sulfurique (HCl)",is_right: true, question_id: question.id)
 Option.create(title: "Le dioxyde de carbone (CO2)",is_right: false, question_id: question.id)
 #3
-title = "Si vous vous trouvez à l’arrêt avec votre véhicule seulement pendant 2 minutes, est-il vraiment utile d’arrêter votre moteur ?"
+title = "Est-il vraiment utile d’arrêter votre moteur si vous vous arrêtez pendant 2 minutes ?"
 details = "Au-delà de 10 secondes, votre véhicule consomme plus de carburant au ralenti que si vous l’arrêtez et le redémarrez."
 link = "https://permis-de-conduire.ooreka.fr/astuce/voir/301697/couper-son-moteur-a-l-arret-vraiment-utile"
 question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
@@ -390,7 +390,7 @@ question = Question.create(title: title,details: details,link: link, quiz_id: qu
 Option.create(title: "Une conduite en surrégime",is_right: false, question_id: question.id)
 Option.create(title: "Des accélérations modérées",is_right: true, question_id: question.id)
 #7
-title = "Sur une année, la surconsommation moyenne en carburant des véhicules climatisés par rapport à ceux qui ne le sont pas est de :"
+title = "Sur une année, la surconsommation moyenne en carburant des véhicules climatisés est de :"
 details = "Sachez que votre véhicule, s’il est climatisé, consomme à l’année environ \"5%\" de plus que le même modèle non climatisé."
 link = "https://www.legipermis.com/blog/2015/08/20/climatisation-consommation-essence-astuces-conseils/"
 question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
