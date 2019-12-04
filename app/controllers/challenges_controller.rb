@@ -1,10 +1,12 @@
 class ChallengesController < ApplicationController
   def index
+    
     if params[:cat].present?
-      @challenges = Challenge.all
+      @challenges = Challenge.where(category_id: params[:cat].to_i)
     else
-      @challenges = Challenge.find_by(category_id: params[:cat])
-    end    
+      @challenges = Challenge.all
+    end
+    
   end
 
   def show
