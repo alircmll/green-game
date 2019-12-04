@@ -25,7 +25,9 @@
                 <h2><%= challenge.title %></h2>
                 <p><%= challenge.description %></p>
               </div>
-              <%= image_tag challenge.photo %>
+              <div class="d-flex align-items-end">
+                <%= image_tag challenge.photo %>
+              </div>
             </div>
           <% end %>
         </div>
