@@ -8,7 +8,7 @@
 </section>
 <section id="quizContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
   <div class="flipcontainer">
-    <p class="flipscore text-center"><%= "Your score : #{@party_quiz.party_points}" %></p>
+    <p class="flipscore text-center"><%= "Votre score : #{@party_quiz.party_points}" %></p>
     <%= simple_form_for [@party_quiz, @answer] do |f| %>
       <div class="flipcard">
         <div class="front flipcontent">
@@ -42,7 +42,7 @@
               <%= @question.details %>
             </div>
             <div class="details d-flex align-items-center">
-              <a href="<%= @question.link %>" target="_blank">More informations...</a>
+              <a href="<%= @question.link %>" target="_blank">En savoir plus...</a>
             </div>
             <div class="options text-center">
               <% label_button = (@party_quiz.position_in_quiz+1 == @party_quiz.quiz.questions.count) ? "Done !" : "Next" %>
