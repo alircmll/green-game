@@ -30,6 +30,10 @@
     border-top-left-radius: $border-radius-lg;
     border-top-right-radius: $border-radius-lg;
 
+    h1 {
+      font-size: 4vh;
+    }
+
     .card, .category {
         box-shadow: $boxshadow2;
     }
