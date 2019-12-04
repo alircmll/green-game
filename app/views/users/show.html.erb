@@ -38,9 +38,9 @@
         <%# Rajouter un message si tt les challenges du jours sont done   %>
           <% @party_challenges.each do |pc| %>
             <% if  (pc.updated_at.day != Time.now.day) || (pc.created_at.day == Time.now.day and pc.position == 0) %>
-            <div class="list-group-item d-flex justify-content-between align-items-center border-0">
+            <div class="list-group-item d-flex justify-content-between align-items-center my-1">
             <div class="d-flex flex-row align-items-center">
-              <%= button_to "Check", party_challenge_path(pc.id), method: :patch, class: "btn btn-primary btn-block" %>
+              <%= button_to "Fait !", party_challenge_path(pc.id), method: :patch, class: "btn btn-primary btn-block" %>
               <p class="pl-2 m-0"><%= pc.challenge.title %></p></div>
 
               <small><%= pc.position %> / <%= pc.challenge.step_number %></small>

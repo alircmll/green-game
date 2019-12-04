@@ -35,14 +35,18 @@
 
 #toDo {
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
 
     .list-group-item  {
         list-style-type: none;
         font-weight: normal;
-        font-size: calc(2vh);
+        font-size: 2.3vh;
         width: 100%;
-        padding: 8px 0;
+        padding: 0;
+        border: none;
+        .btn {
+
+        }
     }
 
 
