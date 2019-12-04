@@ -243,36 +243,227 @@ challenges = [
 Challenge.create!(challenges)
 # Desctruction de tous les quiz
 
-# Premier Quiz
-quiz = Quiz.create(title: 'EcoloQuiz',description: 'The best quiz',category_id: no_waste.id, points_by_question: 5)
+# Premier Quiz - Global
+quiz1 = Quiz.create(title: 'Mini Quiz', description: 'Petit quiz global', category_id: no_waste.id, points_by_question: 10)
 # 1
-title = "In which year did the \"Grenelle\" Environment Forum take place in France ?"
-details = "Two laws known as \"Grenelle I\" and \"Grenelle II\" were adopted in 2009 and 2010, following these major consultations."
+title = "En quelle année le \"Grenelle\" de l'Environment a-t'il eu lieu en France ?"
+details = "Deux lois connues sous le nom de \"Grenelle I\" et \"Grenelle II\" ont été adoptées en 2009 et 2010, à la suite de cette consultation majeure."
 link = "https://www.connaissancedesenergies.org/fiche-pedagogique/grenelle-environnement"
-question = Question.create(title: title,details: details,link: link, quiz_id: quiz.id)
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz1.id)
 Option.create(title: "2007",is_right: true, question_id: question.id)
 Option.create(title: "2017",is_right: false, question_id: question.id)
 # 2
-title = "In which city is the oldest French nuclear power station still in operation ?"
-details = "The Fessenheim nuclear power plant is the first nuclear power plant in commercial operation since 1978"
+title = "Dans quelle ville se trouve la plus ancienne centrale nucléaire française encore en activité ?"
+details = "La centrale nucléaire de Fessenheim est la première centrale nucléaire en exploitation commerciale (depuis 1978)."
 link = "https://fr.wikipedia.org/wiki/Centrale_nucl%C3%A9aire_de_Fessenheim"
-question = Question.create(title: title,details: details,link: link, quiz_id: quiz.id)
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz1.id)
 Option.create(title: "Fessenheim",is_right: true, question_id: question.id)
 Option.create(title: "Gravelines",is_right: false, question_id: question.id)
-#4
-title = "What is the ideal temperature in a living room ?"
-details = "For rooms, the ideal temperature is between 16 and 17 ° C. Under the duvet, heating is not an obligation and too much heat can affect the quality of sleep."
+#3
+title = "Quelle est la température idéale dans une chambre ?"
+details = "Dans une chambre, la température idéale se situe entre 16 et 17°C. Sous la couette, le chauffage n’est pas une obligation et trop de chaleur peut affecter la qualité du sommeil."
 link = "https://www.lenergietoutcompris.fr/actualites-et-informations/economies-energie/realisez-des-economies-d-energie-en-ajustant-la-temperature-de-chacune-des-piece-de-votre-maison-47487"
-question = Question.create(title: title,details: details,link: link, quiz_id: quiz.id)
-Option.create(title: "19",is_right: true, question_id: question.id)
-Option.create(title: "22",is_right: false, question_id: question.id)
-# 5
-title = "When I leave a room of the house I think about :"
-details = "ecology and economis go hand in hand"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz1.id)
+Option.create(title: "19°C",is_right: true, question_id: question.id)
+Option.create(title: "22°C",is_right: false, question_id: question.id)
+# 4
+title = "Quand je quitte la maison je pense à :"
+details = "L'écologie et l'économie vont de pair."
 link = "https://particuliers.engie.fr/economies-energie.html"
-question = Question.create(title: title,details: details,link: link, quiz_id: quiz.id)
-Option.create(title: "Close the door",is_right: false, question_id: question.id)
-Option.create(title: "Turn off the light",is_right: true, question_id: question.id)
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz1.id)
+Option.create(title: "Fermer la porte",is_right: false, question_id: question.id)
+Option.create(title: "Eteindre les lumières",is_right: true, question_id: question.id)
+
+
+
+# Deuxième Quiz - Energie Renouvelable
+quiz2 = Quiz.create(title: 'Energie', description: 'Quiz sur les énergies renouvelables', category_id: energy.id, points_by_question: 5)
+# 1
+title = "Qu'appelle-t-on énergie renouvelable ?"
+details = "Les énergies renouvelables sont des sources d'énergie dont le renouvellement naturel est assez rapide pour qu'elles puissent être considérées comme inépuisables à l'échelle du temps humain.."
+link = "https://www.edf.fr/groupe-edf/espaces-dedies/l-energie-de-a-a-z/tout-sur-l-energie/le-developpement-durable/qu-est-ce-qu-une-energie-renouvelable"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
+Option.create(title: "Sources d'énergie dont le renouvellement naturel est assez rapide",is_right: true, question_id: question.id)
+Option.create(title: "Énergie qui fait fonctionner nos moteurs",is_right: false, question_id: question.id)
+# 2
+title = "Quelle source a le meilleur rendement pour la production d'électricité ?"
+details = "Le terme d'énergie hydraulique désigne l'énergie qui peut être obtenue par exploitation de l'eau. Une catégorie d'énergies moins soumise aux conditions météorologiques, mais qui reste réservée à une production d'envergure."
+link = "https://www.futura-sciences.com/planete/questions-reponses/energie-renouvelable-sont-cinq-types-energies-renouvelables-4134/"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
+Option.create(title: "L'eau",is_right: true, question_id: question.id)
+Option.create(title: "Le vent",is_right: false, question_id: question.id)
+#3
+title = "Pourquoi développe-t-on les énergies renouvelables ?"
+details = "Dans une chambre, la température idéale se situe entre 16 et 17°C. Sous la couette, le chauffage n’est pas une obligation et trop de chaleur peut affecter la qualité du sommeil."
+link = "https://www.lenergietoutcompris.fr/actualites-et-informations/economies-energie/realisez-des-economies-d-energie-en-ajustant-la-temperature-de-chacune-des-piece-de-votre-maison-47487"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
+Option.create(title: "Elles attenuent les dérèglements climatiques",is_right: true, question_id: question.id)
+Option.create(title: "Elles sont peu coûteuses",is_right: false, question_id: question.id)
+# 4
+title = "L'utilisation des panneaux solaires pour produire l'électricité est-elle dangereuse pour l'environnement ?"
+details = "L’impact environnemental du photovoltaïque se situe au niveau de l’énergie grise."
+link = "https://www.actu-environnement.com/ae/pdt/panneaux-solaires-impact-environnement-edf-enr-667.php4"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
+Option.create(title: "Non",is_right: false, question_id: question.id)
+Option.create(title: "Oui",is_right: true, question_id: question.id)
+# 5
+title = "Les cellules photovoltaïques qui transforment le rayonnement lumineux en électricité sont composées de :"
+details = "Le silicium est un matériau produit par l'industrie métallurgique à partir de sable ou de quartz, riches en silice."
+link = "https://www.picbleu.fr/page/les-panneaux-solaires-photovoltaiques-le-silicium#Qu'est-ce%20que%20le%20silicium%20?"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
+Option.create(title: "Silicium",is_right: true, question_id: question.id)
+Option.create(title: "Antimonium",is_right: false, question_id: question.id)
+# 6
+title = "La géothermie exploite des gisements de :"
+details = "La géothermie est une forme d'énergie utilisant la chaleur des profondeurs de la Terre."
+link = "https://www.edf.fr/groupe-edf/espaces-dedies/l-energie-de-a-a-z/tout-sur-l-energie/produire-de-l-electricite/qu-est-ce-que-la-geothermie"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
+Option.create(title: "Vapeur",is_right: false, question_id: question.id)
+Option.create(title: "Eau chaude",is_right: true, question_id: question.id)
+# 7
+title = "La production des éoliennes européennes couvrent les besoins en électricité domestique hors chauffage de :"
+details = "Le secteur de l'énergie éolienne en Europe assure 11 % de la production d'électricité de l'Union Européenne."
+link = "https://fr.wikipedia.org/wiki/%C3%89nergie_%C3%A9olienne_en_Europe"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
+Option.create(title: "18 millions de personnes",is_right: false, question_id: question.id)
+Option.create(title: "50 millions de personnes",is_right: true, question_id: question.id)
+# 8
+title = "Lequel de ces deux mots ne désigne pas un vent ?"
+details = "Le vent d'autan est un vent soufflant dans le sud/sud-ouest de la France, en provenance du sud-est/sud-sud-est, affectant la partie orientale du bassin aquitain et le sud-ouest du Massif central."
+link = "https://fr.wikipedia.org/wiki/Vent_d%27autan"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
+Option.create(title: "Autan",is_right: false, question_id: question.id)
+Option.create(title: "Aquilon",is_right: true, question_id: question.id)
+# 9
+title = "L'effet photovoltaïque a été découvert par :"
+details = "La découverte fut faiyte en 1839 par deux Français, Antoine César Becquerel et son fils Alexandre Edmond Becquerel."
+link = "https://www.futura-sciences.com/planete/dossiers/developpement-durable-cellules-photovoltaiques-coeur-panneaux-solaires-1688/page/4/"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
+Option.create(title: "Louis Lumière",is_right: false, question_id: question.id)
+Option.create(title: "Alexandre-Edmond Becquerel",is_right: true, question_id: question.id)
+
+
+
+# Troisième Quiz - Transport
+quiz3 = Quiz.create(title: 'Transport', description: 'Quiz sur les transports', category_id: transport.id, points_by_question: 7)
+# 1
+title = "Quelle est la surconsommation de carburant lors du premier kilomètre parcouru par votre véhicule ?"
+details = "Sachez également que cette surconsommation est de 25 % lors du deuxième kilomètre. Par conséquent, il est préférable de prendre votre vélo ou aller à pied pour effectuer un déplacement inférieur à 2 km : c’est bon pour le porte-monnaie, pour la santé et pour l’environnement."
+link = "#"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
+Option.create(title: "+ 50%",is_right: true, question_id: question.id)
+Option.create(title: "+ 20%",is_right: false, question_id: question.id)
+# 2
+title = "Parmi ces deux polluants, cherchez l’intrus :"
+details = "L’acide sulfurique (HCl) est l’intrus car il n’est pas présent et rejeté dans les gaz d’échappement des véhicules. Il provient de l’industrie et de l’incinération des déchets en particulier."
+link = "https://www.lefigaro.fr/automobile/2008/10/13/03001-20081013ARTFIG00373-ce-que-recrache-un-pot-d-echappement-.php"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
+Option.create(title: "L'acide sulfurique (HCl)",is_right: true, question_id: question.id)
+Option.create(title: "Le dioxyde de carbone (CO2)",is_right: false, question_id: question.id)
+#3
+title = "Si vous vous trouvez à l’arrêt avec votre véhicule seulement pendant 2 minutes, est-il vraiment utile d’arrêter votre moteur ?"
+details = "Au-delà de 10 secondes, votre véhicule consomme plus de carburant au ralenti que si vous l’arrêtez et le redémarrez."
+link = "https://permis-de-conduire.ooreka.fr/astuce/voir/301697/couper-son-moteur-a-l-arret-vraiment-utile"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
+Option.create(title: "Oui",is_right: true, question_id: question.id)
+Option.create(title: "Non",is_right: false, question_id: question.id)
+# 4
+title = "D’après vous, pour des marchandises, quel est le mode de transport le plus économe en carburant ?"
+details = "La péniche est le mode déplacement le plus économique. Avec 5 litres de carburant, elle transporte 1 tonne de marchandises sur 500 km alors que le train le fait sur 330 km et un camion sur seulement 80 km !"
+link = "http://www.cnba-transportfluvial.fr/acces-particuliers-cnba/presentation-generale/transport-fluvial"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
+Option.create(title: "Le train",is_right: false, question_id: question.id)
+Option.create(title: "La péniche",is_right: true, question_id: question.id)
+# 5
+title = "Si vous transportez des objets volumineux pour partir en vacances, il est préférable :"
+details = "Il est préférable de transporter les objets volumineux dans une remorque que sur une galerie car la prise au vent de votre véhicule est plus limitée dans ce cas et donc la consommation de carburant et la pollution engendrée sont diminuées."
+link = "https://www.lelynx.fr/assurance-auto/vehicule/autre/caravane-remorque/coffre-toit/"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
+Option.create(title: "De les installer sur la galerie de votre véhicule",is_right: false, question_id: question.id)
+Option.create(title: "De les tracter dans une remorque",is_right: true, question_id: question.id)
+# 6
+title = "Parmi ces deux propositions, laquelle est synonyme d’économie de carburant et donc de moindre pollution ?"
+details = "La conduite en surrégime, qui revient bien souvent à pousser les rapports sur un véhicule, sollicite le moteur plus qu’à la normale en augmentant la consommation d’environ 20 %."
+link = "https://www.permisecole.com/conduite/conducteur/eco-conduite#/"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
+Option.create(title: "Une conduite en surrégime",is_right: false, question_id: question.id)
+Option.create(title: "Des accélérations modérées",is_right: true, question_id: question.id)
+#7
+title = "Sur une année, la surconsommation moyenne en carburant des véhicules climatisés par rapport à ceux qui ne le sont pas est de :"
+details = "Sachez que votre véhicule, s’il est climatisé, consomme à l’année environ \"5%\" de plus que le même modèle non climatisé."
+link = "https://www.legipermis.com/blog/2015/08/20/climatisation-consommation-essence-astuces-conseils/"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
+Option.create(title: "5%",is_right: true, question_id: question.id)
+Option.create(title: "1%",is_right: false, question_id: question.id)
+
+
+
+# Quatrième Quiz - Zéro déchet
+quiz4 = Quiz.create(title: 'Déchets', description: 'Quiz sur les déchets', category_id: no_waste.id, points_by_question: 10)
+# 1
+title = "Quelle part représentent les emballages parmi nos déchets ?"
+details = "La part des emballages dans les déchets ménagers est à la hausse (UE:176kg/personne/an) principalement à cause des plats préparés."
+link = "http://www.educapoles.org/assets/uploads/teaching_dossiers_files/11_swift_action_sheet_packaging_fr.pdf"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz4.id)
+Option.create(title: "La moitié",is_right: true, question_id: question.id)
+Option.create(title: "Le quart",is_right: false, question_id: question.id)
+# 2
+title = "Combien de kilogrammes d'ordures ménagères un Français jette-t-il par jour ?"
+details = "Chaque année en France, un habitant produit 354 kg d’ordures ménagères. Les calculs sont réalisés par l’Ademe à partir des tonnages des poubelles des ménages (hors déchets verts) collectées par les collectivités locales."
+link = "http://www.cniid.org/Les-dechets-en-France-quelques-chiffres,151"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz4.id)
+Option.create(title: "500gr",is_right: false, question_id: question.id)
+Option.create(title: "1kg",is_right: true, question_id: question.id)
+#3
+title = "Combien de bouteilles en plastique faut-il pour faire un pull polaire ?"
+details = "27 bouteilles d’eau d’1,5 litre donnent un pull en laine polaire et 12 bouteilles de soda rembourrent un oreiller."
+link = "https://www.geo.fr/environnement/du-plastique-pour-faire-des-pulls-26208"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz4.id)
+Option.create(title: "27",is_right: true, question_id: question.id)
+Option.create(title: "16",is_right: false, question_id: question.id)
+# 4
+title = "Comment s'appelle l'homme qui, en 1883, a imposé l'usage de récipients spéciaux pour les déchets ?"
+details = "Le 24 novembre 1883, Eugène Poubelle, préfet de la Seine, signe le fameux arrêté qui oblige les propriétaires parisiens à fournir à chacun de leurs locataires un récipient muni d'un couvercle."
+link = "http://www.planete-echo.net/CollecteParis/EugenePoubelle.html"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz4.id)
+Option.create(title: "Arsène Benne",is_right: false, question_id: question.id)
+Option.create(title: "Eugène Poubelle",is_right: true, question_id: question.id)
+# 5
+title = "Combien de kilogramme(s) de vieux papiers faut-il pour faire 1 kg de papier recyclé ?"
+details = "Il faut 2 T de pâte à papier pour fabriquer 1 T de papier à base de fibres vierges. Comparativement, 1 tonne de vieux papiers donnera 900 kg de papier recyclé."
+link = "https://www.ecoconso.be/fr/Le-papier-recycle"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz4.id)
+Option.create(title: "1.3kg",is_right: false, question_id: question.id)
+Option.create(title: "Un peu plus d'un kilogramme",is_right: true, question_id: question.id)
+# 6
+title = "Que signifie ce logo ? ♻"
+details = "Symbole universel du recyclage depuis 1970, cette représentation de l’infini conçue par le mathématicien allemand August Ferdinand Möbius signifie, lui, aussi, que votre emballage est recyclable."
+link = "https://www.easyrecyclage.com/blog/a-quoi-correspondent-les-logos-de-vos-emballages/"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz4.id)
+Option.create(title: "Le fabricant de l'emballage a participé à sa valorisation",is_right: false, question_id: question.id)
+Option.create(title: "L'emballage est recyclable",is_right: true, question_id: question.id)
+#7
+title = "Quel est le taux de recyclage des canettes en France ?"
+details = "En France, le taux de recyclage atteint \"67 %\" des canettes utilisées (en acier et en aluminium), en Suisse le taux est de \"91 %\" et \"96 %\" en Allemagne."
+link = "https://fr.wikipedia.org/wiki/Canette_(alimentaire)"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz4.id)
+Option.create(title: "67%",is_right: true, question_id: question.id)
+Option.create(title: "54%",is_right: false, question_id: question.id)
+#8
+title = "Combien de canettes recyclées faut-il pour fabriquer un vélo ?"
+details = "660 canettes d'aluminium recyclées fournissent la quantité d'aluminium pour fabriquer un vélo, 48 000 une voiture et 15 millions un Airbus A380."
+link = "https://fr.wikipedia.org/wiki/Canette_(alimentaire)"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz4.id)
+Option.create(title: "660",is_right: true, question_id: question.id)
+Option.create(title: "1240",is_right: false, question_id: question.id)
+#9
+title = "Pour une tonne de plastique recyclée, on économise :"
+details = ""
+link = "http://www.ecoemballages.fr/grand-public/le-petit-geste-aux-grands-effets"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz4.id)
+Option.create(title: "800 Kg de pétrole brut",is_right: true, question_id: question.id)
+Option.create(title: "562 Kg de pétrole brut",is_right: false, question_id: question.id)
+
 
 puts "Finished!"
 
