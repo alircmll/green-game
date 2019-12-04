@@ -8,6 +8,7 @@ Tip.destroy_all
 Answer.destroy_all
 Option.destroy_all
 Question.destroy_all
+PartyQuiz.destroy_all
 Quiz.destroy_all
 Category.destroy_all
 User.destroy_all
