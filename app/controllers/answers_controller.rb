@@ -48,7 +48,7 @@ class AnswersController < ApplicationController
     if !@party_quiz.nil?
       # Sauvegarde de la réponse fournit par l'utilisateur
       answer = Answer.new(answer_params)
-      #answer.party_quiz = @party_quiz
+      answer.party_quiz = @party_quiz
       answer.user = current_user
       
       if answer.save

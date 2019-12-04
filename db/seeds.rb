@@ -247,23 +247,30 @@ Challenge.create!(challenges)
 quiz = Quiz.create(title: 'EcoloQuiz',description: 'The best quiz',category_id: no_waste.id, points_by_question: 5)
 # 1
 title = "In which year did the \"Grenelle\" Environment Forum take place in France ?"
-question = Question.create(title: title, quiz_id: quiz.id)
+details = "Two laws known as \"Grenelle I\" and \"Grenelle II\" were adopted in 2009 and 2010, following these major consultations."
+link = "https://www.connaissancedesenergies.org/fiche-pedagogique/grenelle-environnement"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz.id)
 Option.create(title: "2007",is_right: true, question_id: question.id)
 Option.create(title: "2017",is_right: false, question_id: question.id)
 # 2
 title = "In which city is the oldest French nuclear power station still in operation ?"
-question = Question.create(title: title, quiz_id: quiz.id)
+details = "The Fessenheim nuclear power plant is the first nuclear power plant in commercial operation since 1978"
+link = "https://fr.wikipedia.org/wiki/Centrale_nucl%C3%A9aire_de_Fessenheim"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz.id)
 Option.create(title: "Fessenheim",is_right: true, question_id: question.id)
 Option.create(title: "Gravelines",is_right: false, question_id: question.id)
 #4
-title = "
-What is the ideal temperature in a living room ?"
-question = Question.create(title: title, quiz_id: quiz.id)
+title = "What is the ideal temperature in a living room ?"
+details = "For rooms, the ideal temperature is between 16 and 17 ° C. Under the duvet, heating is not an obligation and too much heat can affect the quality of sleep."
+link = "https://www.lenergietoutcompris.fr/actualites-et-informations/economies-energie/realisez-des-economies-d-energie-en-ajustant-la-temperature-de-chacune-des-piece-de-votre-maison-47487"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz.id)
 Option.create(title: "19",is_right: true, question_id: question.id)
 Option.create(title: "22",is_right: false, question_id: question.id)
 # 5
 title = "When I leave a room of the house I think about :"
-question = Question.create(title: title, quiz_id: quiz.id)
+details = "ecology and economis go hand in hand"
+link = "https://particuliers.engie.fr/economies-energie.html"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz.id)
 Option.create(title: "Close the door",is_right: false, question_id: question.id)
 Option.create(title: "Turn off the light",is_right: true, question_id: question.id)
 
