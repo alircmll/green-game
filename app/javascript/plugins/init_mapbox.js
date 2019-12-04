@@ -1,5 +1,6 @@
 import mapboxgl from 'mapbox-gl';
 
+
 const mapElement = document.getElementById('map');
 
 const buildMap = () => {
@@ -40,8 +41,129 @@ const fitMapToMarkers = (map, markers) => {
 
 
 const initMapbox = () => {
+
+
+
+
+
   if (mapElement) {
+
+
+
+    var hoveredStateId =  null;
     const map = buildMap();
+
+
+    fetch("https://opendata.bordeaux-metropole.fr/api/records/1.0/search/?dataset=en_frcol_s&rows=100&facet=passage&facet=jour_col&facet=type&facet=commune")
+      .then(response => response.json())
+      .then((data) => {
+        let i = 1;
+        const test = {
+            "type": "FeatureCollection",
+            "features": []
+        }
+
+         data.records.forEach((record) => {
+          let testi = {
+            "type": "Feature",
+            "geometry": record.fields.geo_shape,
+            "id": i
+          }
+          test.features.push(testi);
+          i = i + 1;
+        });
+
+        map.on('load', function () {
+          map.addLayer({
+            'id': 'layer-state',
+            'type': 'fill',
+            'source': {
+              "type": "geojson",
+              "data": test
+            },
+            'paint': {
+            'fill-color': 'rgba(200, 100, 240, 0.4)',
+            'fill-outline-color': 'rgba(200, 100, 240, 1)'
+            }
+          })
+          .addSource("states", {
+            "type": "geojson",
+            "data": test
+          });
+
+          let communes = []
+          data.records.forEach(record => { communes.push(record.fields.commune) })
+
+          map.on('click', 'layer-state', function (e) {
+            let commune = communes[e.features[0].id - 1]
+            new mapboxgl.Popup()
+              .setLngLat(e.lngLat)
+              .setHTML(commune)
+              .addTo(map);
+          });
+
+          // The feature-state dependent fill-opacity expression will render the hover effect
+          // when a feature's hover state is set to true.
+          map.addLayer({
+          "id": "state-fills",
+          "type": "fill",
+          "source": "states",
+          "layout": {},
+          "paint": {
+          "fill-color": "#627BC1",
+          "fill-opacity": ["case",
+          ["boolean", ["feature-state", "hover"], false],
+          1,
+          0.5
+          ]
+          }
+          });
+
+          map.addLayer({
+          "id": "state-borders",
+          "type": "line",
+          "source": "states",
+          "layout": {},
+          "paint": {
+          "line-color": "#627BC1",
+          "line-width": 2
+          }
+          });
+
+          // When the user moves their mouse over the state-fill layer, we'll update the
+          // feature state for the feature under the mouse.
+          map.on("mousemove", "state-fills", function(e) {
+          if (e.features.length > 0) {
+          if (hoveredStateId) {
+          map.setFeatureState({source: 'states', id: hoveredStateId}, { hover: false});
+          }
+          hoveredStateId = e.features[0].id;
+          map.setFeatureState({source: 'states', id: hoveredStateId}, { hover: true});
+          }
+          });
+
+          // When the mouse leaves the state-fill layer, update the feature state of the
+          // previously hovered feature.
+          map.on("mouseleave", "state-fills", function() {
+          if (hoveredStateId) {
+          map.setFeatureState({source: 'states', id: hoveredStateId}, { hover: false});
+          }
+          hoveredStateId =  null;
+          });
+        });
+
+
+
+
+
+      });
+
+
+
+
+
+
+
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
@@ -62,6 +184,30 @@ const initMapbox = () => {
 
 
 export { initMapbox };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
