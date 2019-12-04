@@ -180,8 +180,6 @@ Tip.create!(tips)
 
 puts "Finished!"
 
-
-
 puts "Creating Challenges..."
 
 
@@ -192,7 +190,8 @@ challenges = [
     step_number:      7,
     points_by_step:   15,
     description:      "Changez vos déplacements en seulement 7 jours",
-    category:         transport
+    category:         transport,
+    photo:            "transport.png"
   },
   {
     title:            "Manger local et responsable",
@@ -200,7 +199,8 @@ challenges = [
     step_number:      10,
     points_by_step:   20,
     description:      "Changez vos habitudes alimentaires en deux semaines",
-    category:         food
+    category:         food,
+    photo:            "food.png"
   },
   {
     title:            "Bricoler avec du recyclé",
@@ -208,7 +208,8 @@ challenges = [
     step_number:      5,
     points_by_step:   10,
     description:      "Le DIY : Do It Yourself",
-    category:         diy
+    category:         diy,
+    photo:            "diy.png"
   },
   {
     title:            "Les énergies renouvelables",
@@ -216,7 +217,8 @@ challenges = [
     step_number:      20,
     points_by_step:   50,
     description:      "Appréhendez les énergies renouvelables pendant 100 jours",
-    category:         energy
+    category:         energy,
+    photo:            "energie-renouvelable.png"
   },
   {
     title:            "Triez vos déchets",
@@ -224,7 +226,8 @@ challenges = [
     step_number:      7,
     points_by_step:   10,
     description:      "Faites du tri de vos déchets une habitude",
-    category:         no_waste
+    category:         no_waste,
+    photo:            "sortwaste.png"
   },
   {
     title:            "Reconnectez vous à l'essentiel",
@@ -232,7 +235,8 @@ challenges = [
     step_number:      9,
     points_by_step:   15,
     description:      "Déconnecter pour mieux se reconnecter à l'essentiel : Dame nature",
-    category:         nature_connect
+    category:         nature_connect,
+    photo:            "damenature.png"
   }
 ]
 
