@@ -25,29 +25,45 @@
 </section>
 <section id="userContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
   <div id="myTodo" class="row ">
-    <div class="col-12 mt-0">
-
-      <p class="h4">Ma journée écologiquement durable</p>
-
+    <div class="col-12 mt-2">
+      <p class="h3">Ma journée écologiquement durable</p>
       <%# TODO LIST%>
-      <ul id="toDo" class="d-flex flex-column-reverse todo-list list-group mt-3">
+      <ul id="toDo" class="d-flex todo-list list-group mt-3 top" >
         <%# ITEMS %>
         <%#  Faire un Each pour display les taches et generer la li suivante %>
-
         <!-- Mettre le form ici-->
         <%# Rajouter un message si tt les challenges du jours sont done   %>
+        <% if @count == 0 %>
+          <p>Rien de prevu.</p>
+        <% else %>
           <% @party_challenges.each do |pc| %>
-            <% if  (pc.updated_at.day != Time.now.day) || (pc.created_at.day == Time.now.day and pc.position == 0) %>
-            <div class="list-group-item d-flex justify-content-between align-items-center my-1">
-            <div class="d-flex flex-row align-items-center">
-              <%= button_to "Fait !", party_challenge_path(pc.id), method: :patch, class: "btn btn-primary btn-block" %>
-              <p class="pl-2 m-0"><%= pc.challenge.title %></p></div>
-
-              <small><%= pc.position %> / <%= pc.challenge.step_number %></small>
-            </div>
+            <% if (pc.updated_at.day != Time.now.day) || (pc.created_at.day == Time.now.day and pc.position == 0) %>
+              <div class="list-group-item d-flex justify-content-between align-items-center my-1">
+                <div class="d-flex flex-row align-items-center">
+                  <%= button_to "à faire", party_challenge_path(pc.id), method: :patch, class: "btn btn-primary btn-block" %>
+                  <p class="pl-2 m-0"><%= pc.challenge.title %></p>
+                </div>
+                <small><%= pc.position %> / <%= pc.challenge.step_number %></small>
+              </div>
             <% end %>
           <% end %>
-
+        <% end %>
+        <p class="h3 mt-4">Mes tâches faites</p>
+        <% if @countdone == 0 %>
+          <p>Vous n'avez rien fait aujourd'hui.</p>
+        <% else %>
+          <% @party_challenges.each do |pc| %>
+            <% if (pc.updated_at.day == Time.now.day and pc.position > 0) %>
+              <div class="list-group-item d-flex justify-content-between align-items-center my-1">
+                <div class="d-flex flex-row align-items-center">
+                  <small>-</small>
+                  <p class="pl-2 m-0"><%= pc.challenge.title %></p>
+                </div>
+                <small><%= pc.position %> / <%= pc.challenge.step_number %></small>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
       </ul>
     </div>
   </div>
@@ -55,33 +71,34 @@
     <div id="partyChallenges" class="container-fluid d-flex page-content flex-column bg-white">
       <div class="row">
         <div class="col-12  col-md-12 col-lg-8 offset-lg-2">
-
-          <p class="h4">Mes Challenges</p>
-
-          <% @party_challenges.each do |pc| %>
-            <div class="blog-slider mb-5">
-              <div class="blog-slider__wrp swiper-wrapper">
-                <div class="blog-slider__item swiper-slide">
-                  <div class="blog-slider__img">
-                    <%= cl_image_tag pc.challenge.category.photo %>
-                  </div>
-                  <div class="blog-slider__content">
-                    <span class="blog-slider__code"><%= pc.challenge.duration %> jours</span>
-                    <div class="blog-slider__title"><%= pc.challenge.title %></div>
-                    <div class="blog-slider__text">
-                      <%= pc.challenge.description %>
-                      <%= pc.point %>
+          <p class="h3 mt-4">Mes Challenges</p>
+          <% if @party_challenges.count == 0 %>
+            <p>Aucun challenge en cours.</p>
+          <% else %>
+            <% @party_challenges.each do |pc| %>
+              <div class="blog-slider mb-5">
+                <div class="blog-slider__wrp swiper-wrapper">
+                  <div class="blog-slider__item swiper-slide">
+                    <div class="blog-slider__img">
+                      <%= cl_image_tag pc.challenge.category.photo %>
                     </div>
-                    <%= link_to "Details", challenge_path(pc), class: "blog-slider__button" %>
+                    <div class="blog-slider__content">
+                      <span class="blog-slider__code"><%= pc.challenge.duration %> jours</span>
+                      <div class="blog-slider__title"><%= pc.challenge.title %></div>
+                      <div class="blog-slider__text">
+                        <%= pc.challenge.description %>
+                        <%= pc.point %>
+                      </div>
+                      <%= link_to "Details", challenge_path(pc), class: "blog-slider__button" %>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
         </div>
       </div>
       <%#  Rajouter mon challenge en cours ici %>
-      <small>Tout voir</small>
     </div>
     <%# Je place mes challenges %>
   </div>
