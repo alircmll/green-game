@@ -42,10 +42,6 @@ const fitMapToMarkers = (map, markers) => {
 
 const initMapbox = () => {
 
-
-
-
-
   if (mapElement) {
 
 
@@ -82,8 +78,8 @@ const initMapbox = () => {
               "data": test
             },
             'paint': {
-            'fill-color': 'rgba(200, 100, 240, 0.4)',
-            'fill-outline-color': 'rgba(200, 100, 240, 1)'
+            'fill-color': 'rgba(96, 54, 94, 0)',
+            'fill-outline-color': 'rgba(200, 100, 240, 0)'
             }
           })
           .addSource("states", {
@@ -93,12 +89,23 @@ const initMapbox = () => {
 
           let communes = []
           data.records.forEach(record => { communes.push(record.fields.commune) })
+          let collects = []
+          data.records.forEach(record => { collects.push(record.fields.jour_col) })
+          let types = []
+          data.records.forEach(record => { types.push(record.fields.type) })
 
+            // console.log(types);
           map.on('click', 'layer-state', function (e) {
             let commune = communes[e.features[0].id - 1]
+            let collect = collects[e.features[0].id - 1]
+            let type = types[e.features[0].id - 1]
+
+              // console.log(collect);
+
             new mapboxgl.Popup()
               .setLngLat(e.lngLat)
-              .setHTML(commune)
+              .setHTML(commune +'('+ collect +')' + ' ' + type)
+              // .setHTML(collect)
               .addTo(map);
           });
 
@@ -110,11 +117,11 @@ const initMapbox = () => {
           "source": "states",
           "layout": {},
           "paint": {
-          "fill-color": "#627BC1",
+          "fill-color": "#60365e",
           "fill-opacity": ["case",
           ["boolean", ["feature-state", "hover"], false],
           1,
-          0.5
+          0.4
           ]
           }
           });
@@ -125,7 +132,7 @@ const initMapbox = () => {
           "source": "states",
           "layout": {},
           "paint": {
-          "line-color": "#627BC1",
+          "line-color": "#60365e",
           "line-width": 2
           }
           });
