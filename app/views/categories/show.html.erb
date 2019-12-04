@@ -11,18 +11,18 @@
     <div class="col-12">
       <!--  Ajout de la notion de la catégorie pour filtrage dans l'index de quizzes -->
       <%= link_to challenges_path(cat: @category.id), id: "main-btn" do %>
-        <div class="card-category m-2" >
+        <div class="card-category " >
           Challenges
         </div>
       <% end %>
       <!--  Ajout de la notion de la catégorie pour filtrage dans l'index de quizzes -->
       <%= link_to quizzes_path(cat: @category.id), id: "main-btn" do %>
-        <div class="card-category m-2">
+        <div class="card-category ">
           Quizzes
         </div>
       <% end %>
       <%= link_to category_tips_path(@category), id: "main-btn" do %>
-        <div class="card-category m-2">
+        <div class="card-category ">
           Conseils
         </div>
       <% end %>
