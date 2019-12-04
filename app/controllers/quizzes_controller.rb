@@ -4,10 +4,10 @@ class QuizzesController < ApplicationController
 
   def index
     # on filtre sur la catégorie si cette dernière est tarnsmise
-    if params["cat"].nil?
+    if params[:cat].present?
       @quizzes = Quiz.all
     else
-      @quizzes = Quiz.find_by(category_id: params["cat"])
+      @quizzes = Quiz.find_by(category_id: params[:cat])
     end
   end
 
