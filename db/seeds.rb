@@ -383,18 +383,86 @@ Option.create(title: "De les installer sur la galerie de votre véhicule",is_rig
 Option.create(title: "De les tracter dans une remorque",is_right: true, question_id: question.id)
 # 6
 title = "Parmi ces deux propositions, laquelle est synonyme d’économie de carburant et donc de moindre pollution ?"
-details = "La conduite en surrégime, qui revient bien souvent à pousser les rapports sur un véhicule, sollicite le moteur plus qu’à la normale et réduit sa durée de vie tout en augmentant la consommation d’environ 20 %."
+details = "La conduite en surrégime, qui revient bien souvent à pousser les rapports sur un véhicule, sollicite le moteur plus qu’à la normale en augmentant la consommation d’environ 20 %."
 link = "https://www.permisecole.com/conduite/conducteur/eco-conduite#/"
 question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
 Option.create(title: "Une conduite en surrégime",is_right: false, question_id: question.id)
 Option.create(title: "Des accélérations modérées",is_right: true, question_id: question.id)
 #7
 title = "Sur une année, la surconsommation moyenne en carburant des véhicules climatisés par rapport à ceux qui ne le sont pas est de :"
-details = "Sachez que votre véhicule, s’il est climatisé, consomme à l’année environ 5 % de plus que le même modèle non climatisé. A titre indicatif, en ville et en moyenne, un véhicule essence consomme 9 l/100 km sans clim et 11,8 l/100 km avec clim ; un véhicule diesel consomme 7 l/100 km sans clim et 9,5 l/100 km avec clim. La climatisation proposée parfois pour 1 € de plus à l’achat des véhicules peut donc s’avérer une option beaucoup plus coûteuse à la longue."
+details = "Sachez que votre véhicule, s’il est climatisé, consomme à l’année environ \"5%\" de plus que le même modèle non climatisé."
 link = "https://www.legipermis.com/blog/2015/08/20/climatisation-consommation-essence-astuces-conseils/"
 question = Question.create(title: title,details: details,link: link, quiz_id: quiz3.id)
 Option.create(title: "5%",is_right: true, question_id: question.id)
 Option.create(title: "1%",is_right: false, question_id: question.id)
+
+
+
+# Quatrième Quiz - Zéro déchet
+quiz4 = Quiz.create(title: 'Déchets', description: 'Quiz sur les déchets', category_id: no_waste.id, points_by_question: 10)
+# 1
+title = "Quelle part représentent les emballages parmi nos déchets ?"
+details = "La part des emballages dans les déchets ménagers est à la hausse (UE:176kg/personne/an) principalement à cause des plats préparés."
+link = "http://www.educapoles.org/assets/uploads/teaching_dossiers_files/11_swift_action_sheet_packaging_fr.pdf"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz4.id)
+Option.create(title: "La moitié",is_right: true, question_id: question.id)
+Option.create(title: "Le quart",is_right: false, question_id: question.id)
+# 2
+title = "Combien de kilogrammes d'ordures ménagères un Français jette-t-il par jour ?"
+details = "Chaque année en France, un habitant produit 354 kg d’ordures ménagères. Les calculs sont réalisés par l’Ademe à partir des tonnages des poubelles des ménages (hors déchets verts) collectées par les collectivités locales."
+link = "http://www.cniid.org/Les-dechets-en-France-quelques-chiffres,151"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz4.id)
+Option.create(title: "500gr",is_right: false, question_id: question.id)
+Option.create(title: "1kg",is_right: true, question_id: question.id)
+#3
+title = "Combien de bouteilles en plastique faut-il pour faire un pull polaire ?"
+details = "27 bouteilles d’eau d’1,5 litre donnent un pull en laine polaire et 12 bouteilles de soda rembourrent un oreiller."
+link = "https://www.geo.fr/environnement/du-plastique-pour-faire-des-pulls-26208"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz4.id)
+Option.create(title: "27",is_right: true, question_id: question.id)
+Option.create(title: "16",is_right: false, question_id: question.id)
+# 4
+title = "Comment s'appelle l'homme qui, en 1883, a imposé l'usage de récipients spéciaux pour les déchets ?"
+details = "Le 24 novembre 1883, Eugène Poubelle, préfet de la Seine, signe le fameux arrêté qui oblige les propriétaires parisiens à fournir à chacun de leurs locataires un récipient muni d'un couvercle."
+link = "http://www.planete-echo.net/CollecteParis/EugenePoubelle.html"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz4.id)
+Option.create(title: "Arsène Benne",is_right: false, question_id: question.id)
+Option.create(title: "Eugène Poubelle",is_right: true, question_id: question.id)
+# 5
+title = "Combien de kilogramme(s) de vieux papiers faut-il pour faire 1 kg de papier recyclé ?"
+details = "Il faut 2 T de pâte à papier pour fabriquer 1 T de papier à base de fibres vierges. Comparativement, 1 tonne de vieux papiers donnera 900 kg de papier recyclé."
+link = "https://www.ecoconso.be/fr/Le-papier-recycle"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz4.id)
+Option.create(title: "1.3kg",is_right: false, question_id: question.id)
+Option.create(title: "Un peu plus d'un kilogramme",is_right: true, question_id: question.id)
+# 6
+title = "Que signifie ce logo ? ♻"
+details = "Symbole universel du recyclage depuis 1970, cette représentation de l’infini conçue par le mathématicien allemand August Ferdinand Möbius signifie, lui, aussi, que votre emballage est recyclable."
+link = "https://www.easyrecyclage.com/blog/a-quoi-correspondent-les-logos-de-vos-emballages/"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz4.id)
+Option.create(title: "Le fabricant de l'emballage a participé à sa valorisation",is_right: false, question_id: question.id)
+Option.create(title: "L'emballage est recyclable",is_right: true, question_id: question.id)
+#7
+title = "Quel est le taux de recyclage des canettes en France ?"
+details = "En France, le taux de recyclage atteint \"67 %\" des canettes utilisées (en acier et en aluminium), en Suisse le taux est de \"91 %\" et \"96 %\" en Allemagne."
+link = "https://fr.wikipedia.org/wiki/Canette_(alimentaire)"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz4.id)
+Option.create(title: "67%",is_right: true, question_id: question.id)
+Option.create(title: "54%",is_right: false, question_id: question.id)
+#8
+title = "Combien de canettes recyclées faut-il pour fabriquer un vélo ?"
+details = "660 canettes d'aluminium recyclées fournissent la quantité d'aluminium pour fabriquer un vélo, 48 000 une voiture et 15 millions un Airbus A380."
+link = "https://fr.wikipedia.org/wiki/Canette_(alimentaire)"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz4.id)
+Option.create(title: "660",is_right: true, question_id: question.id)
+Option.create(title: "1240",is_right: false, question_id: question.id)
+#9
+title = "Pour une tonne de plastique recyclée, on économise :"
+details = ""
+link = "http://www.ecoemballages.fr/grand-public/le-petit-geste-aux-grands-effets"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz4.id)
+Option.create(title: "800 Kg de pétrole brut",is_right: true, question_id: question.id)
+Option.create(title: "562 Kg de pétrole brut",is_right: false, question_id: question.id)
 
 
 puts "Finished!"
