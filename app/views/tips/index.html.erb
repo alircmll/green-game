@@ -2,14 +2,14 @@
 <%= render 'shared/topnav' %>
   <section id="tipsTitle" class="row px-4 my-auto">
     <div class="name col-10 offset-1 text-center">
-      <span class=" ">Tips</span>
+      <span class=" ">Conseils</span>
     </div>
   </section>
 </section>
 <section id="tipsContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
 
   <div class="cta-over-section">
-    <%= link_to "Add your  tip", new_tip_path, class: "btn btn-block btn-primary" %>
+    <%= link_to "Ajouter votre conseil", new_tip_path, class: "btn btn-block btn-primary" %>
   </div>
 
     <% @tips.reverse_each do |tip| %>
@@ -22,10 +22,10 @@
             <% end %>
           </div>
           <h5 class="card-title mb-0"><%= tip.title %></h5>
-          <small class="card-subtitle mt-n4 text-muted">Posted by: <%= tip.user.username %></small>
+          <small class="card-subtitle mt-n4 text-muted">Posté par: <%= tip.user.username %></small>
           <p class="card-text mt-4"><%= tip.description.first(35)%>...</p>
           <div class="bottom-tip-card d-flex justify-content-space-around align-items-center">
-            <%= link_to "View", tip_path(tip)%>
+            <%= link_to "Voir plus", tip_path(tip)%>
             <% if tip.user == current_user %>
               <%= button_to tip_path(tip), method: :delete, class: "like-btn" do%>
                 <i class='fas fa-trash-alt'></i>
