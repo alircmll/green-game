@@ -151,7 +151,8 @@
   border-radius: 5px;
   box-shadow: $boxshadow2;
   transition: all ease 300ms;
-  &:hover{
+
+  &:hover {
     box-shadow: $boxshadow3;
     transition: all ease 300ms;
   }
@@ -195,9 +196,7 @@
 
 //  MEDIA QUERIES
 @media (max-width: 576px) {
-  .card-deck {
-
-  }
+  .card-deck {}
 
 
 }
@@ -236,7 +235,7 @@
   max-width: 800px;
   margin-top: 1rem;
   background: #fff;
-  box-shadow: $boxshadow4;
+  box-shadow: $boxshadow2;
   padding: 25px;
   border-radius: $border-radius-lg;
   // height: 400px;
@@ -254,56 +253,69 @@
       .blog-slider__img {
         img {
           opacity: 1;
-        transition-delay: .3s;
+          transition-delay: .3s;
         }
       }
-      .blog-slider__content {
-        > * {
 
-        opacity: 1;
-        transform: none;
-        color: black;
-      }
+      .blog-slider__content {
+        >* {
+
+          opacity: 1;
+          transform: none;
+          color: black;
+        }
       }
     }
   }
 
   &__img {
-    // width: 200px;
-    height: 50%;
     // background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
-    box-shadow: 4px 13px 30px 1px rgba(96, 54, 94, 0.5);
+    box-shadow: $boxshadow3;
     border-radius: $border-radius-lg;
     transform: translateX(0px);
     overflow: hidden;
 
     img {
       width: 100%;
-      height: 100%;
       object-fit: cover;
       display: block;
       opacity: 1;
       border-radius: $border-radius-lg;
       transition: all .3s;
+      @media screen and (min-width: 992px) {
+        height: 500px;
+      }
+
+      @media screen and (max-width: 768px) {
+      }
+
+      @media screen and (max-width: 576px) {
+        height: 256px;
+      }
     }
+
+
   }
 
   &__content {
+
     // width: 60%;
     // padding-right: 25px;
     @media screen and (max-width: 992px) {
       // width: 55%;
     }
+
     @media screen and (max-width: 768px) {
-          // margin-top: -80px;
-    text-align: center;
-    padding: 0 8px !important;
+      // margin-top: -80px;
+      text-align: center;
+      padding: 0 8px !important;
     }
 
     @media screen and (max-width: 576px) {
       padding: 0
     }
-    > * {
+
+    >* {
       opacity: 1;
       transform: translateY(25px);
       transition: all .4s;
@@ -334,7 +346,7 @@
   }
 
   &__button {
-        // display: inline-flex;
+    // display: inline-flex;
     background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
     padding: 15px 35px !important;
     border-radius: 50px;
@@ -342,9 +354,10 @@
     box-shadow: 0px 14px 80px rgba(252, 56, 56, 0.4);
     text-decoration: none;
     font-weight: 500;
-        justify-content: center;
+    justify-content: center;
     text-align: center;
     letter-spacing: 1px;
+
     @media screen and (max-width: 576px) {
       width: 100%;
     }
