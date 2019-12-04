@@ -243,36 +243,103 @@ challenges = [
 Challenge.create!(challenges)
 # Desctruction de tous les quiz
 
-# Premier Quiz
-quiz = Quiz.create(title: 'EcoloQuiz',description: 'The best quiz',category_id: no_waste.id, points_by_question: 5)
+# Premier Quiz - Global
+quiz1 = Quiz.create(title: 'Mini Quiz', description: 'Petit quiz global', category_id: no_waste.id, points_by_question: 10)
 # 1
-title = "In which year did the \"Grenelle\" Environment Forum take place in France ?"
-details = "Two laws known as \"Grenelle I\" and \"Grenelle II\" were adopted in 2009 and 2010, following these major consultations."
+title = "En quelle année le \"Grenelle\" de l'Environment a-t'il eu lieu en France ?"
+details = "Deux lois connues sous le nom de \"Grenelle I\" et \"Grenelle II\" ont été adoptées en 2009 et 2010, à la suite de cette consultation majeure."
 link = "https://www.connaissancedesenergies.org/fiche-pedagogique/grenelle-environnement"
-question = Question.create(title: title,details: details,link: link, quiz_id: quiz.id)
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz1.id)
 Option.create(title: "2007",is_right: true, question_id: question.id)
 Option.create(title: "2017",is_right: false, question_id: question.id)
 # 2
-title = "In which city is the oldest French nuclear power station still in operation ?"
-details = "The Fessenheim nuclear power plant is the first nuclear power plant in commercial operation since 1978"
+title = "Dans quelle ville se trouve la plus ancienne centrale nucléaire française encore en activité ?"
+details = "La centrale nucléaire de Fessenheim est la première centrale nucléaire en exploitation commerciale (depuis 1978)."
 link = "https://fr.wikipedia.org/wiki/Centrale_nucl%C3%A9aire_de_Fessenheim"
-question = Question.create(title: title,details: details,link: link, quiz_id: quiz.id)
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz1.id)
 Option.create(title: "Fessenheim",is_right: true, question_id: question.id)
 Option.create(title: "Gravelines",is_right: false, question_id: question.id)
-#4
-title = "What is the ideal temperature in a living room ?"
-details = "For rooms, the ideal temperature is between 16 and 17 ° C. Under the duvet, heating is not an obligation and too much heat can affect the quality of sleep."
+#3
+title = "Quelle est la température idéale dans une chambre ?"
+details = "Dans une chambre, la température idéale se situe entre 16 et 17°C. Sous la couette, le chauffage n’est pas une obligation et trop de chaleur peut affecter la qualité du sommeil."
 link = "https://www.lenergietoutcompris.fr/actualites-et-informations/economies-energie/realisez-des-economies-d-energie-en-ajustant-la-temperature-de-chacune-des-piece-de-votre-maison-47487"
-question = Question.create(title: title,details: details,link: link, quiz_id: quiz.id)
-Option.create(title: "19",is_right: true, question_id: question.id)
-Option.create(title: "22",is_right: false, question_id: question.id)
-# 5
-title = "When I leave a room of the house I think about :"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz1.id)
+Option.create(title: "19°C",is_right: true, question_id: question.id)
+Option.create(title: "22°C",is_right: false, question_id: question.id)
+# 4
+title = "Quand je quitte la maison je pense à :"
 details = "ecology and economis go hand in hand"
 link = "https://particuliers.engie.fr/economies-energie.html"
-question = Question.create(title: title,details: details,link: link, quiz_id: quiz.id)
-Option.create(title: "Close the door",is_right: false, question_id: question.id)
-Option.create(title: "Turn off the light",is_right: true, question_id: question.id)
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz1.id)
+Option.create(title: "Fermer la porte",is_right: false, question_id: question.id)
+Option.create(title: "Eteindre les lumières",is_right: true, question_id: question.id)
+
+
+# Deuxième Quiz - Energie Renouvelable
+quiz2 = Quiz.create(title: 'Energie renouvelable', description: '', category_id: energy.id, points_by_question: 5)
+# 1
+title = "Qu'appelle-t-on énergie renouvelable ?"
+details = "Les énergies renouvelables sont des sources d'énergie dont le renouvellement naturel est assez rapide pour qu'elles puissent être considérées comme inépuisables à l'échelle du temps humain.."
+link = "https://www.edf.fr/groupe-edf/espaces-dedies/l-energie-de-a-a-z/tout-sur-l-energie/le-developpement-durable/qu-est-ce-qu-une-energie-renouvelable"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
+Option.create(title: "Sources d'énergie dont le renouvellement naturel est assez rapide",is_right: true, question_id: question.id)
+Option.create(title: "Énergie qui fait fonctionner nos moteurs",is_right: false, question_id: question.id)
+# 2
+title = "Quelle source a le meilleur rendement pour la production d'électricité ?"
+details = "Le terme d'énergie hydraulique désigne l'énergie qui peut être obtenue par exploitation de l'eau. Une catégorie d'énergies moins soumise aux conditions météorologiques, mais qui reste réservée à une production d'envergure."
+link = "https://www.futura-sciences.com/planete/questions-reponses/energie-renouvelable-sont-cinq-types-energies-renouvelables-4134/"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
+Option.create(title: "L'eau",is_right: true, question_id: question.id)
+Option.create(title: "Le vent",is_right: false, question_id: question.id)
+#3
+title = "Pourquoi développe-t-on les énergies renouvelables ?"
+details = "Dans une chambre, la température idéale se situe entre 16 et 17°C. Sous la couette, le chauffage n’est pas une obligation et trop de chaleur peut affecter la qualité du sommeil."
+link = "https://www.lenergietoutcompris.fr/actualites-et-informations/economies-energie/realisez-des-economies-d-energie-en-ajustant-la-temperature-de-chacune-des-piece-de-votre-maison-47487"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
+Option.create(title: "Elles attenuent les dérèglements climatiques",is_right: true, question_id: question.id)
+Option.create(title: "Elles sont peu coûteuses",is_right: false, question_id: question.id)
+# 4
+title = "L'utilisation des panneaux solaires pour produire l'électricité est-elle dangereuse pour l'environnement ?"
+details = "L’impact environnemental du photovoltaïque se situe au niveau de l’énergie grise."
+link = "https://www.actu-environnement.com/ae/pdt/panneaux-solaires-impact-environnement-edf-enr-667.php4"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
+Option.create(title: "Non",is_right: false, question_id: question.id)
+Option.create(title: "Oui",is_right: true, question_id: question.id)
+# 5
+title = "Les cellules photovoltaïques qui transforment le rayonnement lumineux en électricité sont composées de :"
+details = "Le silicium est un matériau produit par l'industrie métallurgique à partir de sable ou de quartz, riches en silice."
+link = "https://www.picbleu.fr/page/les-panneaux-solaires-photovoltaiques-le-silicium#Qu'est-ce%20que%20le%20silicium%20?"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
+Option.create(title: "Silicium",is_right: true, question_id: question.id)
+Option.create(title: "Antimonium",is_right: false, question_id: question.id)
+# 6
+title = "La géothermie exploite des gisements de :"
+details = "La géothermie est une forme d'énergie utilisant la chaleur des profondeurs de la Terre."
+link = "https://www.edf.fr/groupe-edf/espaces-dedies/l-energie-de-a-a-z/tout-sur-l-energie/produire-de-l-electricite/qu-est-ce-que-la-geothermie"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
+Option.create(title: "Vapeur",is_right: false, question_id: question.id)
+Option.create(title: "Eau chaude",is_right: true, question_id: question.id)
+# 7
+title = "La production des éoliennes européennes couvrent les besoins en électricité domestique hors chauffage de :"
+details = "Le secteur de l'énergie éolienne en Europe assure 11 % de la production d'électricité de l'Union Européenne."
+link = "https://fr.wikipedia.org/wiki/%C3%89nergie_%C3%A9olienne_en_Europe"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
+Option.create(title: "18 millions de personnes",is_right: false, question_id: question.id)
+Option.create(title: "50 millions de personnes",is_right: true, question_id: question.id)
+# 8
+title = "Lequel de ces deux mots ne désigne pas un vent ?"
+details = "Le vent d'autan est un vent soufflant dans le sud/sud-ouest de la France, en provenance du sud-est/sud-sud-est, affectant la partie orientale du bassin aquitain et le sud-ouest du Massif central."
+link = "https://fr.wikipedia.org/wiki/Vent_d%27autan"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
+Option.create(title: "Autan",is_right: false, question_id: question.id)
+Option.create(title: "Aquilon",is_right: true, question_id: question.id)
+# 9
+title = "L'effet photovoltaïque a été découvert par :"
+details = "La découverte fut faiyte en 1839 par deux Français, Antoine César Becquerel et son fils Alexandre Edmond Becquerel."
+link = "https://www.futura-sciences.com/planete/dossiers/developpement-durable-cellules-photovoltaiques-coeur-panneaux-solaires-1688/page/4/"
+question = Question.create(title: title,details: details,link: link, quiz_id: quiz2.id)
+Option.create(title: "Louis Lumière",is_right: false, question_id: question.id)
+Option.create(title: "Alexandre-Edmond Becquerel",is_right: true, question_id: question.id)
 
 puts "Finished!"
 
