@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_12_03_151809) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -93,6 +94,8 @@ ActiveRecord::Schema.define(version: 2019_12_03_151809) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.string "status"
+    t.text "accept"
   end
 
   create_table "questions", force: :cascade do |t|
