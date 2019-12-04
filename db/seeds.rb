@@ -1,13 +1,15 @@
+require 'json'
+require 'open-uri'
 
 puts "Destroy all"
 
 Challenge.destroy_all
 Tip.destroy_all
-Category.destroy_all
 Answer.destroy_all
 Option.destroy_all
 Question.destroy_all
 Quiz.destroy_all
+Category.destroy_all
 User.destroy_all
 
 puts "Creating users..."
@@ -178,8 +180,6 @@ Tip.create!(tips)
 
 puts "Finished!"
 
-
-
 puts "Creating Challenges..."
 
 
@@ -190,7 +190,8 @@ challenges = [
     step_number:      7,
     points_by_step:   15,
     description:      "Changez vos déplacements en seulement 7 jours",
-    category:         transport
+    category:         transport,
+    photo:            "transport.png"
   },
   {
     title:            "Manger local et responsable",
@@ -198,7 +199,8 @@ challenges = [
     step_number:      10,
     points_by_step:   20,
     description:      "Changez vos habitudes alimentaires en deux semaines",
-    category:         food
+    category:         food,
+    photo:            "food.png"
   },
   {
     title:            "Bricoler avec du recyclé",
@@ -206,7 +208,8 @@ challenges = [
     step_number:      5,
     points_by_step:   10,
     description:      "Le DIY : Do It Yourself",
-    category:         diy
+    category:         diy,
+    photo:            "diy.png"
   },
   {
     title:            "Les énergies renouvelables",
@@ -214,7 +217,8 @@ challenges = [
     step_number:      20,
     points_by_step:   50,
     description:      "Appréhendez les énergies renouvelables pendant 100 jours",
-    category:         energy
+    category:         energy,
+    photo:            "energie-renouvelable.png"
   },
   {
     title:            "Triez vos déchets",
@@ -222,7 +226,8 @@ challenges = [
     step_number:      7,
     points_by_step:   10,
     description:      "Faites du tri de vos déchets une habitude",
-    category:         no_waste
+    category:         no_waste,
+    photo:            "sortwaste.png"
   },
   {
     title:            "Reconnectez vous à l'essentiel",
@@ -230,7 +235,8 @@ challenges = [
     step_number:      9,
     points_by_step:   15,
     description:      "Déconnecter pour mieux se reconnecter à l'essentiel : Dame nature",
-    category:         nature_connect
+    category:         nature_connect,
+    photo:            "damenature.png"
   }
 ]
 
@@ -269,6 +275,22 @@ Option.create(title: "Close the door",is_right: false, question_id: question.id)
 Option.create(title: "Turn off the light",is_right: true, question_id: question.id)
 
 puts "Finished!"
+
+
+puts "Creating places..."
+
+
+url = 'https://opendata.bordeaux-metropole.fr/api/records/1.0/search/?dataset=dechetteries-en-temps-reel&facet=statut&facet=insee'
+dechettery_serialized = open(url).read
+dechettery = JSON.parse(dechettery_serialized)
+dechettery['records'].each do |elem|
+  Place.create(name: "#{ elem['fields']['nom']}", address: "#{ elem['fields']['adresse']}", status: "#{ elem['fields']['statut']}", accept: "#{ elem['fields']['acceptes']}")
+end
+
+# name = dechettery['records'][0]['fields']['nom']
+# address = dechettery['records'][0]['fields']['adresse']
+
+#  Place.create(name: name, address: address)
 
 puts "Seed DONE"
 

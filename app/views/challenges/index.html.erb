@@ -17,14 +17,24 @@
   <div class="row mt-4 mb-5">
 
     <% @challenges.each do |challenge| %>
-      <div class="col-12 mb-2">
-        <%= link_to challenge_path(challenge) do %>
-          <div class="category">
-            <h3><%= challenge.title %></h3>
-            <%= challenge.description %>
-          </div>
-        <% end %>
-      </div>
+
+        <div class="col-12 mb-2">
+          <%= link_to challenge_path(challenge) do %>
+            <div class="category justify-content-between">
+              <div class="category-text">
+                <h2><%= challenge.title %></h2>
+                <p><%= challenge.description %></p>
+              </div>
+              <div class="d-flex align-items-end">
+                <%= image_tag challenge.photo %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
     <% end %>
+
   </div>
 </section>
+
+
