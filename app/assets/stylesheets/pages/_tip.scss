@@ -20,6 +20,16 @@
 
 }
 
+#tipTitle {
+
+  .name {
+    margin-top: $mt-n1;
+    font-size: 3vh;
+    font-weight: bold;
+    color: white;
+  }
+}
+
 #tipsContent {
   z-index: 2;
   margin-top: 30vh;
