@@ -32,6 +32,7 @@ const addMarkersToMap = (map, markers) => {
   });
 };
 
+
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
@@ -45,14 +46,14 @@ const initMapbox = () => {
   if (mapElement) {
 
 
-
     var hoveredStateId =  null;
     const map = buildMap();
 
-
+    // fetch api puis inserer les infos necessaires dans la structure d'un geojson attendu par mapbox
     fetch("https://opendata.bordeaux-metropole.fr/api/records/1.0/search/?dataset=en_frcol_s&rows=100&facet=passage&facet=jour_col&facet=type&facet=commune")
       .then(response => response.json())
       .then((data) => {
+        // incrementer l'id a chaque tour
         let i = 1;
         const test = {
             "type": "FeatureCollection",
@@ -87,6 +88,7 @@ const initMapbox = () => {
             "data": test
           });
 
+
           let communes = []
           data.records.forEach(record => { communes.push(record.fields.commune) })
           let collects = []
@@ -94,18 +96,17 @@ const initMapbox = () => {
           let types = []
           data.records.forEach(record => { types.push(record.fields.type) })
 
-            // console.log(types);
+
           map.on('click', 'layer-state', function (e) {
             let commune = communes[e.features[0].id - 1]
             let collect = collects[e.features[0].id - 1]
             let type = types[e.features[0].id - 1]
 
-              // console.log(collect);
+
 
             new mapboxgl.Popup()
               .setLngLat(e.lngLat)
-              .setHTML(commune +'('+ collect +')' + ' ' + type)
-              // .setHTML(collect)
+              .setHTML('<h6>'+commune+'</h6>'+'Jour(s) de collecte:'+'<br>'+ collect +'<br>'+'Type:'+' '+ type)
               .addTo(map);
           });
 
@@ -169,7 +170,6 @@ const initMapbox = () => {
 };
 
  const addGeoloc = (map) => {
-  // mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   map.addControl(new mapboxgl.GeolocateControl({
     positionOptions: {
       enableHighAccuracy: true
