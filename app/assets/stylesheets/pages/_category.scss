@@ -24,9 +24,58 @@
     z-index: 2;
     position: fixed;
     margin-top: 30vh;
-    padding: 2rem 2.5rem 100px;
+    padding: 2rem 0rem 100px;
     border-top-left-radius: $border-radius-lg;
     border-top-right-radius: $border-radius-lg;
+
+    .mr-cpc {
+        margin-right: 2rem;
+    }
+
+    .ml-cpc {
+        margin-left: 2rem;
+    }
+
+    * {
+        margin: 0;
+    }
+
+
+    .scrolling-wrapper-flexbox {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+
+        .card-phone {
+
+
+            text-align: center;
+
+            .card-phone-content {
+                background-color: #131313;
+                border-radius: $border-radius-lg;
+                height: 50vh;
+                width: 300px;
+                margin-left: 1rem;
+                box-shadow: $boxshadow2;
+                img {
+                    height: 200px;
+                }
+            }
+
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    a {
+        color: white;
+        text-transform: uppercase;
+    }
+
     .card-category {
         margin-bottom: 2vh;
     }
