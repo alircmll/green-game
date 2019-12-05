@@ -26,31 +26,49 @@
     padding: 2rem 2.5rem;
     border-top-left-radius: 36px;
     border-top-right-radius: 36px;
+    font-weight: 500;
 
-    p.h4 {
-        font-weight: 500;
+
+    .todoTitle {
+        font-size: 1.75rem;
+
     }
 
-    #myTodo {
+    .list-group-item {
+        list-style-type: none;
+        font-weight: normal;
+        // font-size: 2.3vh;
+        width: 100%;
+        padding: 0;
+        border: none;
+    }
+
+    span {
+        position: relative;
+    }
+
+    span::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: $teal;
+        transform-origin: bottom right;
+        transform: scaleX(0);
+        transition: transform 0.5s ease;
+    }
+
+    #toDo, #toDodone, #partyChallenges {
+        &:hover span:before {
+            transform-origin: bottom left;
+            transform: scaleX(1);
+        }
+    }
+
+    .todobtn {
 
     }
+
 }
-
-/* Portrait */
-@media screen and (orientation:portrait) {
-    /* Portrait styles */
-
-
-    }
-    /* Landscape */
-    @media screen and (orientation:landscape) {
-    /* Landscape styles */
-
-    .verticaltext {
-        padding-left: 6rem;
-        min-height: 10px;
-    }
-    .verticaltext-content {
-        left: -26%;
-    }
-    }
