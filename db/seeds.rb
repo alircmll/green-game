@@ -197,7 +197,7 @@ challenges = [
   {
     title:            "Manger local et responsable",
     duration:         14,
-    step_number:      10,
+    step_number:      14,
     points_by_step:   20,
     description:      "Changez vos habitudes alimentaires en deux semaines",
     category:         food,
@@ -206,7 +206,7 @@ challenges = [
   {
     title:            "Bricoler avec du recyclé",
     duration:         7,
-    step_number:      5,
+    step_number:      1,
     points_by_step:   10,
     description:      "Le DIY : Do It Yourself",
     category:         diy,
@@ -233,7 +233,7 @@ challenges = [
   {
     title:            "Reconnectez vous à l'essentiel",
     duration:         14,
-    step_number:      9,
+    step_number:      7,
     points_by_step:   15,
     description:      "Déconnecter pour mieux se reconnecter à l'essentiel : Dame nature",
     category:         nature_connect,
