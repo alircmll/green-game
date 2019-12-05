@@ -1,17 +1,11 @@
 #map {
-  margin-top: 6rem;
-  top: 0;
-  position:absolute;
+  z-index: 999;
 }
 
-.bg-map{
-  width: 100%;
-  height: 500px;
-  background-color: $aubergine;
-  opacity: 0.2;
-  position: unset;
-  z-index: -99;
+.navhidden {
+  visibility: hidden;
 }
+
 
 .infoWindow {
   color: #257c0e;
@@ -20,9 +14,7 @@
    width: 226px;
    height: 277px;
    text-align: center;
-   // position: fixed;
-   // background-color: white;
-   // background-attachment: scroll;
+
 
     #type {
       // color: black;

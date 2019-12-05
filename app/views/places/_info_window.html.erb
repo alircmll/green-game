@@ -1,8 +1,7 @@
   <div class="infoWindow">
       <h5><%= place.name %></h5>
       <p><%= place.address %></p>
-      <p>- <em><%= place.status %></em> -</p>
+      <p>- <em><%=place.status%></em> -</p>
       <h6 id="type">Types de déchets acceptés:</h6>
       <%= sanitize place.accept.capitalize.gsub!("\n","<br>").gsub!("_"," "), tags: %w(br) %>
   </div>
-<!-- <div class="bg-map"></div> -->

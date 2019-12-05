@@ -36,7 +36,7 @@ const addMarkersToMap = (map, markers) => {
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
-  markers.forEach(marker => bounds.extend([ 44.8463,-0.689153 ]));
+  markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 
 };
@@ -136,7 +136,10 @@ const initMapbox = () => {
             }
           });
 
+            // map.on('load', function(){
+            //   map.fitBounds([44.846432, -0.644397])
 
+            // });
 
           // When the user moves their mouse over the state-fill layer, we'll update the
           // feature state for the feature under the mouse.
@@ -167,6 +170,7 @@ const initMapbox = () => {
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
     addGeoloc(map);
+
   }
 };
 
