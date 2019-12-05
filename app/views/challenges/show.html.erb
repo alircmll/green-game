@@ -1,8 +1,8 @@
 <section id="challenge" class="container-fluid d-flex flex-column bg-dark">
   <%= render 'shared/topnav' %>
   <section id="challengeTitle" class="row px-4 my-auto">
-    <div class=" name col-10 offset-1 text-center">
-      <h3 class=" text-white  text-uppercase "><%= @challenge.title %></h3>
+    <div class="name col-10 offset-1 text-center">
+      <p class="text-white  text-uppercase "><%= @challenge.title %></h3>
     </div>
   </section>
 </section>
@@ -10,14 +10,14 @@
   <div class="row">
     <div class="col-12">
       <div id="reward" class="">
-        <div class=" d-flex justify-content-around align-items-center my-2 text-center">
-          <p><%= @challenge.duration %> Days</p>
-      <%= button_to "participate", challenge_party_challenges_path(@challenge), method: :post%>
+        <div class="d-flex justify-content-around align-items-center my-2 text-center">
+          <p><%= @challenge.duration %> Jours</p>
+          <%= button_to "Participer", challenge_party_challenges_path(@challenge), method: :post, class: "btn btn-primary" %>
           <p><%= @challenge.points_by_step %>pts <%= image_tag('star (2).svg') %></p>
         </div>
       </div>
     </div>
-    <div class="col-12 mt-4 text-justify">
+    <div class="col-12 mt-4 text-center">
       <p class="description"><%= @challenge.description %></p>
     </div>
   </div>

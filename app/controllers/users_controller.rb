@@ -1,15 +1,27 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(current_user.id)
-    @party_challenges = PartyChallenge.where(user_id: current_user)
-    # J'appelle la function Level Up et je sauvegarde dans la DB
+    # ! Voir si une partie n'est pas completed
+    @party_challenges = PartyChallenge.where(completed: false, user_id: current_user)
+    @count = 0
+    @countdone = 0
+    @countcat = 0
+    @party_challenges.each do |pc|
+      if (pc.updated_at.day != Time.now.day) || (pc.created_at.day == Time.now.day and pc.position == 0)
+        @count += 1
+      end
+      if (pc.updated_at.day == Time.now.day and pc.position > 0)
+        @countdone += 1
+      end
+    end
+
+    # * J'appelle la function Level Up et je sauvegarde dans la DB
     level_up
     @user.save
   end
 
   def edit
     @user = User.find(current_user.id)
-
   end
 
   def update

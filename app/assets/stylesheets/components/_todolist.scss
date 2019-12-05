@@ -1,48 +1,52 @@
-// Pour custom les checkbox
-input[type=checkbox] {
-    display: none;
-}
+// // Pour custom les checkbox
+// input[type=checkbox] {
+//     display: none;
+// }
 
 /* to hide the checkbox itself */
-input[type=checkbox]+label:before {
-    font-family: FontAwesome;
-    // font-family: "font-awesome", sans-serif;
-    display: inline-block;
-    font-weight: 900;
-}
+// input[type=checkbox]+label:before {
+//     font-family: FontAwesome;
+//     // font-family: "font-awesome", sans-serif;
+//     display: inline-block;
+//     font-weight: 900;
+// }
 
-/* unchecked icon */
-input[type=checkbox]+label:before {
-    content: "\f10c";
-}
-/* space between checkbox and label */
-input[type=checkbox]+label:before {
-    letter-spacing: 10px;
-}
+// /* unchecked icon */
+// input[type=checkbox]+label:before {
+//     content: "\f10c";
+// }
+// /* space between checkbox and label */
+// input[type=checkbox]+label:before {
+//     letter-spacing: 10px;
+// }
 
 
-/* checked icon */
-input[type=checkbox]:checked+label:before {
-    content: "\f05d";
-}
+// /* checked icon */
+// input[type=checkbox]:checked+label:before {
+//     content: "\f05d";
+// }
 
-/* allow space for check mark */
-input[type=checkbox]:checked+label:before {
-    letter-spacing: 10px;
-    color: $aubergine;
-}
+// /* allow space for check mark */
+// input[type=checkbox]:checked+label:before {
+//     letter-spacing: 10px;
+//     color: $aubergine;
+// }
 
 
 #toDo {
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
 
-    .list-item {
+    .list-group-item  {
         list-style-type: none;
         font-weight: normal;
-        font-size: 24px;
+        font-size: 2.3vh;
         width: 100%;
-        padding: 8px 0;
+        padding: 0;
+        border: none;
+        .btn {
+
+        }
     }
 
 

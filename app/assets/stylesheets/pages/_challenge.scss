@@ -1,5 +1,5 @@
 #challenge {
-    height: 36vh;
+    height: 50vh;
     position: fixed;
     top: 0;
     left: 0;
@@ -11,8 +11,8 @@
     #challengeTitle {
 
         .name {
-            margin-top: -42px;
-            font-size: 3rem;
+            margin-top: $mt-n1;
+            font-size: 7vw;
             font-weight: bold;
             color: white;
         }
@@ -23,7 +23,7 @@
 #challengeContent {
     z-index: 2;
     position: fixed;
-    margin-top: 32vh;
+    margin-top: 45vh;
     padding: 2rem 2.5rem ;
     border-top-left-radius: $border-radius-lg;
     border-top-right-radius: $border-radius-lg;
@@ -35,6 +35,11 @@
         background-color: #fff;
         padding: 8px 0;
 
+        input {
+            padding: 16px 32px;
+            margin-left: -16px;
+        }
+
         p{
             margin: 0;
         }
@@ -45,7 +50,7 @@
     }
 
 
-    
+
 
 
 }

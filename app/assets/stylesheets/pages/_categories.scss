@@ -11,8 +11,8 @@
     #categoriesTitle {
 
         .name {
-            margin-top: -42px;
-            font-size: 3rem;
+            margin-top: $mt-n1;
+            font-size: $fs-title;
             font-weight: bold;
             color: white;
         }
@@ -26,11 +26,16 @@
     z-index: 2;
     margin-top: 30vh;
 
-    padding: 3rem 2.5rem 100px;
+    padding: 1rem 2.5rem 84px;
     border-top-left-radius: $border-radius-lg;
     border-top-right-radius: $border-radius-lg;
 
-    .card, .category {
+    h1 {
+        font-size: 4vh;
+    }
+
+    .card,
+    .category {
         box-shadow: $boxshadow2;
     }
 
@@ -53,6 +58,30 @@
 
 
     }
+
+    span {
+        position: relative;
+    }
+
+    span::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: $primary;
+        transform-origin: bottom right;
+        transform: scaleX(0);
+        transition: transform 0.5s ease;
+    }
+
+    #vignette:hover span::before {
+        transform-origin: bottom left;
+        transform: scaleX(1);
+    }
+
+
 
 
 

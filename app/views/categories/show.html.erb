@@ -2,26 +2,33 @@
 <%= render 'shared/topnav' %>
   <section id="categoryTitle" class="row px-4 my-auto">
     <div class=" name col-10 offset-1 text-center">
-      <h3 class=" text-white  text-uppercase "><%= @category.name %></span>
+      <p class=" text-white  text-uppercase "><%= @category.name %></span>
     </div>
   </section>
 </section>
 <section id="categoryContent" class="container-fluid d-flex page-content flex-column bg-white">
-  <div class="row">
-    <div class="col-12">
-      <%= link_to challenges_path, id: "main-btn" do %>
-        <div class="card-category m-4" >
-          Challenges
+  <div class="scrolling-wrapper-flexbox">
+    <div class="card-phone ml-cpc blur">
+      <%= link_to challenges_path(cat: @category.id), id: "main-btn", class: "p-0 m-0" do %>
+        <div class="card-phone-content p-0 m-0 d-flex flex-column justify-content-around align-items-center " >
+        <%= image_tag "icons/chall.png"  %>
+          <span class="h4">Challenges</span>
         </div>
       <% end %>
-      <%= link_to quizzes_path, id: "main-btn" do %>
-        <div class="card-category m-4">
-          Quizzes
+      </div>
+       <div class="card-phone">
+      <%= link_to quizzes_path(cat: @category.id), id: "main-btn" do %>
+        <div class="card-phone-content d-flex flex-column justify-content-around align-items-center">
+        <%= image_tag "icons/quiz.png"  %>
+          <span class="h4">Quizzes</span>
         </div>
       <% end %>
+      </div>
+       <div class="card-phone">
       <%= link_to category_tips_path(@category), id: "main-btn" do %>
-        <div class="card-category m-4">
-          Conseils
+        <div class="card-phone-content mr-cpc d-flex flex-column justify-content-around align-items-center">
+        <%= image_tag "icons/tips.png"  %>
+          <span class="h4">Conseils</span>
         </div>
       <% end %>
     </div>
