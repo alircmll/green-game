@@ -40,7 +40,7 @@
             <% if (pc.updated_at.day != Time.now.day) || (pc.created_at.day == Time.now.day and pc.position == 0) %>
               <div class="list-group-item d-flex justify-content-between align-items-center my-1">
                 <div class="d-flex flex-row align-items-center">
-                  <%= button_to "à faire", party_challenge_path(pc.id), method: :patch, class: "btn btn-primary btn-block" %>
+                  <%= button_to "À faire", party_challenge_path(pc.id), method: :patch, class: "btn btn-primary btn-block" %>
                   <p class="pl-2 m-0"><%= pc.challenge.title %></p>
                 </div>
                 <small><%= pc.position %> / <%= pc.challenge.step_number %></small>
@@ -71,7 +71,7 @@
     <div id="partyChallenges" class="container-fluid d-flex page-content flex-column bg-white">
       <div class="row">
         <div class="col-12  col-md-12 col-lg-8 offset-lg-2">
-          <p class="h3 mt-4">Mes Challenges</p>
+          <p class="h3 mt-4">Mes challenges en cours</p>
           <% if @party_challenges.count == 0 %>
             <p>Aucun challenge en cours.</p>
           <% else %>
@@ -80,7 +80,7 @@
                 <div class="blog-slider__wrp swiper-wrapper">
                   <div class="blog-slider__item swiper-slide">
                     <div class="blog-slider__img">
-                      <%= cl_image_tag pc.challenge.category.photo %>
+                      <%= image_tag pc.challenge.category.photo %>
                     </div>
                     <div class="blog-slider__content">
                       <span class="blog-slider__code"><%= pc.challenge.duration %> jours</span>
@@ -89,7 +89,6 @@
                         <%= pc.challenge.description %>
                         <%= pc.point %>
                       </div>
-                      <%= link_to "Details", challenge_path(pc), class: "blog-slider__button" %>
                     </div>
                   </div>
                 </div>
