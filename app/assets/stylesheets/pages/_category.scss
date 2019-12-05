@@ -46,6 +46,7 @@
         flex-wrap: nowrap;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+        padding: 0em 0 4em 0;
 
         .card-phone {
 
@@ -58,10 +59,16 @@
                 height: 50vh;
                 width: 300px;
                 margin-left: 1rem;
-                box-shadow: $boxshadow2;
+                box-shadow: $boxshadow3;
+
+                scrollbar-width: none;
+                scrollbar-color: transparent transparent;
                 img {
                     height: 200px;
                 }
+
+                &::-webkit-scrollbar,  { width: 0 !important;
+                    scrollbar-color: transparent transparent; }
             }
 
         }
