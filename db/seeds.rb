@@ -280,7 +280,7 @@ puts "Finished!"
 puts "Creating places..."
 
 
-url = 'https://opendata.bordeaux-metropole.fr/api/records/1.0/search/?dataset=dechetteries-en-temps-reel&facet=statut&facet=insee'
+url = 'https://opendata.bordeaux-metropole.fr/api/records/1.0/search/?dataset=dechetteries-en-temps-reel&rows=23&facet=statut&facet=insee'
 dechettery_serialized = open(url).read
 dechettery = JSON.parse(dechettery_serialized)
 dechettery['records'].each do |elem|
