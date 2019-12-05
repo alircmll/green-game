@@ -186,47 +186,116 @@ puts "Creating Challenges..."
 
 challenges = [
   {
-    title:            "Transport vert",
+    title:            "Prendre les transports verts",
     duration:         7,
     step_number:      7,
     points_by_step:   15,
-    description:      "Changez vos déplacements en seulement 7 jours",
+    description:      "Se déplacer autrement
+                      Se déplacer autrement, c’est privilégier des modes de transport plus respectueux de l’environnement. Se passer d’une voiture aujourd’hui parait parfois difficile pourtant il existe des solutions alternatives !
+                      Utiliser l’énergie humaine
+                      Le vélo et la marche à pied sont les transports verts par excellence ! Écologiques, sains et peu coûteux, ils sont accessibles à la plupart d’entre nous et les bénéfices pour notre santé sont importants.
+                      Prendre les transports en commun
+                      Utiliser les transports en commun (bus, métro, tramway) est un bon moyen de réduire son impact environnemental. En autobus ou en train, un passager émettra 3 à 4 fois moins de GES qu’en voiture.
+                      Partager un véhicule
+                      S’il est parfois difficile de se passer de son véhicule, il est possible de pratiquer l’autopartage ou le covoiturage. Cela permet de réduire les frais pour le conducteur et aussi de développer la convivialité et le partage.",
     category:         transport,
     photo:            "transport.png"
   },
   {
-    title:            "Manger local et responsable",
+    title:            "Consommer de saison et responsable",
     duration:         14,
     step_number:      14,
     points_by_step:   20,
-    description:      "Changez vos habitudes alimentaires en deux semaines",
+    description:      "Il est important de privilégier les fruits et légumes de saison pour leur goût, mais aussi afin de réduire notre impact écologique.
+                      1. Consommer de saison, c’est profiter de tous les bienfaits nutritionnels
+                      Chaque saison répond à un besoin du corps humain. En hiver, avec le froid et le manque de soleil, notre corps réclame plus de nutriments et de vitamines C. Tant mieux, c’est la saison des légumes riches en minéraux (poireaux, choux, épinards) et des agrumes pleins de vitamine C (mandarines, pamplemousses, clémentines). En été, avec la chaleur, notre organisme dépense moins de calories mais demande plus d’eau : tous les fruits et légumes de la saison en sont gorgés : melons, tomates, courgettes, pastèques, etc. !
+                      2. Consommer de saison, c’est encourager les circuits courts
+                      Il est préférable de privilégier les circuits courts afin d’avoir moins d’impact polluant sur la planète. Le premier réflexe à adopter lorsque l’on est dans les grandes surfaces, c’est de regarder la provenance des fruits et légumes mais aussi leur saisonnalité.
+                      3. Consommer de saison et local, c’est protéger l’environnement
+                      Les fruits ou légumes hors saison et importés sont souvent transportés soit par avion, soit par bateau (pour les produits congelés ou en conserve) puis par camion dans des conditions permettant leur conservation (réfrigération, climatisation). Ces trois moyens de transport sont polluants pour la planète. De plus, afin que les fruits ne mûrissent pas trop vite pendant le transport, ils sont recouverts de produits chimiques permettant leur conservation",
     category:         food,
     photo:            "food.png"
   },
   {
-    title:            "Bricoler avec du recyclé",
-    duration:         7,
+    title:            "Faire un produit vaisselle ",
+    duration:         1,
     step_number:      1,
     points_by_step:   10,
-    description:      "Le DIY : Do It Yourself",
+    description:      "Pour fabriquer votre liquide vaisselle, vous avez besoin de :
+
+                        1 grande cuillère à soupe de cristaux de soude
+                        1 petite cuillère de bicarbonate de soude
+                        1 petite cuillère de savon noir dilué dans 2 dL d’eau
+                        1 petit savon de Marseille que vous râperez
+                        Réaliser vos produits ménagers avec des ingrédients naturels et écologique, permet également :
+                      – de limiter les emballages et donc les déchets
+                      – d’éviter les produits chimiques polluants et donc la pollution de l’eau et des sols
+                      – de reprendre le contrôle de votre consommation sans se laisser berner par les belles promesses marketing des fabricants",
     category:         diy,
     photo:            "diy.png"
   },
   {
-    title:            "Les énergies renouvelables",
+    title:            "Fabriquer sa lessive ",
+    duration:         1,
+    step_number:      1,
+    points_by_step:   10,
+    description:      "Pour fabriquer votre liquide vaisselle, vous avez besoin de :
+
+                        4l d’eau
+                        150 à 200 g de savon de Marseille en paillettes ou râpé
+                        85 g de bicarbonate de soude
+                        8 à 10 gouttes d’huile essentielle (lavande ou autre parfum)
+                        Réaliser vos produits ménagers avec des ingrédients naturels et écologique, permet également :
+                      – de limiter les emballages et donc les déchets
+                      – d’éviter les produits chimiques polluants et donc la pollution de l’eau et des sols
+                      – de reprendre le contrôle de votre consommation sans se laisser berner par les belles promesses marketing des fabricants",
+    category:         diy,
+    photo:            "diy.png"
+  },
+  {
+    title:            "Économies d’énergie dans la salle de bain",
     duration:         100,
     step_number:      20,
-    points_by_step:   50,
-    description:      "Appréhendez les énergies renouvelables pendant 100 jours",
+    points_by_step:   10,
+    description:      "Prendre des douches plutôt que des bains ? C’est un conseil que l’on entend souvent quand il s’agit d’économiser l’eau. Mais c’est aussi un geste très efficace pour économiser l’énergie. En effet, quand on se chouchoute dans sa baignoire, il faut bien-sûr chauffer l’eau, soit avec une chaudière gaz soit avec un chauffe-eau électrique. Selon l’ADEME, 12%\ des consommations d’énergie d’un ménage servent à chauffer l’eau, ce n’est pas rien ! Logiquement, plus vous économisez d’eau chaude, moins vous consommez d’énergie !",
     category:         energy,
     photo:            "energie-renouvelable.png"
   },
   {
-    title:            "Triez vos déchets",
+    title:            "Économies d’électricité simplement au quotidien",
+    duration:         100,
+    step_number:      20,
+    points_by_step:   10,
+    description:      "Maîtriser le chauffage (et la climatisation) pour économiser l’électricité
+                       Bien gérer l’éclairage : des économies d’électricité à la clef !
+                       Pour cela, le premier éco-geste est de miser sur la lumière naturelle ! Eh oui, la lumière du soleil, c’est gratuit, c’est écolo et en plus c’est plus agréable que les lumières artificielles agressives que l’on trouve parfois dans nos intérieurs. Il y en a même qui disent que c’est bon pour le moral.",
+    category:         energy,
+    photo:            "energie-renouvelable.png"
+  },
+  {
+    title:            "Faites du tri de vos déchets une habitude",
     duration:         7,
     step_number:      7,
     points_by_step:   10,
-    description:      "Faites du tri de vos déchets une habitude",
+    description:      "Vous pouvez à présent trier les emballages destinés au recyclage dans vos bacs jaunes:
+                      les cartons (petits cartons, boîte de lessive...) et les cartonnettes (boites de gâteau, emballages carton de yaourt...)
+                      les briques alimentaire (jus de fruit, briques de lait...)
+                      les emballages métalliques (boite de conserve, sprays, mousse à raser, canettes, sirops...)
+                      les flaconnages plastiques (bouteilles d'eau, de shampooings, de lait...)
+                      les pots : de yaourt, de crème, de miel, de chocolat, de beurre, etc...
+                      les barquettes rigides ou semi-rigides (conditionnement fromages, conditionnements traiteur, etc.)
+                      les capsules (de café pour machines, de bouteilles, etc.)
+                      Verre : Bacs à verres.
+                      Papiers: Bacs bleus.",
+    category:         no_waste,
+    photo:            "sortwaste.png"
+  },
+  {
+    title:            "Ramasser au moins un dechet par jour",
+    duration:         7,
+    step_number:      7,
+    points_by_step:   10,
+    description:      "Les chiffres liés à la production et à la gestion des déchets sont très alarmants : de 80 à 126 tonnes de kilos de déchets sont générés chaque seconde dans le monde. Produits en trop grande quantité, traités par des systèmes défaillants ou inadaptés – lorsqu’ils ne sont pas directement jetés dans la nature, les déchets contaminent nos terres, notre air et nos océans. Au quotidien, tout un chacun constate que les rues, les forêts, les plages, les bas côtés des routes et même les plus hautes montagnes sont tristement jonchés de fragments de plastique, de canettes, de pailles, de prospectus, de mégots et autres emballages.",
     category:         no_waste,
     photo:            "sortwaste.png"
   },
