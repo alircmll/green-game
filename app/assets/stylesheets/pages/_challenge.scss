@@ -22,11 +22,13 @@
 
 #challengeContent {
     z-index: 2;
-    position: fixed;
+    // position: fixed;
     margin-top: 45vh;
-    padding: 2rem 2.5rem ;
+    padding: 2rem 2.5rem 100px;
     border-top-left-radius: $border-radius-lg;
     border-top-right-radius: $border-radius-lg;
+
+
 
     #reward{
         box-shadow: $boxshadow2;

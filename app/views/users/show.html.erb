@@ -46,7 +46,7 @@
                   <% end %>
 
                 </div>
-                <small><%= pc.position %> / <%= pc.challenge.step_number %></small>
+                <!-- <small><%= pc.position %> / <%= pc.challenge.step_number %></small> -->
               </div>
             <% end %>
           <% end %>
@@ -54,7 +54,7 @@
       </ul>
     </div>
     <div id="toDodone" class="col-12 mt-2">
-      <span class="h3 mt-4">Mes tâches faites</span>
+      <span class="h3 mt-4">Challenges en cours</span>
       <ul  class="d-flex todo-list list-group mt-3" >
         <% if @countdone == 0 %>
           <p>Vous n'avez rien fait aujourd'hui.</p>
@@ -77,7 +77,7 @@
     <div id="partyChallenges" class="container-fluid d-flex page-content flex-column bg-white">
       <div class="row">
         <div class="col-12 col-md-12 col-lg-8 offset-lg-2">
-          <span class="h3 mt-4 d-block">Mes Challenges</span>
+          <!-- <span class="h3 mt-4 d-block">Mes Challenges</span> -->
           <% if @party_challenges.count == 0 %>
             <p>Aucun challenge en cours.</p>
           <% else %>
@@ -92,7 +92,7 @@
                       <small class="blog-slider__code"> <%= pc.position %> / <%= pc.challenge.duration %> jours</small>
                       <div class="blog-slider__title"><%= pc.challenge.title %></div>
                       <div class="blog-slider__text">
-                        <%= pc.challenge.description %>
+                        <%= pc.challenge.description.first(170)%>...
                         <%= pc.point %>
                       </div>
                     </div>
