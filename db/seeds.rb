@@ -48,12 +48,12 @@ puts 'Finished!'
 
 puts "Creating Categories..."
 
-transport = Category.create!(name: "Transport", photo: "https://images.pexels.com/photos/1548771/pexels-photo-1548771.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
-food = Category.create!(name: "Food", photo: "https://images.pexels.com/photos/2110485/pexels-photo-2110485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
-diy = Category.create!(name: "DIY", photo: "https://images.unsplash.com/photo-1561424111-c81487d25086?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1036&q=80")
-energy = Category.create!(name: "Energie", photo: "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80")
-no_waste = Category.create!(name: "Zéro déchet", photo: "https://images.unsplash.com/photo-1526951521990-620dc14c214b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80")
-nature_connect = Category.create!(name: "Nature connect", photo: "https://images.unsplash.com/photo-1534254608209-03b8f2c24397?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80")
+transport = Category.create!(name: "Transport", photo: "transport.jpg")
+food = Category.create!(name: "Food", photo: "food.jpg")
+diy = Category.create!(name: "DIY", photo: "diy.jpg")
+energy = Category.create!(name: "Energie", photo: "energy.jpg")
+no_waste = Category.create!(name: "Zéro déchet", photo: "no_waste.jpg")
+nature_connect = Category.create!(name: "Nature connect", photo: "dame_nature.jpg")
 
 puts 'Finished!'
 
