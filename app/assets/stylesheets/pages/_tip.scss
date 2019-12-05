@@ -12,12 +12,22 @@
 
     .name {
       margin-top: $mt-n1;
-      font-size: 3vh;
+      font-size: $fs-title;
       font-weight: bold;
       color: white;
     }
   }
 
+}
+
+#tipTitle {
+
+  .name {
+    margin-top: $mt-n1;
+    font-size: 3vh;
+    font-weight: bold;
+    color: white;
+  }
 }
 
 #tipsContent {
