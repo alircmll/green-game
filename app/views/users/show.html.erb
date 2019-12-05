@@ -25,10 +25,10 @@
 </section>
 <section id="userContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
   <div id="myTodo" class="row ">
-    <div class="col-12 mt-2">
-      <p class="h3">Ma journée écologiquement durable</p>
+    <div id="toDo" class="col-12 mt-2">
+      <span class="todoTitle w-100 d-block">Ma journée</span>
       <%# TODO LIST%>
-      <ul id="toDo" class="d-flex todo-list list-group mt-3" >
+      <ul  class="d-flex todo-list list-group mt-3 " >
         <%# ITEMS %>
         <%#  Faire un Each pour display les taches et generer la li suivante %>
         <!-- Mettre le form ici-->
@@ -39,16 +39,23 @@
           <% @party_challenges.each do |pc| %>
             <% if (pc.updated_at.day != Time.now.day) || (pc.created_at.day == Time.now.day and pc.position == 0) %>
               <div class="list-group-item d-flex justify-content-between align-items-center my-1">
-                <div class="d-flex flex-row align-items-center">
-                  <%= button_to "À faire", party_challenge_path(pc.id), method: :patch, class: "btn btn-primary btn-block" %>
+                <div class=" d-flex flex-row align-items-center">
+                  <%= button_to party_challenge_path(pc.id), method: :patch, class: "btn p-0 m-0 d-flex flex-row align-items-center" do %>
+                    <i class="far fa-square"></i>
                   <p class="pl-2 m-0"><%= pc.challenge.title %></p>
+                  <% end %>
+
                 </div>
                 <small><%= pc.position %> / <%= pc.challenge.step_number %></small>
               </div>
             <% end %>
           <% end %>
         <% end %>
-        <p class="h3 mt-4">Mes tâches faites</p>
+      </ul>
+    </div>
+    <div id="toDodone" class="col-12 mt-2">
+      <span class="h3 mt-4">Mes tâches faites</span>
+      <ul  class="d-flex todo-list list-group mt-3" >
         <% if @countdone == 0 %>
           <p>Vous n'avez rien fait aujourd'hui.</p>
         <% else %>
@@ -56,10 +63,9 @@
             <% if (pc.updated_at.day == Time.now.day and pc.position > 0) %>
               <div class="list-group-item d-flex justify-content-between align-items-center my-1">
                 <div class="d-flex flex-row align-items-center">
-                  <small>-</small>
+                  <i class="far fa-check-square"></i>
                   <p class="pl-2 m-0"><%= pc.challenge.title %></p>
                 </div>
-                <small><%= pc.position %> / <%= pc.challenge.step_number %></small>
               </div>
             <% end %>
           <% end %>
@@ -70,8 +76,8 @@
   <div id="myChallenges" class="row">
     <div id="partyChallenges" class="container-fluid d-flex page-content flex-column bg-white">
       <div class="row">
-        <div class="col-12  col-md-12 col-lg-8 offset-lg-2">
-          <p class="h3 mt-4">Mes challenges en cours</p>
+        <div class="col-12 col-md-12 col-lg-8 offset-lg-2">
+          <span class="h3 mt-4 d-block">Mes Challenges</span>
           <% if @party_challenges.count == 0 %>
             <p>Aucun challenge en cours.</p>
           <% else %>
@@ -83,7 +89,7 @@
                       <%= image_tag pc.challenge.category.photo %>
                     </div>
                     <div class="blog-slider__content">
-                      <span class="blog-slider__code"><%= pc.challenge.duration %> jours</span>
+                      <small class="blog-slider__code"> <%= pc.position %> / <%= pc.challenge.duration %> jours</small>
                       <div class="blog-slider__title"><%= pc.challenge.title %></div>
                       <div class="blog-slider__text">
                         <%= pc.challenge.description %>
