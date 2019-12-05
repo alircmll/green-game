@@ -2,7 +2,7 @@
 <%= render 'shared/topnav' %>
   <section id="challengesTitle" class="row px-4 my-auto">
     <div class=" name col-10 offset-1 text-center">
-      <h3 class=" text-white  text-uppercase ">Challenges</span>
+      <p class=" text-white  text-uppercase ">Challenges</span>
     </div>
   </section>
 </section>
@@ -12,12 +12,12 @@
   <% else %>
     <div class="row ">
       <div class="col-12">
-        <p class="m-0">
+        <p class="m-0 lead text-center">
           Trouvez vos challenges favoris ici.
         </p>
       </div>
     </div>
-    <div class="row mt-4 mb-5">
+    <div class="row  mb-5">
 
       <% @challenges.each do |challenge| %>
         <div class="col-12 mb-2">
@@ -38,5 +38,3 @@
     </div>
   <% end %>
 </section>
-
-

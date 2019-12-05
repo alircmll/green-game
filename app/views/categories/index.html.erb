@@ -13,7 +13,7 @@
 </section>
 
 <section id="categoriesContent" class="container-fluid h-100 d-flex page-content flex-column bg-white">
-  <div class="row">
+  <div class="row mb-4">
     <% unless params[:search].present? %>
     <div class="col-12">
       <div class="pressbtn">
@@ -85,11 +85,11 @@
 
   <%# Categories  -------------------------- %>
   <% if @categories.count > 0 %>
-  <div class="row">
-    <div class="col-12 d-flex p-3 mt-n2 align-items-center justify-content-between ">
-      <p class="h4 mt-3">Categories</p>
+  <div id="vignette" class="row">
+    <div class="col-12 d-flex align-items-center justify-content-between mb-4">
+      <span><p class="h4">Categories</p></span>
     </div>
-    <div class="col-12">
+    <div  class="col-12">
       <div class="card-columns">
         <% @categories.each do |category| %>
           <%= link_to category_path(category) do %>
