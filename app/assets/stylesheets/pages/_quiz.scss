@@ -1,35 +1,35 @@
 #quiz {
-    height: 36vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -99;
-    background: linear-gradient(81.2deg, rgba(0, 0, 0, 0.49) -49.44%, rgba(96, 54, 94, 0.62) 82.85%), image-url("background/bg-tips.jpg");
-    background-position: center center;
-    background-size: cover;
+  height: 36vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -99;
+  background: linear-gradient(81.2deg, rgba(0, 0, 0, 0.49) -49.44%, rgba(96, 54, 94, 0.62) 82.85%), image-url("background/bg-tips.jpg");
+  background-position: center center;
+  background-size: cover;
 
-    #quizStatus {
+  #quizStatus {
 
-        .name {
-          margin-bottom: -1rem;
-            font-size: 2rem;
-            font-weight: bold;
-        }
+    .name {
+      margin-bottom: $mt-n1;
+      font-size: 2rem;
+      font-weight: bold;
     }
+  }
 
 }
 
 #quizContent {
-    z-index: 2;
-    position: fixed;
-    margin-top: 30vh;
-    padding: 2rem 2.5rem;
-    border-top-left-radius: $border-radius-lg;
-    border-top-right-radius: $border-radius-lg;
+  z-index: 2;
+  position: fixed;
+  margin-top: 30vh;
+  padding: 2rem 2.5rem;
+  border-top-left-radius: $border-radius-lg;
+  border-top-right-radius: $border-radius-lg;
 
-    p.h4 {
-        font-weight: 500;
-    }
+  p.h4 {
+    font-weight: 500;
+  }
 }
 
 #quizzesContent {
@@ -51,9 +51,9 @@
     // flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background: rgb(11,95,106);
-    background: rgb(11,95,106);
-    background: linear-gradient(90deg, rgba(11,95,106,1) 39%, rgba(7,45,41,1) 91%);
+    background: rgb(11, 95, 106);
+    background: rgb(11, 95, 106);
+    background: linear-gradient(90deg, rgba(11, 95, 106, 1) 39%, rgba(7, 45, 41, 1) 91%);
     padding: 24px 12px;
     transition: all ease 400ms;
     box-shadow: $boxshadow2;
@@ -67,9 +67,10 @@
     }
 
 
-    &:hover, &:focus {
-        background-color: $primary-dark;
-        transition: all ease 400ms;
+    &:hover,
+    &:focus {
+      background-color: $primary-dark;
+      transition: all ease 400ms;
     }
   }
 }
